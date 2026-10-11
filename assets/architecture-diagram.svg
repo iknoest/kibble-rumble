@@ -163,7 +163,7 @@
           <rect x="0" y="0" width="280" height="84" rx="6" fill="#1c192b"/>
           <text x="12" y="24" font-size="12" font-weight="700" fill="#c084fc">Circular Pre-Roll Ring Buffer</text>
           <text x="12" y="44" font-size="11" fill="#94a3b8">• Preserves 3s pre-trigger frames</text>
-          <text x="12" y="62" font-size="11" fill="#94a3b8">• Zero dropped cat arrival frames</text>
+          <text x="12" y="62" font-size="11" fill="#94a3b8">• Preserves pre-trigger motion lead-in</text>
         </g>
         <!-- Col 3 -->
         <g transform="translate(590, 0)">
@@ -193,7 +193,7 @@
           <text x="12" y="22" font-size="12" font-weight="700" fill="#7dd3fc">5-Class Custom YOLOv11 Model</text>
           <text x="12" y="42" font-size="11" fill="#cbd5e1">Classes: <tspan font-family="monospace" fill="#fde047">Dan</tspan>, <tspan font-family="monospace" fill="#67e8f9">Sanbo</tspan>, <tspan font-family="monospace" fill="#f87171">Dan_hand</tspan>, <tspan font-family="monospace" fill="#a7f3d0">Bowl</tspan>, <tspan font-family="monospace" fill="#fed7aa">Kibble</tspan></text>
           <text x="12" y="62" font-size="11" fill="#94a3b8">• Native 16:9 inference (rect=True) preserves aspect ratio</text>
-          <text x="12" y="82" font-size="11" fill="#94a3b8">• mAP50 = 0.957 (Sanbo AP50 = 0.985)</text>
+          <text x="12" y="82" font-size="11" fill="#94a3b8">• Historical V14 val split benchmark: mAP50 = 0.957</text>
         </g>
 
         <!-- Col 2: Data Flywheel -->
@@ -254,7 +254,7 @@
 
     <!-- Subtitle -->
     <text x="125" y="80" text-anchor="middle" font-size="11" font-weight="600" fill="#a7f3d0" letter-spacing="0.5">DOWNSTREAM BARRIER</text>
-    <text x="125" y="98" text-anchor="middle" font-size="10" fill="#6ee7b7">Zero Private Data Escapes</text>
+    <text x="125" y="98" text-anchor="middle" font-size="10" fill="#6ee7b7">Multi-Layer Safeguards</text>
 
     <!-- Gate Rule Badges Stack -->
     <g transform="translate(16, 120)">
@@ -267,7 +267,7 @@
         <text x="14" y="52" font-size="11" fill="#a7f3d0">All clocks mapped to <tspan font-family="monospace" font-weight="700">T+mm:ss</tspan></text>
         <text x="14" y="70" font-size="11" fill="#6ee7b7">• T+00:00 = Kibble Dispensed</text>
         <text x="14" y="88" font-size="11" fill="#6ee7b7">• Household wall clocks stripped</text>
-        <text x="14" y="106" font-size="11" fill="#6ee7b7">• Zero cron trigger leakage</text>
+        <text x="14" y="106" font-size="11" fill="#6ee7b7">• Wall-clock schedules excluded</text>
       </g>
 
       <!-- Rule 2: Person Safety Rule -->
@@ -299,7 +299,7 @@
         <rect x="0" y="0" width="218" height="106" rx="8" fill="#042018" stroke="#10b981" stroke-width="1.2"/>
         <circle cx="20" cy="24" r="10" fill="#064e3b"/>
         <text x="16" y="28" font-size="12" fill="#34d399">🔇</text>
-        <text x="38" y="28" font-size="13" font-weight="700" fill="#ecfdf5">Zero Surveillance Audio</text>
+        <text x="38" y="28" font-size="13" font-weight="700" fill="#ecfdf5">Surveillance Audio Removal</text>
         <text x="14" y="52" font-size="11" fill="#a7f3d0">Surveillance mic removal:</text>
         <text x="14" y="70" font-size="11" fill="#6ee7b7">• Audio stream permanently stripped</text>
         <text x="14" y="88" font-size="11" fill="#6ee7b7">• Web Audio synth soundtrack only</text>
@@ -367,7 +367,7 @@
 
       <g transform="translate(14, 310)">
         <rect x="0" y="0" width="462" height="66" rx="6" fill="#172236"/>
-        <text x="12" y="22" font-size="12" font-weight="700" fill="#fde047">Zero Paid Infrastructure</text>
+        <text x="12" y="22" font-size="12" font-weight="700" fill="#fde047">Static Client Architecture</text>
         <text x="12" y="42" font-size="11" fill="#cbd5e1">• Fully static client: vanilla HTML5 Canvas, Web Audio API, SVG</text>
         <text x="12" y="58" font-size="11" fill="#94a3b8">• Hosted 100% free on GitHub Pages</text>
       </g>
@@ -411,7 +411,7 @@
       <g transform="translate(14, 318)">
         <rect x="0" y="0" width="462" height="60" rx="6" fill="#172e48" stroke="#38bdf8" stroke-width="0.8"/>
         <text x="12" y="22" font-size="12" font-weight="700" fill="#7dd3fc">examples/ &amp; tests/ (17 Synthetic Unit Tests)</text>
-        <text x="12" y="42" font-size="11" fill="#cbd5e1">• 100% self-contained fixtures (zero credentials, zero private paths)</text>
+        <text x="12" y="42" font-size="11" fill="#cbd5e1">• Self-contained synthetic fixtures (no credentials or private paths)</text>
       </g>
     </g>
   </g>

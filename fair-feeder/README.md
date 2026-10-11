@@ -39,7 +39,7 @@ Fair Feeder answers these questions automatically through multi-camera vision an
 ```
 
 1. **Two-Feeder Surveillance**: Monitors Lane 1 (Dan's feeder) and Lane 2 (Sanbo's feeder) using independent cameras.
-2. **Edge Motion Trigger**: Uses MOG2 background subtraction with circular pre-roll buffers to capture feeding events with zero dropped pre-trigger frames.
+2. **Edge Motion Trigger**: Uses MOG2 background subtraction with circular pre-roll buffers to preserve pre-trigger arrival motion lead time.
 3. **Computer Vision Inference**: Employs a custom YOLOv11 model detecting `Dan`, `Sanbo`, `Dan_hand`, `Bowl`, and `Kibble`.
 4. **Championship Game Rules**: Resolves feeding sessions into competitive match outcomes (`DAN_WIN · DEFENDED`, `SANBO_WIN · RAID SUCCESS`, or `DAN COUNTER-RAID`).
 5. **Privacy Projection**: Strips wall-clock times, removes audio streams, masks non-feeder backgrounds, and enforces fail-closed human privacy withholding.

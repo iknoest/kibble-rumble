@@ -26,22 +26,24 @@ This isn't a synthetic simulation — it runs on a real dual-feeder multi-camera
 - **Dan's Feeder (Lane 1)**: Monitored 24/7 by an overhead Tapo C210 infrared camera. This is the primary defense arena where Dan's breakfast is dispensed.
 - **Sanbo's Feeder (Lane 2)**: Monitored by a ground-level Logitech C925e USB camera. This is Sanbo's personal feeding station and home base.
 - **The Core Premise**: The match outcome centers on whether Dan can successfully defend **Dan's bowl**.
-- **Sanbo Raids**: Sanbo wins the championship game layer by crossing over and entering Dan's feeder area while food is present.
+- **Sanbo Raids**: Sanbo wins the championship game layer by crossing over and entering Dan's feeder area (canonical Lane 1 foreign arrival). Under house rules, entering is sufficient for raid success.
 - **Dan Counter-Raids**: Dan can also sneak over to visit Sanbo's feeder, triggering bonus counter-raid events on the timeline!
 
 ## Technical Architecture
 
 KIBBLE RUMBLE '94 is powered by **Fair Feeder**, an edge computer-vision feeding monitor:
 
-[![Fair Feeder System Architecture](assets/architecture-diagram.png)](fair-feeder/architecture.md)
+[![Fair Feeder System Architecture](assets/architecture-diagram.png)](assets/architecture-diagram.png)
+
+*Click image to view full size. Formats: [Full-Resolution PNG (1080p)](assets/architecture-diagram.png) · [Vector SVG (Editable)](assets/architecture-diagram.svg) · [Architecture Documentation](fair-feeder/architecture.md)*
 
 | Stage | Subsystem | Description |
 | :--- | :--- | :--- |
 | **1. Dual Feeders** | Tapo C210 + Logitech C925e | 24/7 IR overhead monitor on Lane 1 (Dan) + ground USB monitor on Lane 2 (Sanbo). |
-| **2. Edge Capture** | Raspberry Pi 5 (`MOG2`) | Background subtraction with circular pre-roll ring buffer; zero dropped frames. |
+| **2. Edge Capture** | Raspberry Pi 5 (`MOG2`) | Background subtraction with circular pre-roll ring buffer; preserves pre-trigger motion lead-in. |
 | **3. Vision Core** | Custom YOLOv11 | 5 domain classes (`Dan`, `Sanbo`, `Dan_hand`, `Bowl`, `Kibble`) with active learning flywheel. |
 | **4. Game Rules** | Rule Engine (`v10.4`) | Discrete timeline event extraction and deterministic match outcome resolution. |
-| **5. Privacy Gate** | Fail-Closed Sanitizer | Wall-clock to relative match time ($T+00:00$), 16:9 crop framing, person safety withholding, no audio. |
+| **5. Privacy Gate** | Fail-Closed Sanitizer | Wall-clock to relative match time ($T+00:00$), 16:9 crop framing, person safety withholding, no surveillance audio. |
 | **6. Public Arcade** | GitHub Pages (`KR94`) | Interactive NIKUKYU NK-500R CRT replay monitor with playable daily matches. |
 
 > 📖 **Deep Dive**: Read the complete technical specification in [`fair-feeder/architecture.md`](fair-feeder/architecture.md), or explore the curated engine code in [`fair-feeder/`](fair-feeder/README.md).
@@ -54,9 +56,9 @@ KIBBLE RUMBLE '94 is powered by **Fair Feeder**, an edge computer-vision feeding
 ## Championship Rules
 
 - **Dan Win · Defended**: Sanbo never enters Dan's bowl area, and Dan successfully clears his breakfast.
-- **Sanbo Win · Raid Success**: Sanbo enters Dan's bowl area and eats Dan's kibble.
-- **Dan Counter-Raid**: Bonus event if Dan visits Sanbo's feeder while Sanbo is elsewhere.
-- **No Contest / Void**: Unresolved attribution, sensor blackout, or interrupted match.
+- **Sanbo Win · Raid Success**: Canonical TAPO foreign arrival of Sanbo at Dan's feeder. Under house rules, entering is sufficient for game-layer raid success.
+- **Dan Counter-Raid**: Bonus event when Dan visits Sanbo's feeder (`LOGITECH`). Classed as Counter-Raid if following a Sanbo raid, otherwise Dan Raid.
+- **No Contest / Void**: Unresolved match: unfinished breakfast, sensor blackout, or missing event timeline.
 
 ## Privacy & Sanitization
 
@@ -70,4 +72,4 @@ All public media published to this repository is automatically sanitized:
 
 ---
 
-*Powered by [Fair Feeder](fair-feeder/README.md) · Hosted on GitHub Pages · Zero paid infrastructure*
+*Powered by [Fair Feeder](fair-feeder/README.md) · Hosted on GitHub Pages · Zero server fees*

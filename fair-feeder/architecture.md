@@ -6,7 +6,9 @@ Fair Feeder is an automated computer-vision monitoring engine designed to superv
 
 ## 1. System Topology
 
-![Fair Feeder System Architecture](../assets/architecture-diagram.png)
+[![Fair Feeder System Architecture](../assets/architecture-diagram.png)](../assets/architecture-diagram.png)
+
+*View [Full-Resolution PNG (1080p)](../assets/architecture-diagram.png) · [Vector SVG (Editable)](../assets/architecture-diagram.svg)*
 
 ```
 +-------------------------------------------------------------------------------+
@@ -95,17 +97,17 @@ The engine derives competitive outcomes for KIBBLE RUMBLE '94 using a **decouple
 Evaluates cat movements and timeline events into deterministic game outcomes:
 
 1. **SANBO WIN · RAID SUCCESS**:
-   - Sanbo crosses over to Lane 1 (Dan's feeder) and enters the bowl area while food is present (`TAPO` `foreign_arrival` or `cat_arrival`).
+   - Canonical TAPO `foreign_arrival` of Sanbo at Dan's feeder (Lane 1). Under household rules, Sanbo entering Dan's bowl area is sufficient for game-layer RAID SUCCESS (food presence, quantity consumed, and contested attribution are not prerequisites).
    - Recorded as `SANBO_WIN` with basis `RAID SUCCESS`.
 2. **DAN WIN · DEFENDED**:
-   - Sanbo never enters Lane 1, and Dan completes his meal cleanly without contested attribution.
-   - Recorded as `DAN_WIN` with basis `DEFENDED`.
+   - No Sanbo raid into Lane 1, and Dan completes his meal cleanly.
+   - Recorded as `DAN_WIN` with basis `DEFENDED`. (Contested attribution belongs to the independent steward layer and does not prevent a Dan victory at the game layer).
 3. **DAN COUNTER-RAID / DAN RAID (Bonus Events)**:
-   - Dan visits Lane 2 (Sanbo's feeder, `LOGITECH` arrival).
+   - Dan visits Lane 2 (Sanbo's feeder, canonical `LOGITECH` arrival of Dan/both).
    - If Dan arrives at or after a Sanbo raid attempt ($T_{\text{Dan}} \ge T_{\text{Raid}}$), the bonus is classed as a `COUNTER RAID` (`"DAN COUNTER-RAIDED SANBO"`).
    - Otherwise, it is classed as an independent `DAN RAID` (`"DAN RAIDED SANBO"`).
 4. **NO CONTEST · UNRESOLVED**:
-   - Incomplete meal, sensory blackout, or unresolved match void (`result = NO_CONTEST`, `basis = UNRESOLVED`).
+   - Genuinely unresolved match: unfinished meal, sensor blackout, unrecorded outcome, or historical timeline lacking event data to rule a raid in or out (`result = NO_CONTEST`, `basis = UNRESOLVED`).
 
 ### Tier 2: Stewards & Evidence Verification Layer
 Maintains independent forensic verification of video and sensor feeds:
@@ -126,7 +128,7 @@ Fair Feeder enforces a strict privacy gate between private on-premise operations
 | **Timing** | Exact local wall-clock times, cron triggers | **Relative match time only** ($T+00:00$ at kibble drop) |
 | **Media** | Raw continuous household video archives | **Sanitized 16:9 crops**, no audio, masked backgrounds |
 | **Safety** | Real surveillance feeds | **Fail-closed withholding** if any human presence detected |
-| **Credentials** | RTSP passwords, service accounts, deploy keys | **None** (zero operational secrets) |
+| **Credentials** | RTSP passwords, service accounts, deploy keys | **None** (operational secrets omitted) |
 | **Replays** | Permanent on-premise storage | **Deterministic 3+3 vault** (max 6 active replays) |
 | **Health** | Private Telegram alerts, Drive registries | **Sanitized match statistics and ASCII weight histories** |
 
