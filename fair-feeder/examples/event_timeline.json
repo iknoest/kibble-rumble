@@ -1,0 +1,54 @@
+[
+  {
+    "index": 0,
+    "type": "food_dispensed",
+    "lane": "lane_1",
+    "camera": "TAPO",
+    "cat": "none",
+    "t_s": 0,
+    "rel_time": "T+00:00",
+    "kibble_count": 44,
+    "description": "Breakfast dispensed into bowl at Dan feeder"
+  },
+  {
+    "index": 1,
+    "type": "cat_arrival",
+    "lane": "lane_1",
+    "camera": "TAPO",
+    "cat": "Dan",
+    "t_s": 0,
+    "rel_time": "T+00:00",
+    "description": "Dan arrives at home bowl and commences eating"
+  },
+  {
+    "index": 2,
+    "type": "foreign_arrival",
+    "lane": "lane_1",
+    "camera": "TAPO",
+    "cat": "Sanbo",
+    "t_s": 15,
+    "rel_time": "T+00:15",
+    "description": "Sanbo crosses over to Lane 1 and raids Dan's feeder"
+  },
+  {
+    "index": 3,
+    "type": "foreign_arrival",
+    "lane": "lane_2",
+    "camera": "LOGITECH",
+    "cat": "Dan",
+    "t_s": 75,
+    "rel_time": "T+01:15",
+    "description": "Dan sneaks over to Lane 2 triggering bonus counter-raid"
+  },
+  {
+    "index": 4,
+    "type": "meal_finish",
+    "lane": "lane_1",
+    "camera": "TAPO",
+    "cat": "Dan",
+    "t_s": 240,
+    "rel_time": "T+04:00",
+    "kibble_count": 0,
+    "description": "Bowl cleared; meal completed"
+  }
+]

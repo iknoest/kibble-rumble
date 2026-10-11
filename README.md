@@ -66,6 +66,16 @@ All public media published to this repository is automatically sanitized:
 - **Single-Camera Framing**: Evidence stills and replays isolate the feeding area in clean 16:9 crops.
 - **No Audio**: Surveillance audio is completely stripped from public replay clips.
 
+## Technical Architecture
+
+KIBBLE RUMBLE '94 is powered by the **Fair Feeder** computer-vision monitoring engine:
+
+- 🕹️ **KIBBLE RUMBLE '94**: The public interactive retro arcade site and daily match presentation.
+- 🐾 **[Fair Feeder Core](fair-feeder/README.md)**: The computer-vision pipeline, event timeline derivation, and privacy-safe projection engine behind it.
+
+Explore the engine documentation, architecture, and sanitized source code in [`fair-feeder/`](fair-feeder/README.md).
+
 ---
 
-*Powered by Fair Feeder · Hosted on GitHub Pages · Zero paid infrastructure*
+*Powered by [Fair Feeder](fair-feeder/README.md) · Hosted on GitHub Pages · Zero paid infrastructure*
+

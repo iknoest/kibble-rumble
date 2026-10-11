@@ -1,0 +1,91 @@
+{
+  "schema": "fair-feeder.synthetic/1",
+  "match_id": "2026-10-11",
+  "date": "2026-10-11",
+  "dow": "SUN",
+  "duration_s": 260,
+  "duration_str": "04:20",
+  "result": "SANBO_WIN",
+  "winner": "Sanbo",
+  "basis": "RAID SUCCESS",
+  "rule": "v10.4-household",
+  "bonus": {
+    "kind": "COUNTER RAID",
+    "label": "DAN COUNTER-RAIDED SANBO",
+    "camera": "LOGITECH",
+    "t_s": 75
+  },
+  "stewards": "CLEAN MATCH",
+  "stewards_detail": "Clean camera and feeding attribution",
+  "meal_finished": true,
+  "kibble": {
+    "dispensed": 44,
+    "dan_eaten": 32,
+    "sanbo_eaten": 12,
+    "remaining": 0
+  },
+  "lanes": {
+    "lane_1": {
+      "camera": "TAPO",
+      "description": "Dan Feeder Arena",
+      "primary_cat": "Dan",
+      "eating_seconds": 185.0
+    },
+    "lane_2": {
+      "camera": "LOGITECH",
+      "description": "Sanbo Home Base",
+      "primary_cat": "Sanbo",
+      "eating_seconds": 94.0
+    }
+  },
+  "events": [
+    {
+      "type": "food_dispensed",
+      "camera": "TAPO",
+      "cat": "none",
+      "t_s": 0,
+      "rel_time": "T+00:00",
+      "confidence": 0.98,
+      "kibble_count": 44
+    },
+    {
+      "type": "cat_arrival",
+      "camera": "TAPO",
+      "cat": "Dan",
+      "t_s": 0,
+      "rel_time": "T+00:00",
+      "confidence": 0.96
+    },
+    {
+      "type": "foreign_arrival",
+      "camera": "TAPO",
+      "cat": "Sanbo",
+      "t_s": 15,
+      "rel_time": "T+00:15",
+      "confidence": 0.94
+    },
+    {
+      "type": "foreign_arrival",
+      "camera": "LOGITECH",
+      "cat": "Dan",
+      "t_s": 75,
+      "rel_time": "T+01:15",
+      "confidence": 0.91
+    },
+    {
+      "type": "meal_finish",
+      "camera": "TAPO",
+      "cat": "Dan",
+      "t_s": 240,
+      "rel_time": "T+04:00",
+      "confidence": 0.99,
+      "kibble_count": 0
+    }
+  ],
+  "privacy_audit": {
+    "person_safety_verified": true,
+    "raw_media_withheld": false,
+    "audio_stream_present": false,
+    "timing_sanitized": "relative_match_offset_only"
+  }
+}
