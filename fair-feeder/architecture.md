@@ -6,6 +6,8 @@ Fair Feeder is an automated computer-vision monitoring engine designed to superv
 
 ## 1. System Topology
 
+![Fair Feeder System Architecture](../assets/architecture-diagram.png)
+
 ```
 +-------------------------------------------------------------------------------+
 |                                EDGE RUNTIME (LAN)                             |
@@ -87,16 +89,31 @@ From raw frame-by-frame detections, the engine derives discrete timeline events:
 
 ## 4. Household Championship Game Rules (`v10.4-household`)
 
-The engine derives competitive outcomes for KIBBLE RUMBLE '94 using the following deterministic state transitions:
+The engine derives competitive outcomes for KIBBLE RUMBLE '94 using a **decoupled two-tier architecture** separating the competitive match outcome from physical evidence verification:
+
+### Tier 1: Competitive Game Outcome Layer
+Evaluates cat movements and timeline events into deterministic game outcomes:
 
 1. **SANBO WIN · RAID SUCCESS**:
-   - Sanbo crosses over to Lane 1 (Dan's feeder) and enters the bowl area while food is present (`TAPO` `foreign_arrival`).
+   - Sanbo crosses over to Lane 1 (Dan's feeder) and enters the bowl area while food is present (`TAPO` `foreign_arrival` or `cat_arrival`).
+   - Recorded as `SANBO_WIN` with basis `RAID SUCCESS`.
 2. **DAN WIN · DEFENDED**:
-   - Sanbo never enters Lane 1, and Dan finishes his meal cleanly.
-3. **DAN COUNTER-RAID (Bonus Event)**:
-   - Dan visits Lane 2 (Sanbo's feeder, `LOGITECH` arrival). If this occurs after a Sanbo raid attempt, it is classed as a `COUNTER RAID`; otherwise, a `DAN RAID`.
+   - Sanbo never enters Lane 1, and Dan completes his meal cleanly without contested attribution.
+   - Recorded as `DAN_WIN` with basis `DEFENDED`.
+3. **DAN COUNTER-RAID / DAN RAID (Bonus Events)**:
+   - Dan visits Lane 2 (Sanbo's feeder, `LOGITECH` arrival).
+   - If Dan arrives at or after a Sanbo raid attempt ($T_{\text{Dan}} \ge T_{\text{Raid}}$), the bonus is classed as a `COUNTER RAID` (`"DAN COUNTER-RAIDED SANBO"`).
+   - Otherwise, it is classed as an independent `DAN RAID` (`"DAN RAIDED SANBO"`).
 4. **NO CONTEST · UNRESOLVED**:
-   - Meal unfinished, sensory occlusion, or attribution conflict between cameras (`STEWARDS REVIEW`).
+   - Incomplete meal, sensory blackout, or unresolved match void (`result = NO_CONTEST`, `basis = UNRESOLVED`).
+
+### Tier 2: Stewards & Evidence Verification Layer
+Maintains independent forensic verification of video and sensor feeds:
+
+- **`CLEAN MATCH`**: All camera streams and feeding events exhibit high-confidence detections and unambiguous attribution.
+- **`STEWARDS REVIEW`**: Triggered when cross-camera attribution is contested, sensor occlusion occurs, or detection confidence falls below threshold.
+
+> **Decoupled Architecture Invariant**: The competitive game outcome is decoupled from steward evidence status. For instance, a match where Sanbo enters Dan's feeder is classified as `SANBO_WIN · RAID SUCCESS` at the game layer even if attribution is flagged for `STEWARDS REVIEW`.
 
 ---
 
@@ -123,3 +140,13 @@ Rather than manually reviewing hours of footage, the engine auto-flags candidate
 - **Kibble count jumps**: Step changes $\ge 15$ kibble on clear bowl frames, indicating detection drift.
 
 Flagged frames feed directly into the retraining pipeline, creating a closed-loop improvement flywheel for model accuracy.
+
+---
+
+## 7. Public Technical Core Notice & Licensing
+
+The source code and documentation published under `fair-feeder/` represent a curated, sanitized technical core demonstrating the multi-camera computer vision models, motion buffers, and rule mechanics.
+
+- **Curated Technical Core**: Production deployment workflows (`.github/workflows/morning-report.yml`), private scheduling, Telegram reporting bots, continuous raw surveillance video archives, and private household cloud storage are intentionally excluded.
+- **Licensing Notice**: Source code and documentation are made visible in this public repository for demonstration and review only. No reuse license (such as MIT, Apache 2.0, or GPL) has been granted.
+

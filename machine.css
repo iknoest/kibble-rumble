@@ -25,6 +25,8 @@ button{font:inherit;color:inherit}
 .topline-mark span{font-family:var(--pix);font-size:8px;color:#9aa3c7}
 .topline-right{display:flex;flex-direction:column;align-items:flex-end;gap:4px;font-family:var(--mono);font-size:19px;color:#c9d2f3}
 .topline-sys{font-family:var(--silk);font-size:10px;letter-spacing:2px;color:#6e7490}
+.topline-doc{display:inline-block;font-family:var(--silk);font-size:11px;font-weight:700;letter-spacing:1px;color:var(--p1);text-decoration:none;padding:2px 7px;border:1px solid rgba(255,210,58,.4);border-radius:3px;background:rgba(255,210,58,.1);transition:all .15s ease;line-height:1.1}
+.topline-doc:hover{color:#fff;border-color:var(--p1);background:rgba(255,210,58,.25);box-shadow:0 0 8px rgba(255,210,58,.5)}
 .stage{display:flex;flex-direction:column;align-items:center;gap:26px;padding:8px 24px 60px}
 
 /* ------------------------------------------------------------- machine shell */
@@ -405,6 +407,9 @@ button{font:inherit;color:inherit}
 .op-card dd{margin:0;color:#5c5548}
 .op-card kbd{display:inline-block;margin-left:4px;padding:0 5px;border:1px solid #a29b8c;border-bottom-width:2px;border-radius:3px;font:600 10px 'Barlow';background:#fbf8f0}
 .op-card p{margin:12px 0 0;font-size:12px;line-height:1.45;color:#6a6355}
+.op-doc{margin-top:14px;padding-top:12px;border-top:1px dashed #b8b09e}
+.op-doc-link{display:inline-block;font-family:var(--pix);font-size:9px;color:#b3261b;text-decoration:none;letter-spacing:.5px;padding:6px 10px;background:#dfd7c5;border:1px solid #b8b09e;border-radius:4px;box-shadow:0 1px 0 #fff;transition:all .15s ease}
+.op-doc-link:hover{color:#fff;background:#b3261b;border-color:#8e1e15}
 
 /* ------------------------------------------------------------- result overlay */
 .result-overlay{position:fixed;inset:0;z-index:50;overflow:auto;background:linear-gradient(180deg,#1b2a9e 0%,#0b1460 45%,#050928 100%);

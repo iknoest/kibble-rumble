@@ -1,0 +1,426 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" style="background:#0b0c14; font-family:'Barlow', 'Segoe UI', system-ui, -apple-system, sans-serif;">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bg-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e101a"/>
+      <stop offset="100%" stop-color="#08080f"/>
+    </linearGradient>
+    <linearGradient id="private-card-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#181a26"/>
+      <stop offset="100%" stop-color="#12131d"/>
+    </linearGradient>
+    <linearGradient id="public-card-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#101928"/>
+      <stop offset="100%" stop-color="#0c1320"/>
+    </linearGradient>
+    <linearGradient id="gate-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c2520"/>
+      <stop offset="50%" stop-color="#071815"/>
+      <stop offset="100%" stop-color="#0c2520"/>
+    </linearGradient>
+    <linearGradient id="gate-border" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="50%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <filter id="glow-gate" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="drop-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+
+    <!-- Markers -->
+    <marker id="arrow-gold" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#f59e0b"/>
+    </marker>
+    <marker id="arrow-emerald" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981"/>
+    </marker>
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1920" height="1080" fill="url(#bg-grad)"/>
+
+  <!-- Subtle Blueprint Grid Pattern -->
+  <g stroke="#ffffff" stroke-opacity="0.02" stroke-width="1">
+    <line x1="0" y1="120" x2="1920" y2="120"/>
+    <line x1="0" y1="240" x2="1920" y2="240"/>
+    <line x1="0" y1="360" x2="1920" y2="360"/>
+    <line x1="0" y1="480" x2="1920" y2="480"/>
+    <line x1="0" y1="600" x2="1920" y2="600"/>
+    <line x1="0" y1="720" x2="1920" y2="720"/>
+    <line x1="0" y1="840" x2="1920" y2="840"/>
+    <line x1="0" y1="960" x2="1920" y2="960"/>
+    <line x1="240" y1="0" x2="240" y2="1080"/>
+    <line x1="480" y1="0" x2="480" y2="1080"/>
+    <line x1="720" y1="0" x2="720" y2="1080"/>
+    <line x1="960" y1="0" x2="960" y2="1080"/>
+    <line x1="1200" y1="0" x2="1200" y2="1080"/>
+    <line x1="1440" y1="0" x2="1440" y2="1080"/>
+    <line x1="1680" y1="0" x2="1680" y2="1080"/>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- TOP HEADER BANNER                                                         -->
+  <!-- ========================================================================= -->
+  <g id="header" transform="translate(60, 36)">
+    <!-- Main Title -->
+    <text x="0" y="32" font-family="'Barlow Condensed', 'Segoe UI', sans-serif" font-weight="800" font-size="34" letter-spacing="1.5" fill="#fde047">FAIR FEEDER · SYSTEM ARCHITECTURE</text>
+    <text x="0" y="60" font-size="15" fill="#94a3b8" letter-spacing="0.5">Dual-Camera Computer Vision Feeding Monitor &amp; KIBBLE RUMBLE '94 Public Projection</text>
+
+    <!-- Legend Badges on Right -->
+    <g transform="translate(1120, 10)">
+      <!-- Private Runtime Badge -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="200" height="34" rx="6" fill="#2d1215" stroke="#ef4444" stroke-width="1.2"/>
+        <circle cx="16" cy="17" r="4.5" fill="#ef4444"/>
+        <text x="28" y="22" font-size="11" font-weight="700" letter-spacing="0.8" fill="#fca5a5">PRIVATE RUNTIME</text>
+      </g>
+      <!-- Privacy Gate Badge -->
+      <g transform="translate(216, 0)">
+        <rect x="0" y="0" width="220" height="34" rx="6" fill="#062e22" stroke="#10b981" stroke-width="1.2"/>
+        <circle cx="16" cy="17" r="4.5" fill="#10b981"/>
+        <text x="28" y="22" font-size="11" font-weight="700" letter-spacing="0.8" fill="#6ee7b7">FAIL-CLOSED GATE</text>
+      </g>
+      <!-- Public Presentation Badge -->
+      <g transform="translate(452, 0)">
+        <rect x="0" y="0" width="220" height="34" rx="6" fill="#0c2338" stroke="#38bdf8" stroke-width="1.2"/>
+        <circle cx="16" cy="17" r="4.5" fill="#38bdf8"/>
+        <text x="28" y="22" font-size="11" font-weight="700" letter-spacing="0.8" fill="#7dd3fc">PUBLIC REPOSITORY</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- ZONE 1: PRIVATE RUNTIME & HOUSEHOLD DATA                                   -->
+  <!-- ========================================================================= -->
+  <g id="zone-private" transform="translate(60, 130)">
+    <!-- Container Outline -->
+    <rect x="0" y="0" width="940" height="900" rx="14" fill="#12131c" fill-opacity="0.85" stroke="#33384f" stroke-width="1.8" filter="url(#drop-shadow)"/>
+    <path d="M 0 14 Q 0 0 14 0 L 926 0 Q 940 0 940 14 L 940 48 L 0 48 Z" fill="#181a28"/>
+    <circle cx="24" cy="24" r="5" fill="#ef4444"/>
+    <text x="38" y="29" font-family="'Barlow Condensed', sans-serif" font-weight="700" font-size="15" letter-spacing="1.2" fill="#f87171">PRIVATE ENVIRONMENT · HOME RUNTIME &amp; HOUSEHOLD DATA (iknoest/fair-feeder)</text>
+
+    <!-- SECTION 1A: DUAL CAMERAS & FEEDER LANES -->
+    <g transform="translate(24, 66)">
+      <!-- Lane 1 Card -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="430" height="154" rx="8" fill="url(#private-card-grad)" stroke="#ffd23a" stroke-width="1.4"/>
+        <rect x="14" y="14" width="76" height="24" rx="4" fill="#3b2b00"/>
+        <text x="22" y="30" font-size="11" font-weight="800" fill="#ffd23a" letter-spacing="1">LANE 1</text>
+        <text x="100" y="31" font-size="15" font-weight="700" fill="#f8fafc">Tapo C210 (Overhead IR)</text>
+        <text x="14" y="58" font-size="12" font-weight="600" fill="#fbbf24">Arena Role: Dan's Breakfast Bowl</text>
+        <text x="14" y="78" font-size="12" fill="#94a3b8">• 1080p Infrared Night Vision &amp; OSD timestamp</text>
+        <text x="14" y="96" font-size="12" fill="#94a3b8">• Continuous RTSP over TCP stream</text>
+        <rect x="14" y="112" width="220" height="26" rx="4" fill="#1f2233" stroke="#475569" stroke-width="0.8"/>
+        <text x="24" y="129" font-family="monospace" font-size="11" fill="#cbd5e1">Primary Cat: Dan (Tuxedo)</text>
+      </g>
+
+      <!-- Lane 2 Card -->
+      <g transform="translate(460, 0)">
+        <rect x="0" y="0" width="430" height="154" rx="8" fill="url(#private-card-grad)" stroke="#56dcff" stroke-width="1.4"/>
+        <rect x="14" y="14" width="76" height="24" rx="4" fill="#002d3d"/>
+        <text x="22" y="30" font-size="11" font-weight="800" fill="#56dcff" letter-spacing="1">LANE 2</text>
+        <text x="100" y="31" font-size="15" font-weight="700" fill="#f8fafc">Logitech C925e (Ground USB)</text>
+        <text x="14" y="58" font-size="12" font-weight="600" fill="#38bdf8">Home Base: Sanbo's Feeder</text>
+        <text x="14" y="78" font-size="12" fill="#94a3b8">• Ground-level USB camera via V4L2</text>
+        <text x="14" y="96" font-size="12" fill="#94a3b8">• Mathematical frame timestamping</text>
+        <rect x="14" y="112" width="220" height="26" rx="4" fill="#1f2233" stroke="#475569" stroke-width="0.8"/>
+        <text x="24" y="129" font-family="monospace" font-size="11" fill="#cbd5e1">Primary Cat: Sanbo (Calico)</text>
+      </g>
+    </g>
+
+    <!-- Connectors: Cameras -> Edge Pi -->
+    <path d="M 239 220 L 239 256 Q 239 266 260 266 L 430 266 Q 450 266 450 276 L 450 290" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-gray)"/>
+    <path d="M 699 220 L 699 256 Q 699 266 680 266 L 490 266 Q 470 266 470 276 L 470 290" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-gray)"/>
+
+    <!-- SECTION 1B: RASPBERRY PI EDGE MOTION RECORDER -->
+    <g transform="translate(24, 290)">
+      <rect x="0" y="0" width="892" height="154" rx="8" fill="url(#private-card-grad)" stroke="#a855f7" stroke-width="1.3"/>
+      <!-- Header -->
+      <rect x="14" y="14" width="130" height="24" rx="4" fill="#3b154c"/>
+      <text x="22" y="30" font-size="11" font-weight="800" fill="#d8b4fe" letter-spacing="1">EDGE RUNTIME</text>
+      <text x="156" y="31" font-size="16" font-weight="700" fill="#f8fafc">Raspberry Pi 5 · Motion Recorder Daemon (cat-monitor.service)</text>
+
+      <g transform="translate(14, 52)">
+        <!-- Col 1 -->
+        <g transform="translate(0, 0)">
+          <rect x="0" y="0" width="270" height="84" rx="6" fill="#1c192b"/>
+          <text x="12" y="24" font-size="12" font-weight="700" fill="#c084fc">MOG2 Motion Detection</text>
+          <text x="12" y="44" font-size="11" fill="#94a3b8">• Background subtraction</text>
+          <text x="12" y="62" font-size="11" fill="#94a3b8">• Bowl ROI activity thresholding</text>
+        </g>
+        <!-- Col 2 -->
+        <g transform="translate(290, 0)">
+          <rect x="0" y="0" width="280" height="84" rx="6" fill="#1c192b"/>
+          <text x="12" y="24" font-size="12" font-weight="700" fill="#c084fc">Circular Pre-Roll Ring Buffer</text>
+          <text x="12" y="44" font-size="11" fill="#94a3b8">• Preserves 3s pre-trigger frames</text>
+          <text x="12" y="62" font-size="11" fill="#94a3b8">• Zero dropped cat arrival frames</text>
+        </g>
+        <!-- Col 3 -->
+        <g transform="translate(590, 0)">
+          <rect x="0" y="0" width="274" height="84" rx="6" fill="#1c192b"/>
+          <text x="12" y="24" font-size="12" font-weight="700" fill="#c084fc">Surveillance &amp; Sync Storage</text>
+          <text x="12" y="44" font-size="11" fill="#94a3b8">• Continuous 24/7 bowl watchdog</text>
+          <text x="12" y="62" font-size="11" fill="#94a3b8">• Non-blocking rclone background copy</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Connector: Edge Pi -> YOLOv11 & Analytics -->
+    <path d="M 470 444 L 470 478" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-gray)"/>
+
+    <!-- SECTION 1C: VISION INFERENCE & DATA FLYWHEEL -->
+    <g transform="translate(24, 480)">
+      <rect x="0" y="0" width="892" height="174" rx="8" fill="url(#private-card-grad)" stroke="#38bdf8" stroke-width="1.3"/>
+      <!-- Header -->
+      <rect x="14" y="14" width="130" height="24" rx="4" fill="#082f49"/>
+      <text x="22" y="30" font-size="11" font-weight="800" fill="#38bdf8" letter-spacing="1">VISION ENGINE</text>
+      <text x="156" y="31" font-size="16" font-weight="700" fill="#f8fafc">YOLOv11 Detection Pipeline &amp; Data Flywheel</text>
+
+      <g transform="translate(14, 52)">
+        <!-- Col 1: Model classes -->
+        <g transform="translate(0, 0)">
+          <rect x="0" y="0" width="410" height="104" rx="6" fill="#122438"/>
+          <text x="12" y="22" font-size="12" font-weight="700" fill="#7dd3fc">5-Class Custom YOLOv11 Model</text>
+          <text x="12" y="42" font-size="11" fill="#cbd5e1">Classes: <tspan font-family="monospace" fill="#fde047">Dan</tspan>, <tspan font-family="monospace" fill="#67e8f9">Sanbo</tspan>, <tspan font-family="monospace" fill="#f87171">Dan_hand</tspan>, <tspan font-family="monospace" fill="#a7f3d0">Bowl</tspan>, <tspan font-family="monospace" fill="#fed7aa">Kibble</tspan></text>
+          <text x="12" y="62" font-size="11" fill="#94a3b8">• Native 16:9 inference (rect=True) preserves aspect ratio</text>
+          <text x="12" y="82" font-size="11" fill="#94a3b8">• mAP50 = 0.957 (Sanbo AP50 = 0.985)</text>
+        </g>
+
+        <!-- Col 2: Data Flywheel -->
+        <g transform="translate(430, 0)">
+          <rect x="0" y="0" width="434" height="104" rx="6" fill="#122438"/>
+          <text x="12" y="22" font-size="12" font-weight="700" fill="#7dd3fc">Closed-Loop Data Flywheel (Active Learning)</text>
+          <text x="12" y="42" font-size="11" fill="#94a3b8">• <tspan font-weight="600" fill="#e2e8f0">Single-frame blips:</tspan> filters isolated detection noise</text>
+          <text x="12" y="62" font-size="11" fill="#94a3b8">• <tspan font-weight="600" fill="#e2e8f0">Conflicting classes:</tspan> flags simultaneous dual-cat bowl errors</text>
+          <text x="12" y="82" font-size="11" fill="#94a3b8">• <tspan font-weight="600" fill="#e2e8f0">Kibble jumps:</tspan> auto-flags count jumps (>=15) on clear bowls</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Connector: Vision -> Event/Rules Engine -->
+    <path d="M 470 654 L 470 688" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-gray)"/>
+
+    <!-- SECTION 1D: EVENT EXTRACTION & GAME RULE ENGINE -->
+    <g transform="translate(24, 690)">
+      <rect x="0" y="0" width="892" height="186" rx="8" fill="url(#private-card-grad)" stroke="#f59e0b" stroke-width="1.3"/>
+      <!-- Header -->
+      <rect x="14" y="14" width="130" height="24" rx="4" fill="#3b2505"/>
+      <text x="22" y="30" font-size="11" font-weight="800" fill="#fbbf24" letter-spacing="1">EVENT &amp; RULES</text>
+      <text x="156" y="31" font-size="16" font-weight="700" fill="#f8fafc">Event Timeline Derivation &amp; Household Rules (v10.4)</text>
+
+      <g transform="translate(14, 52)">
+        <!-- Col 1: Discrete events -->
+        <g transform="translate(0, 0)">
+          <rect x="0" y="0" width="410" height="116" rx="6" fill="#241b11"/>
+          <text x="12" y="22" font-size="12" font-weight="700" fill="#fcd34d">Discrete Event Extraction</text>
+          <text x="12" y="42" font-size="11" fill="#94a3b8">• <tspan font-family="monospace" fill="#fef08a">food_dispensed</tspan>: kibble release defines T+00:00</text>
+          <text x="12" y="60" font-size="11" fill="#94a3b8">• <tspan font-family="monospace" fill="#fef08a">cat_arrival</tspan>: primary cat arrives at home feeder</text>
+          <text x="12" y="78" font-size="11" fill="#94a3b8">• <tspan font-family="monospace" fill="#fef08a">foreign_arrival</tspan>: cross-feeder raid into other bowl</text>
+          <text x="12" y="96" font-size="11" fill="#94a3b8">• <tspan font-family="monospace" fill="#fef08a">meal_finish</tspan>: bowl cleared and cat departs</text>
+        </g>
+
+        <!-- Col 2: Championship outcomes -->
+        <g transform="translate(430, 0)">
+          <rect x="0" y="0" width="434" height="116" rx="6" fill="#241b11"/>
+          <text x="12" y="22" font-size="12" font-weight="700" fill="#fcd34d">Decoupled Two-Tier Rules Engine</text>
+          <text x="12" y="42" font-size="11" fill="#cbd5e1"><tspan font-weight="700" fill="#67e8f9">SANBO WIN · RAID SUCCESS:</tspan> Sanbo enters Dan's feeder</text>
+          <text x="12" y="60" font-size="11" fill="#cbd5e1"><tspan font-weight="700" fill="#fde047">DAN WIN · DEFENDED:</tspan> No raid + Dan clears bowl</text>
+          <text x="12" y="78" font-size="11" fill="#cbd5e1"><tspan font-weight="700" fill="#fb923c">DAN COUNTER-RAID:</tspan> Dan visits Lane 2 (Bonus Event)</text>
+          <text x="12" y="96" font-size="11" fill="#94a3b8">• <tspan font-weight="600" fill="#e2e8f0">Steward Layer:</tspan> CLEAN MATCH vs STEWARDS REVIEW</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- ZONE 2: PRIVACY SANITIZATION GATE (FAIL-CLOSED)                           -->
+  <!-- ========================================================================= -->
+  <g id="zone-gate" transform="translate(1040, 130)">
+    <!-- Gate Shield Box -->
+    <rect x="0" y="0" width="250" height="900" rx="14" fill="url(#gate-grad)" stroke="url(#gate-border)" stroke-width="2" filter="url(#drop-shadow)"/>
+    <path d="M 0 14 Q 0 0 14 0 L 236 0 Q 250 0 250 14 L 250 48 L 0 48 Z" fill="#06382a"/>
+    <circle cx="20" cy="24" r="5" fill="#10b981"/>
+    <text x="34" y="29" font-family="'Barlow Condensed', sans-serif" font-weight="800" font-size="14" letter-spacing="1.2" fill="#6ee7b7">FAIL-CLOSED PRIVACY GATE</text>
+
+    <!-- Subtitle -->
+    <text x="125" y="80" text-anchor="middle" font-size="11" font-weight="600" fill="#a7f3d0" letter-spacing="0.5">DOWNSTREAM BARRIER</text>
+    <text x="125" y="98" text-anchor="middle" font-size="10" fill="#6ee7b7">Zero Private Data Escapes</text>
+
+    <!-- Gate Rule Badges Stack -->
+    <g transform="translate(16, 120)">
+      <!-- Rule 1: Relative Timing -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="218" height="120" rx="8" fill="#042018" stroke="#10b981" stroke-width="1.2"/>
+        <circle cx="20" cy="24" r="10" fill="#064e3b"/>
+        <text x="16" y="28" font-size="12" fill="#34d399">⏱️</text>
+        <text x="38" y="28" font-size="13" font-weight="700" fill="#ecfdf5">Relative Time Only</text>
+        <text x="14" y="52" font-size="11" fill="#a7f3d0">All clocks mapped to <tspan font-family="monospace" font-weight="700">T+mm:ss</tspan></text>
+        <text x="14" y="70" font-size="11" fill="#6ee7b7">• T+00:00 = Kibble Dispensed</text>
+        <text x="14" y="88" font-size="11" fill="#6ee7b7">• Household wall clocks stripped</text>
+        <text x="14" y="106" font-size="11" fill="#6ee7b7">• Zero cron trigger leakage</text>
+      </g>
+
+      <!-- Rule 2: Person Safety Rule -->
+      <g transform="translate(0, 138)">
+        <rect x="0" y="0" width="218" height="126" rx="8" fill="#042018" stroke="#10b981" stroke-width="1.2"/>
+        <circle cx="20" cy="24" r="10" fill="#064e3b"/>
+        <text x="16" y="28" font-size="12" fill="#34d399">✋</text>
+        <text x="38" y="28" font-size="13" font-weight="700" fill="#ecfdf5">Person Safety Rule</text>
+        <text x="14" y="52" font-size="11" fill="#a7f3d0">Fail-closed video withholding:</text>
+        <text x="14" y="70" font-size="11" fill="#6ee7b7">• Detects <tspan font-family="monospace">Dan_hand</tspan> or human</text>
+        <text x="14" y="88" font-size="11" fill="#6ee7b7">• Withholds replay footage</text>
+        <text x="14" y="106" font-size="11" fill="#6ee7b7">• Exports match metadata only</text>
+      </g>
+
+      <!-- Rule 3: 16:9 Crop & Privacy Masking -->
+      <g transform="translate(0, 282)">
+        <rect x="0" y="0" width="218" height="120" rx="8" fill="#042018" stroke="#10b981" stroke-width="1.2"/>
+        <circle cx="20" cy="24" r="10" fill="#064e3b"/>
+        <text x="16" y="28" font-size="12" fill="#34d399">🔲</text>
+        <text x="38" y="28" font-size="13" font-weight="700" fill="#ecfdf5">Privacy Masking</text>
+        <text x="14" y="52" font-size="11" fill="#a7f3d0">Visual environment protection:</text>
+        <text x="14" y="70" font-size="11" fill="#6ee7b7">• 16:9 single-lane tight crop</text>
+        <text x="14" y="88" font-size="11" fill="#6ee7b7">• Background room blur</text>
+        <text x="14" y="106" font-size="11" fill="#6ee7b7">• 4 timestamp zones masked</text>
+      </g>
+
+      <!-- Rule 4: No Audio Stream -->
+      <g transform="translate(0, 420)">
+        <rect x="0" y="0" width="218" height="106" rx="8" fill="#042018" stroke="#10b981" stroke-width="1.2"/>
+        <circle cx="20" cy="24" r="10" fill="#064e3b"/>
+        <text x="16" y="28" font-size="12" fill="#34d399">🔇</text>
+        <text x="38" y="28" font-size="13" font-weight="700" fill="#ecfdf5">Zero Surveillance Audio</text>
+        <text x="14" y="52" font-size="11" fill="#a7f3d0">Surveillance mic removal:</text>
+        <text x="14" y="70" font-size="11" fill="#6ee7b7">• Audio stream permanently stripped</text>
+        <text x="14" y="88" font-size="11" fill="#6ee7b7">• Web Audio synth soundtrack only</text>
+      </g>
+
+      <!-- Rule 5: 3+3 Vault Retention -->
+      <g transform="translate(0, 544)">
+        <rect x="0" y="0" width="218" height="180" rx="8" fill="#042018" stroke="#10b981" stroke-width="1.2"/>
+        <circle cx="20" cy="24" r="10" fill="#064e3b"/>
+        <text x="16" y="28" font-size="12" fill="#34d399">📼</text>
+        <text x="38" y="28" font-size="13" font-weight="700" fill="#ecfdf5">Replay Vault Policy</text>
+        <text x="14" y="52" font-size="11" fill="#a7f3d0">Deterministic 3+3 retention:</text>
+        <text x="14" y="70" font-size="11" fill="#6ee7b7">• Top 3 Dan wins retained</text>
+        <text x="14" y="88" font-size="11" fill="#6ee7b7">• Top 3 Sanbo wins retained</text>
+        <text x="14" y="106" font-size="11" fill="#6ee7b7">• Max 6 public videos active</text>
+        <text x="14" y="124" font-size="11" fill="#6ee7b7">• Older replays aged gracefully</text>
+        <text x="14" y="142" font-size="11" fill="#6ee7b7">• 30-day index preserves data</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Connectors: Private -> Gate -> Public -->
+  <path d="M 1000 580 L 1030 580" fill="none" stroke="#10b981" stroke-width="3" marker-end="url(#arrow-emerald)"/>
+  <path d="M 1290 580 L 1320 580" fill="none" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrow-cyan)"/>
+
+  <!-- ========================================================================= -->
+  <!-- ZONE 3: PUBLIC REPOSITORY & PRESENTATION                                  -->
+  <!-- ========================================================================= -->
+  <g id="zone-public" transform="translate(1330, 130)">
+    <!-- Container Outline -->
+    <rect x="0" y="0" width="530" height="900" rx="14" fill="#0f172a" fill-opacity="0.85" stroke="#1e293b" stroke-width="1.8" filter="url(#drop-shadow)"/>
+    <path d="M 0 14 Q 0 0 14 0 L 516 0 Q 530 0 530 14 L 530 48 L 0 48 Z" fill="#1e293b"/>
+    <circle cx="24" cy="24" r="5" fill="#38bdf8"/>
+    <text x="38" y="29" font-family="'Barlow Condensed', sans-serif" font-weight="700" font-size="15" letter-spacing="1.2" fill="#38bdf8">PUBLIC REPOSITORY · iknoest/kibble-rumble</text>
+
+    <!-- SECTION 3A: KIBBLE RUMBLE '94 WEBSITE (GITHUB PAGES) -->
+    <g transform="translate(20, 66)">
+      <rect x="0" y="0" width="490" height="390" rx="8" fill="url(#public-card-grad)" stroke="#fde047" stroke-width="1.4"/>
+      <!-- Header -->
+      <rect x="14" y="14" width="180" height="24" rx="4" fill="#3b2b00"/>
+      <text x="22" y="30" font-size="11" font-weight="800" fill="#fde047" letter-spacing="1">INTERACTIVE ARCADE</text>
+      <text x="204" y="31" font-size="16" font-weight="700" fill="#f8fafc">KIBBLE RUMBLE '94</text>
+      <text x="14" y="58" font-size="12" font-weight="600" fill="#38bdf8">Live Demo: https://iknoest.github.io/kibble-rumble/</text>
+
+      <g transform="translate(14, 76)">
+        <rect x="0" y="0" width="462" height="66" rx="6" fill="#172236"/>
+        <text x="12" y="22" font-size="12" font-weight="700" fill="#fde047">NIKUKYU NK-500R CRT Video Monitor</text>
+        <text x="12" y="42" font-size="11" fill="#cbd5e1">• Authentic 1994 CRT emulator: scanlines, phosphor glare, boot sequence</text>
+        <text x="12" y="58" font-size="11" fill="#94a3b8">• Hand-free draggable KR-94 controllers (P1 Dan / P2 Sanbo)</text>
+      </g>
+
+      <g transform="translate(14, 154)">
+        <rect x="0" y="0" width="462" height="66" rx="6" fill="#172236"/>
+        <text x="12" y="22" font-size="12" font-weight="700" fill="#fde047">Split-Lane Replay &amp; Event Seeking</text>
+        <text x="12" y="42" font-size="11" fill="#cbd5e1">• Synchronized 4x speed video playback with telemetry overlay</text>
+        <text x="12" y="58" font-size="11" fill="#94a3b8">• Relative event navigation: [◀ EVENT] / [EVENT ▶] step jumps</text>
+      </g>
+
+      <g transform="translate(14, 232)">
+        <rect x="0" y="0" width="462" height="66" rx="6" fill="#172236"/>
+        <text x="12" y="22" font-size="12" font-weight="700" fill="#fde047">Match Memories &amp; Fighter Profiles</text>
+        <text x="12" y="42" font-size="11" fill="#cbd5e1">• 4-page CRT result report: verdict, memories stills, stats, memes</text>
+        <text x="12" y="58" font-size="11" fill="#94a3b8">• Retro ASCII weight history screen &amp; dynamic age calculation</text>
+      </g>
+
+      <g transform="translate(14, 310)">
+        <rect x="0" y="0" width="462" height="66" rx="6" fill="#172236"/>
+        <text x="12" y="22" font-size="12" font-weight="700" fill="#fde047">Zero Paid Infrastructure</text>
+        <text x="12" y="42" font-size="11" fill="#cbd5e1">• Fully static client: vanilla HTML5 Canvas, Web Audio API, SVG</text>
+        <text x="12" y="58" font-size="11" fill="#94a3b8">• Hosted 100% free on GitHub Pages</text>
+      </g>
+    </g>
+
+    <!-- SECTION 3B: FAIR FEEDER TECHNICAL CORE (SOURCE-VISIBLE) -->
+    <g transform="translate(20, 480)">
+      <rect x="0" y="0" width="490" height="396" rx="8" fill="url(#public-card-grad)" stroke="#38bdf8" stroke-width="1.4"/>
+      <!-- Header -->
+      <rect x="14" y="14" width="180" height="24" rx="4" fill="#082f49"/>
+      <text x="22" y="30" font-size="11" font-weight="800" fill="#38bdf8" letter-spacing="1">CURATED ENGINE</text>
+      <text x="204" y="31" font-size="16" font-weight="700" fill="#f8fafc">Fair Feeder Core (fair-feeder/)</text>
+      <text x="14" y="58" font-size="12" font-weight="600" fill="#94a3b8">Clean, sanitized technical core demonstrating the underlying CV engine</text>
+
+      <!-- Component Blocks -->
+      <g transform="translate(14, 76)">
+        <rect x="0" y="0" width="462" height="50" rx="6" fill="#10233b"/>
+        <text x="12" y="20" font-family="monospace" font-size="12" font-weight="700" fill="#38bdf8">src/models.py</text>
+        <text x="12" y="38" font-size="11" fill="#94a3b8">Domain schemas: BoundingBox, Detection, FeederLane, CatProfile, Event</text>
+      </g>
+
+      <g transform="translate(14, 136)">
+        <rect x="0" y="0" width="462" height="50" rx="6" fill="#10233b"/>
+        <text x="12" y="20" font-family="monospace" font-size="12" font-weight="700" fill="#38bdf8">src/motion_detector.py</text>
+        <text x="12" y="38" font-size="11" fill="#94a3b8">Portable MOG2 motion trigger &amp; circular pre-roll ring buffer</text>
+      </g>
+
+      <g transform="translate(14, 196)">
+        <rect x="0" y="0" width="462" height="50" rx="6" fill="#10233b"/>
+        <text x="12" y="20" font-family="monospace" font-size="12" font-weight="700" fill="#38bdf8">src/flagger.py</text>
+        <text x="12" y="38" font-size="11" fill="#94a3b8">Active learning cache anomaly flagger: blips, conflicts, kibble jumps</text>
+      </g>
+
+      <g transform="translate(14, 256)">
+        <rect x="0" y="0" width="462" height="50" rx="6" fill="#10233b"/>
+        <text x="12" y="20" font-family="monospace" font-size="12" font-weight="700" fill="#38bdf8">src/rule_engine.py &amp; privacy.py</text>
+        <text x="12" y="38" font-size="11" fill="#94a3b8">v10.4 Championship rules, Person Safety gate, and 3+3 Vault retention</text>
+      </g>
+
+      <!-- Tests & Examples Badge -->
+      <g transform="translate(14, 318)">
+        <rect x="0" y="0" width="462" height="60" rx="6" fill="#172e48" stroke="#38bdf8" stroke-width="0.8"/>
+        <text x="12" y="22" font-size="12" font-weight="700" fill="#7dd3fc">examples/ &amp; tests/ (17 Synthetic Unit Tests)</text>
+        <text x="12" y="42" font-size="11" fill="#cbd5e1">• 100% self-contained fixtures (zero credentials, zero private paths)</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- FOOTER NOTICE                                                             -->
+  <!-- ========================================================================= -->
+  <g transform="translate(60, 1050)">
+    <text x="0" y="0" font-size="12" fill="#64748b">Fair Feeder &amp; KIBBLE RUMBLE '94 Architecture · Source available for viewing; no reuse license has been granted.</text>
+    <text x="1800" y="0" text-anchor="end" font-size="12" fill="#64748b">https://github.com/iknoest/kibble-rumble</text>
+  </g>
+</svg>
