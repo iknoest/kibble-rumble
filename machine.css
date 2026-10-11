@@ -56,7 +56,7 @@ button{font:inherit;color:inherit}
 /* ------------------------------------------------------------- screen */
 .screen{position:relative;width:754px;aspect-ratio:4/3;border-radius:30px;overflow:hidden;background:var(--glass);container-type:size;container-name:screen;
   transition:filter .2s}
-.screen[data-state="off"]{background:radial-gradient(ellipse 80% 70% at 45% 40%,#202725 0%,#0b0f0e 70%,#050707 100%)}
+.screen[data-state="off"]{background:radial-gradient(ellipse 80% 70% at 45% 40%,#202725 0%,#0b0f0e 70%,#050707 100%);cursor:pointer}
 .layer{position:absolute;inset:0;display:none}
 .fx{position:absolute;inset:0;pointer-events:none;border-radius:30px}
 .fx-scan{background:url(assets/scanlines.png) 0 0/4px 4px repeat;opacity:.28}
@@ -65,7 +65,8 @@ button{font:inherit;color:inherit}
 .fx-glare{background:linear-gradient(158deg,rgba(255,255,255,.14) 0%,rgba(255,255,255,.04) 24%,rgba(255,255,255,0) 42%),
   radial-gradient(ellipse 50% 22% at 28% 8%,rgba(255,255,255,.10),rgba(255,255,255,0) 70%)}
 .fx-curve{box-shadow:inset 0 0 80px 14px rgba(0,0,0,.72),inset 0 0 0 3px rgba(0,0,0,.9),inset 0 0 18px 3px rgba(140,255,220,.06)}
-.screen[data-state="off"] .fx-scan,.screen[data-state="off"] .fx-noise{opacity:0}
+.screen[data-state="off"] .fx-scan{opacity:.12}
+.screen[data-state="off"] .fx-noise{opacity:0}
 .crt-flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
 .screen.crt-on .crt-flash{animation:crtOn .55s ease-out}
 .screen.crt-off .crt-flash{animation:crtOff .45s ease-in forwards}
@@ -73,6 +74,20 @@ button{font:inherit;color:inherit}
 @keyframes crtOff{0%{opacity:0;clip-path:inset(0)}30%{opacity:.95;clip-path:inset(49% 0 49% 0)}70%{opacity:.9;clip-path:inset(49.7% 45% 49.7% 45%)}100%{opacity:0;clip-path:inset(50% 50% 50% 50%)}}
 .screen.glitch{animation:glitch .22s steps(3)}
 @keyframes glitch{0%{filter:none;transform:none}33%{filter:contrast(1.4) brightness(1.3);transform:translateX(-3px) skewX(-1deg)}66%{filter:hue-rotate(20deg);transform:translateX(2px)}100%{filter:none;transform:none}}
+
+.screen[data-state="off"] .s-off{display:flex}
+.s-off{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;user-select:none;-webkit-user-select:none;cursor:pointer;z-index:2;outline:none}
+.s-off:focus-visible{outline:2px dashed #facc15;outline-offset:-6px}
+.off-prompt{display:flex;flex-direction:column;align-items:center;gap:3.2cqh;pointer-events:none}
+.off-title{display:flex;flex-direction:column;align-items:center;gap:1.2cqh}
+.kr-logo.sm{transform:rotate(-3deg);opacity:.95}
+.kr-logo.sm b{font-size:7.5cqw!important;letter-spacing:.25cqw;-webkit-text-stroke:.2cqw #2a0d00;filter:drop-shadow(0 .4cqw 0 #6a1800)}
+.kr-logo.sm i{font-size:3.8cqw!important;margin-top:-.6cqw;-webkit-text-stroke:.15cqw #2a002a}
+.off-sub{font-family:var(--mono);font-size:2.4cqw;letter-spacing:.25cqw;color:#4ade80;text-shadow:0 0 6px rgba(74,222,128,.65)}
+.off-cta{display:flex;flex-direction:column;align-items:center;gap:1.4cqh;margin-top:2cqh}
+.off-blink{font-family:var(--disp);font-size:5.2cqw;letter-spacing:.25cqw;color:#fde047;text-shadow:0 0 10px rgba(253,224,71,.85),0 .4cqw 0 #3b1500;animation:offBlink 1.4s steps(2,start) infinite}
+.off-tap{font-family:var(--pix);font-size:2.4cqw;letter-spacing:.15cqw;color:#93c5fd;text-shadow:0 0 6px rgba(147,197,253,.75)}
+@keyframes offBlink{0%,100%{opacity:1}50%{opacity:.15}}
 
 .screen[data-state="boot"] .s-boot,.screen[data-state="ready"] .s-vs,
 .screen[data-state="replay"] .s-replay,.screen[data-state="paused"] .s-replay,.screen[data-state="still"] .s-replay,
@@ -536,6 +551,7 @@ button{font:inherit;color:inherit}
   .bezel{padding:16px 14px 18px}
   .screen{width:100%;aspect-ratio:10/13}
   .m-bottom{display:none}
+  .postit{display:none!important}
   .m-panel{width:100%;margin:6px 0 0;padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
   .brand{grid-column:1/-1;flex-direction:row;align-items:baseline;gap:10px}
   .brand b{font-size:20px}

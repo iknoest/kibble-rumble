@@ -169,6 +169,16 @@
     }
     machine.dataset.state = st;
     screen.dataset.state = st;
+    const sOff = $("#s-off");
+    if (sOff) {
+      if (st === "off") {
+        sOff.setAttribute("tabindex", "0");
+        sOff.removeAttribute("aria-hidden");
+      } else {
+        sOff.setAttribute("tabindex", "-1");
+        sOff.setAttribute("aria-hidden", "true");
+      }
+    }
     S.hudKey = "";
     // the only place music changes: the soundtrack follows the machine state
     AUDIO.setState(st, { result: S.day ? S.day.result.label : null, game: S.day ? gameOutcome(S.day).id : null });
@@ -1113,8 +1123,12 @@
     const btn = $(`[data-key="${key}"]`);
     if (btn) { btn.classList.add("is-pressed"); setTimeout(() => btn.classList.remove("is-pressed"), 140); }
     click(key === "play" || key === "stop" || key === "power");
-    if (key !== "power" && !S.power) {
-      // hardware is dead while off: nudge the power key instead
+    if (!S.power) {
+      if (key === "power" || ["play", "stop", "result", "archive", "print", "still", "slow", "prev", "next", "rew", "ff"].includes(key)) {
+        if (window.KRAudio) KRAudio.unlock();
+        return ACTIONS["power"]();
+      }
+      // non-game button while off: nudge the power key instead
       const p = $('[data-led="power"]'); p.classList.add("on", "blink"); setTimeout(() => p.classList.remove("on", "blink"), 900);
       machine.dataset.first = "1";
       return;
@@ -1134,17 +1148,21 @@
   const KEY_FOR = { PLAY: "play", STOP: "stop", PREV_EVENT: "prev", NEXT_EVENT: "next", REW: "rew", FF: "ff",
     STILL: "still", SLOW: "slow", RESULT: "result", PRINT: "print", ARCHIVE: "archive", POWER: "power" };
   function command(cmd) {
+    if (!S.power) {
+      if (cmd === "ESC") return;
+      if (window.KRAudio) KRAudio.unlock();
+      return ACTIONS["power"]();
+    }
     if (S.power && S.state === "postmatch" && !["POWER", "PRINT", "ESC"].includes(cmd)) { AUDIO.ui("confirm"); return result(); }
     switch (cmd) {
       case "TOGGLE": return command(S.state === "replay" ? "STOP" : "PLAY");
       case "CONFIRM":
-        if (!S.power) return press("play");
         if (S.state === "boot") return finishBoot();
         if (S.state === "archive") { if (S.arTab) { AUDIO.ui("tick"); return; } AUDIO.ui("confirm"); return selectArchive(); }
         if (S.state === "result") { AUDIO.ui("confirm"); return S.resPage < RESULT_PAGES - 1 ? showResultPage(S.resPage + 1) : closeResult(); }
         return press("play");
       case "BACK":              // pad B: back out of result/archive/still, otherwise the STOP key
-        if (S.power && ["result", "archive", "still", "boot"].includes(S.state)) { AUDIO.ui("tick"); return back(); }
+        if (["result", "archive", "still", "boot"].includes(S.state)) { AUDIO.ui("tick"); return back(); }
         return press("stop");
       case "ESC": return back();
       case "MENU_UP": case "MENU_DOWN": {
@@ -1157,7 +1175,7 @@
         const key = KEY_FOR[cmd];
         if (!key) return;
         // in the tape library only tape/menu keys mean something; transport keys just click
-        if (S.power && S.state === "archive" && ["rew", "ff", "still", "slow"].includes(key)) { AUDIO.ui("tick"); return; }
+        if (S.state === "archive" && ["rew", "ff", "still", "slow"].includes(key)) { AUDIO.ui("tick"); return; }
         return press(key);
       }
     }
@@ -1175,6 +1193,11 @@
   $("#vol-label").addEventListener("click", () => { if (window.KRAudio) { KRAudio.unlock(); KRAudio.toggleMute(); soundIndicators(); } });
   if (window.KRAudio) KRAudio.onChange = () => soundIndicators();
   screen.addEventListener("click", (e) => {
+    if (!S.power) {
+      if (window.KRAudio) KRAudio.unlock();
+      ACTIONS["power"]();
+      return;
+    }
     if (S.state === "boot") return finishBoot();
     const fbtn = e.target.closest(".fp-btn");
     if (fbtn) {
@@ -1188,6 +1211,18 @@
     const row = e.target.closest(".ar-row");
     if (row) return selectArchive(+row.dataset.ar);
   });
+  const sOffEl = $("#s-off");
+  if (sOffEl) {
+    sOffEl.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        if (!S.power) {
+          if (window.KRAudio) KRAudio.unlock();
+          ACTIONS["power"]();
+        }
+      }
+    });
+  }
   $("#course").addEventListener("click", (e) => {
     const pip = e.target.closest(".pip");
     if (!S.power || !hasVideo()) return;
@@ -1202,7 +1237,12 @@
     const t = e.target.closest(".tape");
     if (!t) return;
     click(true);
-    if (!S.power) { await loadDay(+t.dataset.tape); powerOn(!seenBefore()); return; }
+    if (!S.power) {
+      if (window.KRAudio) KRAudio.unlock();
+      await loadDay(+t.dataset.tape);
+      ACTIONS["power"]();
+      return;
+    }
     closeResult(true);
     S.arSel = +t.dataset.tape;
     machine.classList.add("door-open");
