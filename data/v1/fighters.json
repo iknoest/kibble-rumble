@@ -1,0 +1,250 @@
+{
+  "schema": "kibble-rumble.public/1",
+  "updated_on": "2026-10-11",
+  "fighters": {
+    "dan": {
+      "name": "Dan",
+      "dob": "2020-12-09",
+      "age_years": 5,
+      "sex": "MALE",
+      "coat": "TUXEDO CAT",
+      "role": "DEFENDS HIS BREAKFAST",
+      "home_feeder": "TAPO",
+      "current_weight_kg": 3.5,
+      "weighed_date": "2026-09-06",
+      "previous_weight_kg": 3.3,
+      "previous_date": "2026-08-03",
+      "trend": "gaining",
+      "weight_history": [
+        {
+          "date": "2026-04-11",
+          "weight_kg": 3.4
+        },
+        {
+          "date": "2026-05-02",
+          "weight_kg": 3.6
+        },
+        {
+          "date": "2026-05-28",
+          "weight_kg": 3.7
+        },
+        {
+          "date": "2026-06-18",
+          "weight_kg": 3.4
+        },
+        {
+          "date": "2026-07-04",
+          "weight_kg": 3.5
+        },
+        {
+          "date": "2026-08-03",
+          "weight_kg": 3.3
+        },
+        {
+          "date": "2026-09-06",
+          "weight_kg": 3.5
+        }
+      ],
+      "weight_monthly": [
+        {
+          "month": "2026-04",
+          "label": "APR",
+          "year": 2026,
+          "latest_kg": 3.4,
+          "records": [
+            {
+              "date": "2026-04-11",
+              "weight_kg": 3.4
+            }
+          ]
+        },
+        {
+          "month": "2026-05",
+          "label": "MAY",
+          "year": 2026,
+          "latest_kg": 3.7,
+          "records": [
+            {
+              "date": "2026-05-02",
+              "weight_kg": 3.6
+            },
+            {
+              "date": "2026-05-28",
+              "weight_kg": 3.7
+            }
+          ]
+        },
+        {
+          "month": "2026-06",
+          "label": "JUN",
+          "year": 2026,
+          "latest_kg": 3.4,
+          "records": [
+            {
+              "date": "2026-06-18",
+              "weight_kg": 3.4
+            }
+          ]
+        },
+        {
+          "month": "2026-07",
+          "label": "JUL",
+          "year": 2026,
+          "latest_kg": 3.5,
+          "records": [
+            {
+              "date": "2026-07-04",
+              "weight_kg": 3.5
+            }
+          ]
+        },
+        {
+          "month": "2026-08",
+          "label": "AUG",
+          "year": 2026,
+          "latest_kg": 3.3,
+          "records": [
+            {
+              "date": "2026-08-03",
+              "weight_kg": 3.3
+            }
+          ]
+        },
+        {
+          "month": "2026-09",
+          "label": "SEP",
+          "year": 2026,
+          "latest_kg": 3.5,
+          "records": [
+            {
+              "date": "2026-09-06",
+              "weight_kg": 3.5
+            }
+          ]
+        }
+      ]
+    },
+    "sanbo": {
+      "name": "Sanbo",
+      "dob": "2025-05-25",
+      "age_years": 1,
+      "sex": "MALE",
+      "coat": "CALICO CAT",
+      "role": "RAIDS DAN'S BOWL",
+      "home_feeder": "LOGITECH",
+      "current_weight_kg": 3.5,
+      "weighed_date": "2026-09-06",
+      "previous_weight_kg": 3.7,
+      "previous_date": "2026-08-03",
+      "trend": "losing",
+      "weight_history": [
+        {
+          "date": "2026-04-11",
+          "weight_kg": 3.5
+        },
+        {
+          "date": "2026-05-02",
+          "weight_kg": 3.6
+        },
+        {
+          "date": "2026-05-28",
+          "weight_kg": 3.8
+        },
+        {
+          "date": "2026-06-18",
+          "weight_kg": 3.5
+        },
+        {
+          "date": "2026-07-04",
+          "weight_kg": 3.8
+        },
+        {
+          "date": "2026-08-03",
+          "weight_kg": 3.7
+        },
+        {
+          "date": "2026-09-06",
+          "weight_kg": 3.5
+        }
+      ],
+      "weight_monthly": [
+        {
+          "month": "2026-04",
+          "label": "APR",
+          "year": 2026,
+          "latest_kg": 3.5,
+          "records": [
+            {
+              "date": "2026-04-11",
+              "weight_kg": 3.5
+            }
+          ]
+        },
+        {
+          "month": "2026-05",
+          "label": "MAY",
+          "year": 2026,
+          "latest_kg": 3.8,
+          "records": [
+            {
+              "date": "2026-05-02",
+              "weight_kg": 3.6
+            },
+            {
+              "date": "2026-05-28",
+              "weight_kg": 3.8
+            }
+          ]
+        },
+        {
+          "month": "2026-06",
+          "label": "JUN",
+          "year": 2026,
+          "latest_kg": 3.5,
+          "records": [
+            {
+              "date": "2026-06-18",
+              "weight_kg": 3.5
+            }
+          ]
+        },
+        {
+          "month": "2026-07",
+          "label": "JUL",
+          "year": 2026,
+          "latest_kg": 3.8,
+          "records": [
+            {
+              "date": "2026-07-04",
+              "weight_kg": 3.8
+            }
+          ]
+        },
+        {
+          "month": "2026-08",
+          "label": "AUG",
+          "year": 2026,
+          "latest_kg": 3.7,
+          "records": [
+            {
+              "date": "2026-08-03",
+              "weight_kg": 3.7
+            }
+          ]
+        },
+        {
+          "month": "2026-09",
+          "label": "SEP",
+          "year": 2026,
+          "latest_kg": 3.5,
+          "records": [
+            {
+              "date": "2026-09-06",
+              "weight_kg": 3.5
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "schema": "kibble-rumble.public/1",
+  "match_id": "2026-09-13",
+  "date": "2026-09-13",
+  "label": "SUN 13 SEP 2026",
+  "dow": "SUN",
+  "short": "13\u00b709",
+  "duration_s": 301,
+  "duration_str": "05:01",
+  "result": "DAN_WIN",
+  "winner": "dan",
+  "basis": "DEFENDED",
+  "rule": "SANBO NEVER ENTERED DAN'S BOWL AND DAN CLEARED HIS BREAKFAST.",
+  "bonus": null,
+  "stewards": "CLEAN",
+  "stewards_detail": "CLEAN MATCH",
+  "stewards_result": {
+    "label": "CLEAN MATCH",
+    "tone": "green",
+    "sub": "CLEAN MATCH"
+  },
+  "meal_finished": true,
+  "kibble": {
+    "start": 25,
+    "end": 0,
+    "consumed": 25,
+    "dan": 25,
+    "sanbo": 0
+  },
+  "dan": {
+    "kibble": 25,
+    "bowl_s": 125.16000000000003
+  },
+  "sanbo": {
+    "kibble": 0,
+    "bowl_s": 0.0,
+    "own_ate": false,
+    "own_line": "Sanbo own feeder"
+  },
+  "conflict": false,
+  "theft": "Not confirmed",
+  "tapo_status": "Finished",
+  "logitech_status": "Finished likely",
+  "sessions": [],
+  "window": {
+    "start": "00:00",
+    "end": "05:01",
+    "t0": 0,
+    "t1": 301,
+    "duration": "05:01"
+  },
+  "timeline": {
+    "t0": 0,
+    "t1": 301.0
+  },
+  "events": [],
+  "facts": {
+    "takeover_by_sanbo": false,
+    "takeover_by_dan": false,
+    "sanbo_ate_at_dan_feeder": false,
+    "dan_bowl_cleared": true,
+    "attribution_contested": false,
+    "theft_confirmed": false,
+    "event_log": false,
+    "sanbo_never_at_dan_feeder": true
+  },
+  "memories": [],
+  "stills": [],
+  "video": {
+    "src": "media/2026-09-13-0ca9a6da-v3.mp4",
+    "speed": 4,
+    "clock_t0": -5,
+    "layout": {
+      "tapo_y": 34,
+      "bar_y": 439,
+      "bar_h": 42,
+      "logi_y": 481,
+      "lane_w": 720,
+      "lane_h": 405,
+      "track_x0": 20,
+      "track_x1": 700
+    }
+  },
+  "replay": {
+    "status": "retained",
+    "src": "media/2026-09-13-0ca9a6da-v3.mp4",
+    "sha256": "7103374988ecfd91e70554bfb65ccd8542e9105629afdc01ca2affd6fb7cfee7",
+    "bytes": 5588596,
+    "duration_s": 75.2,
+    "speed": 4
+  },
+  "replay_withheld": false
+}

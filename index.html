@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>KIBBLE RUMBLE '94 · NK-500R Replay Machine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&family=Bungee&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="machine.css">
+</head>
+<body>
+<!-- The room the NK-500R stands in: original SVG carpet + dim cabinet row -->
+<div class="room" aria-hidden="true"><div class="room-wall"></div><div class="room-floor"><div class="carpet"></div></div><div class="room-light"></div></div>
+<div class="file-notice" id="file-notice" hidden><b>INTERACTIVE MEDIA REQUIRES HTTP/HTTPS SERVER</b>
+  <span>Browsers require HTTP/HTTPS to load media and data. Run
+  <code>python3 -m http.server 4417 --bind 127.0.0.1 --directory website/public-site</code>
+  and open <code>http://localhost:4417/</code></span></div>
+
+<header class="topline">
+  <div class="topline-mark"><b>KIBBLE RUMBLE '94</b><span>DAN VS SANBO · BREAKFAST CHAMPIONSHIP</span></div>
+  <div class="topline-right"><span id="topline-day">—</span><span class="topline-sys">FAIR FEEDER SYSTEM</span></div>
+</header>
+
+<main class="stage">
+  <section class="machine" id="machine" data-state="off" aria-label="NK-500R match replay machine">
+    <div class="sticker" aria-hidden="true"><b>KIBBLE<br>RUMBLE</b><i>'94</i></div>
+    <div class="postit" id="postit" aria-hidden="true">press<br>POWER ↓</div>
+    <div class="printer" aria-hidden="true">
+      <div class="paper" id="paper"><div class="paper-inner" id="paper-inner"></div></div>
+      <div class="printer-lip"><span>VIDEO PRINT</span><i></i></div>
+    </div>
+
+    <div class="m-body">
+      <div class="m-left">
+        <div class="m-housing">
+          <div class="bezel">
+            <span class="screw s1"></span><span class="screw s2"></span><span class="screw s3"></span><span class="screw s4"></span>
+            <div class="tube">
+              <div class="screen" id="screen" data-state="off">
+                <div class="layer s-boot" id="s-boot">
+                  <div class="boot-maker"><b>NIKUKYU</b><span>VIDEO SYSTEMS · NK-500R</span><em>SELF CHECK … OK</em></div>
+                  <div class="boot-title"><div class="kr-logo"><b>KIBBLE</b><b>RUMBLE</b><i>'94</i></div><span>BREAKFAST CHAMPIONSHIP</span><em>© 1994 NIKUKYU SOFT · LICENSED TO DAN &amp; SANBO</em></div>
+                  <div class="boot-today"><span>TODAY'S MATCH</span><b>DAN <i>VS</i> SANBO</b></div>
+                </div>
+                <div class="layer s-vs" id="s-vs"></div>
+                <div class="layer s-replay" id="s-replay">
+                  <div class="rp-col">
+                    <div class="lane lane1"><canvas id="cv-tapo" width="720" height="405"></canvas><div class="lane-hud" id="hud1"></div></div>
+                    <div class="telemetry"><canvas id="cv-bar" width="720" height="42"></canvas></div>
+                    <div class="course" id="course"></div>
+                    <div class="lane lane2"><canvas id="cv-logi" width="720" height="405"></canvas><div class="lane-hud" id="hud2"></div></div>
+                  </div>
+                  <div class="pillar pl-l pl-1" id="pl-l1"></div>
+                  <div class="pillar pl-r pl-1" id="pl-r1"></div>
+                  <div class="pillar pl-l pl-2" id="pl-l2"></div>
+                  <div class="pillar pl-r pl-2" id="pl-r2"></div>
+                  <div class="still-card" id="still-card"></div>
+                  <div class="toast" id="toast"></div>
+                </div>
+                <div class="layer s-archive" id="s-archive"></div>
+                <div class="layer s-nosignal" id="s-nosignal"><b>NO SIGNAL</b><span id="nosig-text">THIS TAPE HAS NO VIDEO</span><em>PRESS RESULT FOR THE REPORT · STOP TO RETURN</em></div>
+                <div class="layer s-postmatch" id="s-postmatch"><div class="pm-box"><b>MATCH COMPLETE</b><span>PRESS ANY BUTTON</span><em>RESULT · PREDICTION VERDICT · REACTION</em></div></div>
+                <div class="layer s-result" id="s-result"></div>
+                <div class="osd" id="osd"></div>
+                <div class="fx fx-scan"></div><div class="fx fx-noise"></div><div class="fx fx-vig"></div><div class="fx fx-glare"></div><div class="fx fx-curve"></div>
+                <div class="crt-flash"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="m-bottom">
+          <div class="pw-cluster">
+            <span class="silk">POWER</span>
+            <div class="row"><span class="led" data-led="power"></span><button class="key key-power" data-key="power" aria-label="Power"></button></div>
+            <span class="silk sm">PHONES</span><span class="jack"></span>
+          </div>
+          <div class="grille" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="knob-well" aria-hidden="true">
+            <div class="kn"><span class="knob" style="--r:-40deg"></span><span class="silk sm">V-HOLD</span></div>
+            <div class="kn"><span class="knob" style="--r:15deg"></span><span class="silk sm">SHARP</span></div>
+            <div class="kn"><span class="knob" style="--r:-5deg"></span><span class="silk sm">CONTRAST</span></div>
+            <div class="kn"><span class="knob" style="--r:35deg"></span><span class="silk sm">BRIGHT</span></div>
+            <div class="kn"><span class="knob" style="--r:0deg"></span><span class="silk sm">TINT</span></div>
+            <div class="kn"><span class="knob" style="--r:-55deg"></span><span class="silk sm">COLOR</span></div>
+          </div>
+          <div class="av-in" aria-hidden="true"><span class="silk sm">VIDEO · L · R  IN</span><div class="row"><i class="rca y"></i><i class="rca w"></i><i class="rca r"></i></div></div>
+        </div>
+      </div>
+
+      <div class="m-panel">
+        <div class="brand"><b>NIKUKYU</b><span>NK-500R · COLOR VIDEO MONITOR / VCR</span></div>
+        <div class="kgroup two">
+          <div class="kc"><span class="silk">EJECT · TAPES</span><button class="key key-s" data-key="archive" aria-label="Eject / archive">
+            <svg viewBox="0 0 16 16"><path d="M8 3 L14 10 H2 Z M2 12 H14 V14 H2 Z"/></svg></button></div>
+          <div class="kc"><span class="silk">PRINT RESULT</span><button class="key key-s" data-key="print" aria-label="Print result">
+            <svg viewBox="0 0 16 16"><path d="M4 1 H12 V5 H4 Z M2 6 H14 V12 H12 V10 H4 V12 H2 Z M5 11 H11 V15 H5 Z"/></svg></button></div>
+        </div>
+        <div class="lcd" id="lcd" aria-live="polite">
+          <div class="lcd-icons"><i data-ic="play">▶</i><i data-ic="stop">■</i><i data-ic="still">❚❚</i><i data-ic="slow">SLOW</i><i data-ic="tape">TAPE</i><i data-ic="snd" title="Sound output">♪</i></div>
+          <div class="lcd-main"><span class="ghost">88:88:88</span><span id="lcd-clock">--:--:--</span></div>
+          <div class="lcd-sub" id="lcd-sub">&nbsp;</div>
+        </div>
+        <div class="kgroup two tight">
+          <div class="kc"><button class="key key-xs" data-key="prev" aria-label="Previous event"><svg viewBox="0 0 16 16"><path d="M2 2 H4 V14 H2 Z M15 2 L5 8 L15 14 Z"/></svg></button><span class="silk sm">◀ EVENT</span></div>
+          <div class="kc"><button class="key key-xs" data-key="next" aria-label="Next event"><svg viewBox="0 0 16 16"><path d="M12 2 H14 V14 H12 Z M1 2 L11 8 L1 14 Z"/></svg></button><span class="silk sm">EVENT ▶</span></div>
+        </div>
+        <div class="well">
+          <span class="silk">SEARCH −15s / +15s</span>
+          <div class="kgroup two">
+            <button class="key key-m" data-key="rew" aria-label="Rewind 15 seconds"><svg viewBox="0 0 16 16"><path d="M8 2 L1 8 L8 14 Z M15 2 L8 8 L15 14 Z"/></svg></button>
+            <button class="key key-m" data-key="ff" aria-label="Fast forward 15 seconds"><svg viewBox="0 0 16 16"><path d="M1 2 L8 8 L1 14 Z M8 2 L15 8 L8 14 Z"/></svg></button>
+          </div>
+          <div class="kc wide"><div class="row lab"><span class="led" data-led="play"></span><span class="silk">PLAY</span></div>
+            <button class="key key-play" data-key="play" aria-label="Play"><svg viewBox="0 0 16 16"><path d="M3 1.5 L14 8 L3 14.5 Z"/></svg></button></div>
+          <div class="kc wide"><div class="row lab"><span class="led" data-led="stop"></span><span class="silk">STOP</span></div>
+            <button class="key key-stop" data-key="stop" aria-label="Stop"><svg viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10"/></svg></button></div>
+          <div class="kgroup two">
+            <div class="kc"><div class="row lab"><span class="led" data-led="still"></span><span class="silk">STILL</span></div><button class="key key-m short" data-key="still" aria-label="Still frame"><svg viewBox="0 0 16 16"><rect x="3" y="2" width="3.5" height="12"/><rect x="9.5" y="2" width="3.5" height="12"/></svg></button></div>
+            <div class="kc"><div class="row lab"><span class="led" data-led="slow"></span><span class="silk">SLOW</span></div><button class="key key-m short" data-key="slow" aria-label="Slow replay"><span class="cap-txt">½</span></button></div>
+          </div>
+        </div>
+        <div class="kc wide game">
+          <div class="row lab"><span class="led" data-led="result"></span><span class="silk">GAME · RESULT</span></div>
+          <button class="key key-result" data-key="result" aria-label="Result screen"><span class="cap-txt">RESULT</span></button>
+        </div>
+        <div class="pgrille" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="vol">
+          <div class="row vol-head"><button class="vol-label" id="vol-label" type="button" aria-label="Mute or unmute all sound">MASTER VOLUME</button><span class="led" data-led="snd" id="snd-led"></span></div>
+          <input type="range" min="0" max="100" value="50" id="vol" aria-label="Master volume">
+          <span class="silk sm snd-note" id="snd-note">SOUND STARTS ON FIRST PRESS</span>
+        </div>
+      </div>
+
+      <div class="m-bay">
+        <div class="tape-door" id="tape-door">
+          <div class="door-flap"><span class="door-logo">VIDEO<br>TAPE</span><span class="door-label-side">▭ LABEL SIDE</span></div>
+          <div class="cassette" id="cassette"><span id="cassette-label">—</span></div>
+        </div>
+        <div class="row lab"><span class="led" data-led="tape"></span><span class="silk sm">TAPE IN</span></div>
+        <div class="trk"><span class="knob sm" style="--r:20deg"></span><span class="silk sm">TRACKING</span></div>
+      </div>
+    </div>
+    <div class="m-feet"><i></i><i></i></div>
+  </section>
+
+  <div class="pad-bay" id="pad-bay" aria-hidden="true"></div>
+  <div class="pads" id="pads" aria-label="KR-94 controllers: P1 Dan, P2 Sanbo"></div>
+
+  <section class="desk">
+    <div class="shelf-wrap">
+      <div class="dymo">MATCH TAPES · CLICK TO LOAD</div>
+      <div class="shelf" id="shelf"></div>
+      <div class="shelf-board"></div>
+      <p class="shelf-note">Vault holds up to 6 matches (3 Dan + 3 Sanbo wins). Matches over 30 days old or evicted are archived.</p>
+    </div>
+    <aside class="op-card" aria-label="Operating card">
+      <h2>OPERATING CARD</h2>
+      <dl>
+        <dt>POWER <kbd>O</kbd></dt><dd>Boot / switch off</dd>
+        <dt>PICK <kbd>←</kbd><kbd>→</kbd></dt><dd>Character select: choose DAN or SANBO; PLAY locks it in</dd>
+        <dt>PLAY <kbd>Space</kbd></dt><dd>Play / resume replay · locks your pick</dd>
+        <dt>STOP <kbd>Space</kbd></dt><dd>Pause · again = match screen</dd>
+        <dt>◀ EVENT ▶ <kbd>←</kbd><kbd>→</kbd></dt><dd>Jump between report events</dd>
+        <dt>REW · FF <kbd>[</kbd><kbd>]</kbd></dt><dd>−15 s / +15 s replay timeline</dd>
+        <dt>STILL <kbd>S</kbd></dt><dd>Freeze + evidence still</dd>
+        <dt>SLOW <kbd>L</kbd></dt><dd>4× → 2× real time</dd>
+        <dt>RESULT <kbd>R</kbd></dt><dd>4 result pages on the CRT: outcome · match memories · stats · reaction (◀ ▶ to turn)</dd>
+        <dt>PRINT <kbd>P</kbd></dt><dd>Print today's result sheet</dd>
+        <dt>EJECT <kbd>A</kbd></dt><dd>Tape library · ◀ ▶ switches MATCH TAPES / PLAYER RECORD / FIGHTERS</dd>
+        <dt>BACK <kbd>Esc</kbd></dt><dd>Close screen / return</dd>
+      </dl>
+      <h2 class="h2b">KR-94 PADS · P1 DAN / P2 SANBO</h2>
+      <dl>
+        <dt>◀ ▶ D-PAD</dt><dd>Pick champion · previous / next event · result page · archive tab</dd>
+        <dt>▲ ▼ D-PAD</dt><dd>Move in tape list · result page</dd>
+        <dt>A</dt><dd>Play · confirm</dd>
+        <dt>B</dt><dd>Stop · back</dd>
+        <dt>X · Y</dt><dd>Still frame · slow</dd>
+        <dt>L · R</dt><dd>−15 s / +15 s</dd>
+        <dt>START · SELECT</dt><dd>Result · tape library</dd>
+        <dt>DRAG</dt><dd>Grab the shell to move a pad · double-click resets it</dd>
+      </dl>
+      <h2 class="h2b">SOUND</h2>
+      <dl>
+        <dt>MASTER VOLUME</dt><dd>Music, event cues, clicks and CRT hum · click the label to mute</dd>
+      </dl>
+      <p>Sound starts after your first press (browser rule). The soundtrack is original and synthesised live in the page.</p>
+      <p>Footage is the sanitized public replay (4× speedup), cropped into two 16:9 lanes. Memes are synthetic reactions, never evidence.</p>
+    </aside>
+  </section>
+</main>
+
+<div class="print-sheet" id="print-sheet" aria-hidden="true"></div>
+<video id="src-video" muted playsinline preload="auto"></video>
+
+<script src="machine-data.js"></script>
+<script src="machine-audio.js"></script>
+<script src="machine.js"></script>
+<script src="machine-pads.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+{
+  "schema": "kibble-rumble.public/1",
+  "match_id": "2026-09-16",
+  "date": "2026-09-16",
+  "label": "WED 16 SEP 2026",
+  "dow": "WED",
+  "short": "16\u00b709",
+  "duration_s": 63,
+  "duration_str": "01:03",
+  "result": "NO_CONTEST",
+  "winner": null,
+  "basis": "UNRESOLVED",
+  "rule": "THIS OLDER REPORT HAS NO EVENT LOG, SO WHETHER SANBO ENTERED DAN'S BOWL CANNOT BE DETERMINED.",
+  "bonus": null,
+  "stewards": "REVIEW",
+  "stewards_detail": "ATTRIBUTION CONTESTED",
+  "stewards_result": {
+    "label": "STEWARDS REVIEW",
+    "tone": "amber",
+    "sub": "ATTRIBUTION CONTESTED"
+  },
+  "meal_finished": true,
+  "kibble": {
+    "start": 35,
+    "end": 0,
+    "consumed": 35,
+    "dan": 3,
+    "sanbo": 29
+  },
+  "dan": {
+    "kibble": 3,
+    "bowl_s": 5.599999999999999
+  },
+  "sanbo": {
+    "kibble": 29,
+    "bowl_s": 8.399999999999999,
+    "own_ate": true,
+    "own_line": "Sanbo own feeder"
+  },
+  "conflict": true,
+  "theft": "Not confirmed",
+  "tapo_status": "Finished",
+  "logitech_status": "Finished likely",
+  "sessions": [],
+  "window": {
+    "start": "00:00",
+    "end": "01:03",
+    "t0": 0,
+    "t1": 63,
+    "duration": "01:03"
+  },
+  "timeline": {
+    "t0": 0,
+    "t1": 63.0
+  },
+  "events": [],
+  "facts": {
+    "takeover_by_sanbo": false,
+    "takeover_by_dan": false,
+    "sanbo_ate_at_dan_feeder": true,
+    "dan_bowl_cleared": true,
+    "attribution_contested": true,
+    "theft_confirmed": false,
+    "event_log": false,
+    "sanbo_never_at_dan_feeder": false
+  },
+  "memories": [],
+  "stills": [],
+  "video": null,
+  "replay": {
+    "status": "withheld",
+    "withheld_reason": "HUMAN_INTERACTION_IN_REPORT: 1 ep (human hand/interaction observed)"
+  },
+  "replay_withheld": true
+}

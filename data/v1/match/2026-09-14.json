@@ -1,0 +1,74 @@
+{
+  "schema": "kibble-rumble.public/1",
+  "match_id": "2026-09-14",
+  "date": "2026-09-14",
+  "label": "MON 14 SEP 2026",
+  "dow": "MON",
+  "short": "14\u00b709",
+  "duration_s": 309,
+  "duration_str": "05:09",
+  "result": "DAN_WIN",
+  "winner": "dan",
+  "basis": "DEFENDED",
+  "rule": "SANBO NEVER ENTERED DAN'S BOWL AND DAN CLEARED HIS BREAKFAST.",
+  "bonus": null,
+  "stewards": "CLEAN",
+  "stewards_detail": "CLEAN MATCH",
+  "stewards_result": {
+    "label": "CLEAN MATCH",
+    "tone": "green",
+    "sub": "CLEAN MATCH"
+  },
+  "meal_finished": true,
+  "kibble": {
+    "start": 34,
+    "end": 0,
+    "consumed": 34,
+    "dan": 34,
+    "sanbo": 0
+  },
+  "dan": {
+    "kibble": 34,
+    "bowl_s": 182.60834745762708
+  },
+  "sanbo": {
+    "kibble": 0,
+    "bowl_s": 0.0,
+    "own_ate": true,
+    "own_line": "Sanbo own feeder"
+  },
+  "conflict": false,
+  "theft": "Not confirmed",
+  "tapo_status": "Finished",
+  "logitech_status": "Finished likely",
+  "sessions": [],
+  "window": {
+    "start": "00:00",
+    "end": "05:09",
+    "t0": 0,
+    "t1": 309,
+    "duration": "05:09"
+  },
+  "timeline": {
+    "t0": 0,
+    "t1": 309.0
+  },
+  "events": [],
+  "facts": {
+    "takeover_by_sanbo": false,
+    "takeover_by_dan": false,
+    "sanbo_ate_at_dan_feeder": false,
+    "dan_bowl_cleared": true,
+    "attribution_contested": false,
+    "theft_confirmed": false,
+    "event_log": false,
+    "sanbo_never_at_dan_feeder": true
+  },
+  "memories": [],
+  "stills": [],
+  "video": null,
+  "replay": {
+    "status": "not_available"
+  },
+  "replay_withheld": false
+}

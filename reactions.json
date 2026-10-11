@@ -1,0 +1,300 @@
+{
+  "_doc": "Reaction (meme) registry, v10.4. Synthetic media, NEVER evidence. Assets are NOT listed by hand: build_machine_data.py scans source_dir for <cat>-<template>.png (Ava's generated pack, 2026-10-06), makes web copies in assets/memes/, and fails the build if a rule names an id that is not in the pack. ONE primary reaction per result = the first rule whose 'when' matches (game outcome id + game basis + visitor's local pick + canonical facts). An optional secondary event reaction may accompany it. Deterministic: no randomness anywhere.",
+  "source_dir": "website_style_ref/meme/Meme_generated",
+  "web_dir": "assets/memes",
+  "players": {
+    "dan": "P1",
+    "sanbo": "P2"
+  },
+  "templates": {
+    "scream": "Screaming cat (Popcat-style)",
+    "buffering": "Brain buffering",
+    "yamcha-defeat": "Yamcha defeat crater",
+    "wide-eyed": "Wide-eyed shock",
+    "grumpy": "Grumpy face",
+    "take-some": "'Hello, I will take some' chopsticks",
+    "huh": "HUH cat",
+    "sunglasses": "Sunglasses (deal with it)",
+    "crying": "Crying cat",
+    "table": "Dinner-table disgust",
+    "so-mad": "So mad"
+  },
+  "facts": {
+    "theft_confirmed": "house_theft_verdict starts with 'Confirmed' or 'Theft observed' (the pipeline's own decision that Sanbo actually ate Dan's food)",
+    "takeover_by_sanbo": "events[] has foreign_arrival, cat=Sanbo, camera=TAPO (Sanbo entered Dan's lane)",
+    "takeover_by_dan": "a canonical LOGITECH (Sanbo feeder) cat_arrival/foreign_arrival whose cat is Dan or 'both' \u2192 bonus COUNTER RAID / DAN RAID event",
+    "sanbo_ate_at_dan_feeder": "tapo_summary.sanbo_kibble > 0",
+    "attribution_contested": "tapo_summary.has_conflict is true",
+    "no_incident": "no conflict and no foreign_arrival",
+    "dan_bowl_cleared": "meal_finished is true (Dan feeder bowl reached 0)",
+    "sanbo_own_ate": "a Logitech session with cat Sanbo/both shows eating_evidence = yes",
+    "sanbo_own_finished": "logitech_meal_status starts with 'Finished'",
+    "sanbo_own_unfinished": "logitech_meal_status explicitly says unfinished / not finished",
+    "sanbo_raid_contradicted": "Sanbo's TAPO foreign_arrival overlaps a Logitech session where Sanbo is eating at her own feeder (mirrors the pipeline's physical-contradiction check)",
+    "sanbo_never_at_dan_feeder": "event log has no TAPO Sanbo foreign_arrival; for older event-less reports: TAPO summary never saw Sanbo (0 kibble, 0 s, no first ts, no conflict)"
+  },
+  "rules": [
+    {
+      "id": "sanbo-win-you-backed-dan",
+      "when": {
+        "game": "SANBO_WIN",
+        "pick": "dan"
+      },
+      "primary": "dan-yamcha-defeat",
+      "label": "DAN LOST HIS BREAKFAST",
+      "why": "Sanbo raided Dan's bowl (house rule: entering = eating) and you backed Dan. Yamcha stays reserved for a lost bet on a raid."
+    },
+    {
+      "id": "sanbo-win",
+      "when": {
+        "game": "SANBO_WIN"
+      },
+      "primary": "sanbo-take-some",
+      "label": "RAID SUCCESS!",
+      "why": "Sanbo entered Dan's bowl; by house rule that is a successful raid."
+    },
+    {
+      "id": "dan-win-you-backed-sanbo",
+      "when": {
+        "game": "DAN_WIN",
+        "pick": "sanbo"
+      },
+      "primary": "sanbo-crying",
+      "label": "NOT TODAY, SANBO",
+      "why": "Dan defended and cleared his own bowl; you backed Sanbo."
+    },
+    {
+      "id": "dan-win",
+      "when": {
+        "game": "DAN_WIN"
+      },
+      "primary": "dan-sunglasses",
+      "label": "BREAKFAST DEFENDED",
+      "why": "Dan cleared his own bowl with no Sanbo intake."
+    },
+    {
+      "id": "no-contest",
+      "when": {
+        "game": "NO_CONTEST"
+      },
+      "primary": "dan-huh",
+      "label": "HUH?",
+      "why": "The match state is genuinely unresolved (e.g. an older report without an event log)."
+    }
+  ],
+  "event_reactions": [
+    {
+      "id": "raid",
+      "when": {
+        "fact": "takeover_by_sanbo"
+      },
+      "asset": "sanbo-take-some",
+      "label": "EVENT REACTION \u00b7 RAID",
+      "why": "Canonical foreign_arrival: Sanbo entered Dan's bowl."
+    }
+  ],
+  "not_used": {
+    "so-mad": "contains a human hand (project rule: no hands)",
+    "table": "contains a human hand (project rule: no hands)"
+  },
+  "assets": [
+    {
+      "id": "dan-buffering",
+      "player": "P1",
+      "cat": "dan",
+      "template_id": "buffering",
+      "template": "Brain buffering",
+      "file": "assets/memes/dan-buffering.jpg",
+      "source": "website_style_ref/meme/Meme_generated/dan-buffering.png"
+    },
+    {
+      "id": "dan-crying",
+      "player": "P1",
+      "cat": "dan",
+      "template_id": "crying",
+      "template": "Crying cat",
+      "file": "assets/memes/dan-crying.jpg",
+      "source": "website_style_ref/meme/Meme_generated/dan-crying.png"
+    },
+    {
+      "id": "dan-grumpy",
+      "player": "P1",
+      "cat": "dan",
+      "template_id": "grumpy",
+      "template": "Grumpy face",
+      "file": "assets/memes/dan-grumpy.jpg",
+      "source": "website_style_ref/meme/Meme_generated/dan-grumpy.png"
+    },
+    {
+      "id": "dan-huh",
+      "player": "P1",
+      "cat": "dan",
+      "template_id": "huh",
+      "template": "HUH cat",
+      "file": "assets/memes/dan-huh.jpg",
+      "source": "website_style_ref/meme/Meme_generated/dan-huh.png"
+    },
+    {
+      "id": "dan-scream",
+      "player": "P1",
+      "cat": "dan",
+      "template_id": "scream",
+      "template": "Screaming cat (Popcat-style)",
+      "file": "assets/memes/dan-scream.jpg",
+      "source": "website_style_ref/meme/Meme_generated/dan-scream.png"
+    },
+    {
+      "id": "dan-so-mad",
+      "player": "P1",
+      "cat": "dan",
+      "template_id": "so-mad",
+      "template": "So mad",
+      "file": "assets/memes/dan-so-mad.jpg",
+      "source": "website_style_ref/meme/Meme_generated/dan-so-mad.png"
+    },
+    {
+      "id": "dan-sunglasses",
+      "player": "P1",
+      "cat": "dan",
+      "template_id": "sunglasses",
+      "template": "Sunglasses (deal with it)",
+      "file": "assets/memes/dan-sunglasses.jpg",
+      "source": "website_style_ref/meme/Meme_generated/dan-sunglasses.png"
+    },
+    {
+      "id": "dan-table",
+      "player": "P1",
+      "cat": "dan",
+      "template_id": "table",
+      "template": "Dinner-table disgust",
+      "file": "assets/memes/dan-table.jpg",
+      "source": "website_style_ref/meme/Meme_generated/dan-table.png"
+    },
+    {
+      "id": "dan-take-some",
+      "player": "P1",
+      "cat": "dan",
+      "template_id": "take-some",
+      "template": "'Hello, I will take some' chopsticks",
+      "file": "assets/memes/dan-take-some.jpg",
+      "source": "website_style_ref/meme/Meme_generated/dan-take-some.png"
+    },
+    {
+      "id": "dan-wide-eyed",
+      "player": "P1",
+      "cat": "dan",
+      "template_id": "wide-eyed",
+      "template": "Wide-eyed shock",
+      "file": "assets/memes/dan-wide-eyed.jpg",
+      "source": "website_style_ref/meme/Meme_generated/dan-wide-eyed.png"
+    },
+    {
+      "id": "dan-yamcha-defeat",
+      "player": "P1",
+      "cat": "dan",
+      "template_id": "yamcha-defeat",
+      "template": "Yamcha defeat crater",
+      "file": "assets/memes/dan-yamcha-defeat.jpg",
+      "source": "website_style_ref/meme/Meme_generated/dan-yamcha-defeat.png"
+    },
+    {
+      "id": "sanbo-buffering",
+      "player": "P2",
+      "cat": "sanbo",
+      "template_id": "buffering",
+      "template": "Brain buffering",
+      "file": "assets/memes/sanbo-buffering.jpg",
+      "source": "website_style_ref/meme/Meme_generated/sanbo-buffering.png"
+    },
+    {
+      "id": "sanbo-crying",
+      "player": "P2",
+      "cat": "sanbo",
+      "template_id": "crying",
+      "template": "Crying cat",
+      "file": "assets/memes/sanbo-crying.jpg",
+      "source": "website_style_ref/meme/Meme_generated/sanbo-crying.png"
+    },
+    {
+      "id": "sanbo-grumpy",
+      "player": "P2",
+      "cat": "sanbo",
+      "template_id": "grumpy",
+      "template": "Grumpy face",
+      "file": "assets/memes/sanbo-grumpy.jpg",
+      "source": "website_style_ref/meme/Meme_generated/sanbo-grumpy.png"
+    },
+    {
+      "id": "sanbo-huh",
+      "player": "P2",
+      "cat": "sanbo",
+      "template_id": "huh",
+      "template": "HUH cat",
+      "file": "assets/memes/sanbo-huh.jpg",
+      "source": "website_style_ref/meme/Meme_generated/sanbo-huh.png"
+    },
+    {
+      "id": "sanbo-scream",
+      "player": "P2",
+      "cat": "sanbo",
+      "template_id": "scream",
+      "template": "Screaming cat (Popcat-style)",
+      "file": "assets/memes/sanbo-scream.jpg",
+      "source": "website_style_ref/meme/Meme_generated/sanbo-scream.png"
+    },
+    {
+      "id": "sanbo-so-mad",
+      "player": "P2",
+      "cat": "sanbo",
+      "template_id": "so-mad",
+      "template": "So mad",
+      "file": "assets/memes/sanbo-so-mad.jpg",
+      "source": "website_style_ref/meme/Meme_generated/sanbo-so-mad.png"
+    },
+    {
+      "id": "sanbo-sunglasses",
+      "player": "P2",
+      "cat": "sanbo",
+      "template_id": "sunglasses",
+      "template": "Sunglasses (deal with it)",
+      "file": "assets/memes/sanbo-sunglasses.jpg",
+      "source": "website_style_ref/meme/Meme_generated/sanbo-sunglasses.png"
+    },
+    {
+      "id": "sanbo-table",
+      "player": "P2",
+      "cat": "sanbo",
+      "template_id": "table",
+      "template": "Dinner-table disgust",
+      "file": "assets/memes/sanbo-table.jpg",
+      "source": "website_style_ref/meme/Meme_generated/sanbo-table.png"
+    },
+    {
+      "id": "sanbo-take-some",
+      "player": "P2",
+      "cat": "sanbo",
+      "template_id": "take-some",
+      "template": "'Hello, I will take some' chopsticks",
+      "file": "assets/memes/sanbo-take-some.jpg",
+      "source": "website_style_ref/meme/Meme_generated/sanbo-take-some.png"
+    },
+    {
+      "id": "sanbo-wide-eyed",
+      "player": "P2",
+      "cat": "sanbo",
+      "template_id": "wide-eyed",
+      "template": "Wide-eyed shock",
+      "file": "assets/memes/sanbo-wide-eyed.jpg",
+      "source": "website_style_ref/meme/Meme_generated/sanbo-wide-eyed.png"
+    },
+    {
+      "id": "sanbo-yamcha-defeat",
+      "player": "P2",
+      "cat": "sanbo",
+      "template_id": "yamcha-defeat",
+      "template": "Yamcha defeat crater",
+      "file": "assets/memes/sanbo-yamcha-defeat.jpg",
+      "source": "website_style_ref/meme/Meme_generated/sanbo-yamcha-defeat.png"
+    }
+  ]
+}

@@ -1,0 +1,296 @@
+{
+  "schema": "kibble-rumble.public/1",
+  "match_id": "2026-09-27",
+  "date": "2026-09-27",
+  "label": "SUN 27 SEP 2026",
+  "dow": "SUN",
+  "short": "27\u00b709",
+  "duration_s": 274,
+  "duration_str": "04:34",
+  "result": "SANBO_WIN",
+  "winner": "sanbo",
+  "basis": "RAID SUCCESS",
+  "rule": "SANBO ENTERED DAN'S BOWL. HOUSE RULE: ENTERING DAN'S BOWL IS A SUCCESSFUL RAID.",
+  "bonus": null,
+  "stewards": "REVIEW",
+  "stewards_detail": "ATTRIBUTION CONTESTED",
+  "stewards_result": {
+    "label": "STEWARDS REVIEW",
+    "tone": "amber",
+    "sub": "ATTRIBUTION CONTESTED"
+  },
+  "meal_finished": true,
+  "kibble": {
+    "start": 18,
+    "end": 0,
+    "consumed": 18,
+    "dan": 12,
+    "sanbo": 6
+  },
+  "dan": {
+    "kibble": 12,
+    "bowl_s": 5.653846153846153
+  },
+  "sanbo": {
+    "kibble": 6,
+    "bowl_s": 13.730769230769234,
+    "own_ate": false,
+    "own_line": "Sanbo own feeder"
+  },
+  "conflict": true,
+  "theft": "Not confirmed",
+  "tapo_status": "Finished",
+  "logitech_status": "Finished likely",
+  "sessions": [],
+  "window": {
+    "start": "00:00",
+    "end": "04:34",
+    "t0": 0,
+    "t1": 274,
+    "duration": "04:34"
+  },
+  "timeline": {
+    "t0": 0,
+    "t1": 274.0
+  },
+  "events": [
+    {
+      "t": -10,
+      "t_s": -10,
+      "time": "PRE-MATCH",
+      "rel_time": "PRE-MATCH",
+      "type": "cat_arrival",
+      "camera": "LOGITECH",
+      "cat": "Sanbo",
+      "confidence": 0.95,
+      "feeder": "Sanbo feeder",
+      "notes": "Sanbo arrived at Sanbo feeder"
+    },
+    {
+      "t": 0,
+      "t_s": 0,
+      "time": "T+00:00",
+      "rel_time": "T+00:00",
+      "type": "food_dispensed",
+      "camera": "TAPO",
+      "cat": "none",
+      "confidence": 1.0,
+      "feeder": "Dan feeder",
+      "notes": "Food dispensed (~18 kibble)",
+      "seek_t": 8.5
+    },
+    {
+      "t": 0,
+      "t_s": 0,
+      "time": "T+00:00",
+      "rel_time": "T+00:00",
+      "type": "cat_arrival",
+      "camera": "TAPO",
+      "cat": "Dan",
+      "confidence": 0.95,
+      "feeder": "Dan feeder",
+      "notes": "Dan arrived at Dan feeder",
+      "seek_t": 13.0
+    },
+    {
+      "t": 1,
+      "t_s": 1,
+      "time": "T+00:01",
+      "rel_time": "T+00:01",
+      "type": "foreign_arrival",
+      "camera": "TAPO",
+      "cat": "Sanbo",
+      "confidence": 0.9,
+      "feeder": "Dan feeder",
+      "notes": "\u26a0\ufe0f Sanbo arrived at Dan feeder",
+      "seek_t": 18.0
+    },
+    {
+      "t": 35,
+      "t_s": 35,
+      "time": "T+00:35",
+      "rel_time": "T+00:35",
+      "type": "feeder_departure",
+      "camera": "LOGITECH",
+      "cat": "Sanbo",
+      "confidence": 0.95,
+      "feeder": "Sanbo feeder",
+      "notes": "Sanbo departed Sanbo feeder"
+    },
+    {
+      "t": 60,
+      "t_s": 60,
+      "time": "T+01:00",
+      "rel_time": "T+01:00",
+      "type": "meal_finish",
+      "camera": "TAPO",
+      "cat": "Sanbo",
+      "confidence": 1.0,
+      "feeder": "Dan feeder",
+      "notes": "Dan feeder meal finished",
+      "seek_t": 61.5
+    },
+    {
+      "t": 71,
+      "t_s": 71,
+      "time": "T+01:11",
+      "rel_time": "T+01:11",
+      "type": "return_to_feeder",
+      "camera": "LOGITECH",
+      "cat": "Sanbo",
+      "confidence": 0.9,
+      "feeder": "Sanbo feeder",
+      "notes": "\u21a9 Sanbo returned to Sanbo feeder"
+    },
+    {
+      "t": 274,
+      "t_s": 274,
+      "time": "T+04:34",
+      "rel_time": "T+04:34",
+      "type": "feeder_departure",
+      "camera": "LOGITECH",
+      "cat": "Sanbo",
+      "confidence": 0.9,
+      "feeder": "Sanbo feeder",
+      "notes": "Sanbo departed Sanbo feeder"
+    }
+  ],
+  "facts": {
+    "takeover_by_sanbo": true,
+    "takeover_by_dan": false,
+    "sanbo_ate_at_dan_feeder": true,
+    "dan_bowl_cleared": true,
+    "attribution_contested": true,
+    "theft_confirmed": false,
+    "event_log": true,
+    "sanbo_never_at_dan_feeder": false
+  },
+  "memories": [
+    {
+      "n": 1,
+      "kind": "dispensed",
+      "label": "KIBBLE DROP",
+      "title": "KIBBLE DROP",
+      "rel_time": "T+00:00",
+      "event_time": "T+00:00",
+      "t": 0,
+      "t_s": 0,
+      "cat": "none",
+      "feeder": "Dan feeder",
+      "src": "media/2026-09-27-memories-1-v3.jpg",
+      "event_type": "food_dispensed"
+    },
+    {
+      "n": 2,
+      "kind": "arrival",
+      "label": "DAN ARRIVES",
+      "title": "DAN ARRIVES",
+      "rel_time": "T+00:00",
+      "event_time": "T+00:00",
+      "t": 0,
+      "t_s": 0,
+      "cat": "Dan",
+      "feeder": "Dan feeder",
+      "src": "media/2026-09-27-memories-2-v3.jpg",
+      "event_type": "cat_arrival"
+    },
+    {
+      "n": 3,
+      "kind": "foreign_arrival",
+      "label": "SANBO RAID",
+      "title": "SANBO RAID",
+      "rel_time": "T+00:01",
+      "event_time": "T+00:01",
+      "t": 1,
+      "t_s": 1,
+      "cat": "Sanbo",
+      "feeder": "Dan feeder",
+      "src": "media/2026-09-27-memories-3-v3.jpg",
+      "event_type": "foreign_arrival"
+    },
+    {
+      "n": 4,
+      "kind": "finish",
+      "label": "BOWL CLEARED",
+      "title": "BOWL CLEARED",
+      "rel_time": "T+01:00",
+      "event_time": "T+01:00",
+      "t": 60,
+      "t_s": 60,
+      "cat": "Sanbo",
+      "feeder": "Dan feeder",
+      "src": "media/2026-09-27-memories-4-v3.jpg",
+      "event_type": "meal_finish"
+    }
+  ],
+  "stills": [
+    {
+      "n": 1,
+      "kind": "dispensed",
+      "title": "KIBBLE DROP",
+      "src": "media/2026-09-27-memories-1-v3.jpg",
+      "event_type": "food_dispensed",
+      "event_time": "T+00:00",
+      "t": 0,
+      "cat": "none",
+      "feeder": "Dan feeder"
+    },
+    {
+      "n": 2,
+      "kind": "arrival",
+      "title": "DAN ARRIVES",
+      "src": "media/2026-09-27-memories-2-v3.jpg",
+      "event_type": "cat_arrival",
+      "event_time": "T+00:00",
+      "t": 0,
+      "cat": "Dan",
+      "feeder": "Dan feeder"
+    },
+    {
+      "n": 3,
+      "kind": "foreign_arrival",
+      "title": "SANBO RAID",
+      "src": "media/2026-09-27-memories-3-v3.jpg",
+      "event_type": "foreign_arrival",
+      "event_time": "T+00:01",
+      "t": 1,
+      "cat": "Sanbo",
+      "feeder": "Dan feeder"
+    },
+    {
+      "n": 4,
+      "kind": "finish",
+      "title": "BOWL CLEARED",
+      "src": "media/2026-09-27-memories-4-v3.jpg",
+      "event_type": "meal_finish",
+      "event_time": "T+01:00",
+      "t": 60,
+      "cat": "Sanbo",
+      "feeder": "Dan feeder"
+    }
+  ],
+  "video": {
+    "src": "media/2026-09-27-c0c548f0-v3.mp4",
+    "speed": 4,
+    "clock_t0": -10,
+    "layout": {
+      "tapo_y": 34,
+      "bar_y": 439,
+      "bar_h": 42,
+      "logi_y": 481,
+      "lane_w": 720,
+      "lane_h": 405,
+      "track_x0": 20,
+      "track_x1": 700
+    }
+  },
+  "replay": {
+    "status": "retained",
+    "src": "media/2026-09-27-c0c548f0-v3.mp4",
+    "sha256": "6b952c94676fc60a32cd0b6a59f681a9ccff714d6894f0a472291d834cdcddc4",
+    "bytes": 3289321,
+    "duration_s": 68.5,
+    "speed": 4
+  },
+  "replay_withheld": false
+}

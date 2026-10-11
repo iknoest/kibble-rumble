@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="360" viewBox="0 0 360 360">
+  <!-- Original KR-94 game-room carpet tile: flat neon motifs scattered on a black-navy base
+       (period arcade-carpet inspired, not traced). Large tile + varied rotations so the repeat is hard to see. -->
+  <rect width="360" height="360" fill="#06061a"/>
+  <g fill="none" stroke-linecap="square" stroke-linejoin="miter" stroke-width="4.5">
+    <!-- cyan squiggles -->
+    <path d="M0 0 q8 -11 16 0 t16 0 t16 0" stroke="#19d3e6" transform="translate(18 40) rotate(-14)"/>
+    <path d="M0 0 q8 -11 16 0 t16 0" stroke="#19d3e6" transform="translate(236 132) rotate(38)"/>
+    <path d="M0 0 q8 -11 16 0 t16 0 t16 0" stroke="#19d3e6" transform="translate(120 300) rotate(8)"/>
+    <!-- magenta zig-zags -->
+    <polyline points="0,0 9,13 18,0 27,13 36,0" stroke="#ff2e9a" transform="translate(150 28) rotate(12)"/>
+    <polyline points="0,0 9,13 18,0 27,13" stroke="#ff2e9a" transform="translate(42 226) rotate(-30)"/>
+    <polyline points="0,0 9,13 18,0 27,13 36,0" stroke="#ff2e9a" transform="translate(286 268) rotate(70)"/>
+    <!-- yellow triangles -->
+    <polygon points="0,-14 13,10 -13,10" stroke="#ffd21f" transform="translate(96 120) rotate(-18)"/>
+    <polygon points="0,-9 8,6 -8,6" fill="#ffd21f" stroke="none" transform="translate(320 52) rotate(24)"/>
+    <polygon points="0,-12 11,9 -11,9" stroke="#ffd21f" transform="translate(212 236) rotate(160)"/>
+    <!-- lime circles -->
+    <circle cx="190" cy="98" r="8" stroke="#8be635"/>
+    <circle cx="28" cy="318" r="4.5" fill="#8be635" stroke="none"/>
+    <circle cx="300" cy="190" r="4.5" fill="#8be635" stroke="none"/>
+    <circle cx="70" cy="168" r="3.5" fill="#8be635" stroke="none"/>
+    <!-- purple broken strokes -->
+    <path d="M0 0 l14 0 M20 0 l10 0 M6 10 l18 0" stroke="#8a4dff" transform="translate(262 80) rotate(-22)"/>
+    <path d="M0 0 l0 12 M10 -4 l0 20 M20 2 l0 8" stroke="#8a4dff" transform="translate(150 182) rotate(16)"/>
+    <path d="M0 0 l14 0 M20 0 l10 0" stroke="#8a4dff" transform="translate(18 108) rotate(52)"/>
+    <!-- confetti ticks -->
+    <path d="M0 0 l7 -7" stroke="#19d3e6" stroke-width="3.5" transform="translate(110 60)"/>
+    <path d="M0 0 l7 7" stroke="#ff2e9a" stroke-width="3.5" transform="translate(340 330)"/>
+    <path d="M0 0 l8 0" stroke="#ffd21f" stroke-width="3.5" transform="translate(196 340)"/>
+    <path d="M0 0 l6 6" stroke="#8a4dff" stroke-width="3.5" transform="translate(240 20)"/>
+    <path d="M0 0 l0 8" stroke="#8be635" stroke-width="3.5" transform="translate(58 270)"/>
+  </g>
+</svg>
