@@ -2,24 +2,14 @@
 
 > **A retro 1994 arcade replay machine and daily cat feeding championship for Dan and Sanbo powered by computer vision.**
 
-🕹️ **[Play Live Demo](https://iknoest.github.io/kibble-rumble/)** · 🎬 **[Watch Showcase Videos](#watch-showcase--experience)** · 📐 **[Technical Architecture](#technical-architecture)** · 🐾 **[Fair Feeder Core](fair-feeder/README.md)**
+🕹️ **[Play Live Demo](https://iknoest.github.io/kibble-rumble/)** · 📐 **[Technical Architecture](#technical-architecture)** · 🐾 **[Fair Feeder Core](fair-feeder/README.md)**
 
 ![KIBBLE RUMBLE '94 Arcade Machine](assets/og-preview.png)
-
-## Watch Showcase & Experience
-
-- 🕹️ **[Play Live Demo](https://iknoest.github.io/kibble-rumble/)** — Interactive retro arcade replay machine running in your browser on GitHub Pages.
-- 📐 **[Technical Architecture](#technical-architecture)** — Complete dual-camera CV pipeline, active learning flywheel, and fail-closed privacy gate.
-- 🎬 **[Watch 55s Walkthrough (MP4)](https://github.com/iknoest/kibble-rumble/releases/download/v1.0.0/KR94_LinkedIn_55s_v2.mp4)** — Full end-to-end system walkthrough (cameras, edge detection, CRT replay, and match memories).
-- ⚡ **[Watch 18s Short Version (MP4)](https://github.com/iknoest/kibble-rumble/releases/download/v1.0.0/KR94_Instagram_18s_v2.mp4)** — Fast-paced action highlight reel.
-
-> 📦 *High-definition showcase videos, subtitles, and poster thumbnails are delivered via [GitHub Release `v1.0.0`](https://github.com/iknoest/kibble-rumble/releases/tag/v1.0.0) to preserve clean repository history.*
 
 ## Quick Navigation
 
 - 🕹️ **[Live Demo](https://iknoest.github.io/kibble-rumble/)** — Playable 1994 CRT arcade replay machine in your browser.
 - 📐 **[Technical Architecture](#technical-architecture)** — Dual-camera edge CV, active learning flywheel, and fail-closed privacy gate.
-- 🎬 **[Showcase Videos](#watch-showcase--experience)** — Watch the 55s system walkthrough or the 18s fast-paced short reel.
 - 🐾 **[Fair Feeder Core](fair-feeder/README.md)** — Curated computer-vision engine, domain models, and test fixtures.
 
 ## What is this?
