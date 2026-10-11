@@ -134,14 +134,24 @@ Fair Feeder enforces a strict privacy gate between private on-premise operations
 
 ---
 
-## 6. Continuous Data Flywheel
+## 6. Continuous Data Flywheel & Improvement Loop
 
-Rather than manually reviewing hours of footage, the engine auto-flags candidate frames directly from the detection cache:
-- **Single-frame blips**: Isolated single-frame cat detections filtered out as noise.
-- **Conflicting classes**: Simultaneous competing cat detections in a single-cat bowl box.
-- **Kibble count jumps**: Step changes $\ge 15$ kibble on clear bowl frames, indicating detection drift.
+Rather than manually reviewing hours of footage, the system implements an active learning feedback loop to continuously refine detection accuracy:
 
-Flagged frames feed directly into the retraining pipeline, creating a closed-loop improvement flywheel for model accuracy.
+1. **Detection Cache Auto-Flagger (`flagger.py`)**:
+   - Automatically monitors the inference cache for model uncertainties and anomalies:
+   - **Single-frame blips**: Isolated single-frame cat detections filtered out as transient noise.
+   - **Conflicting classes**: Simultaneous competing cat detections in a single-cat bowl boundary.
+   - **Kibble count jumps**: Step changes $\ge 15$ kibble pieces on clear bowl frames, indicating detection drift.
+   - Low-confidence candidate frames near the detection threshold.
+2. **Review Dataset Curation**:
+   - Ambiguous and flagged frames are sampled into candidate review datasets.
+   - Stratified curation balances night infrared frames (Tapo IR) and daytime frames (Logitech USB).
+   - Enforces strict train/validation split hygiene to prevent dataset leakage.
+3. **Model Retraining & Evaluation Loop**:
+   - Periodic YOLOv11 fine-tuning runs incorporate difficult edge cases.
+   - Validation benchmarking ensures per-class AP50 improvements without regressions.
+   - Validated weights are deployed back to the edge inference runtime, closing the active learning flywheel.
 
 ---
 
