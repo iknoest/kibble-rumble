@@ -11,44 +11,53 @@ Fair Feeder is an automated computer-vision monitoring engine designed to superv
 *View [Full-Resolution PNG (1080p)](../assets/architecture-diagram.png) · [Vector SVG (Editable)](../assets/architecture-diagram.svg)*
 
 ```
-+-------------------------------------------------------------------------------+
-|                                EDGE RUNTIME (LAN)                             |
-|                                                                               |
-|  [Tapo C210 IR] (Lane 1)  --RTSP/TCP-->  [Motion Recorder Daemon (Pi 5)]      |
-|  [Logitech USB] (Lane 2)  --V4L2/USB-->  * MOG2 Motion Detection              |
-|                                          * Pre-roll Circular Ring Buffer      |
-|                                          * Video Capture & Sync Storage       |
-+-------------------------------------------------------------------------------+
-                                        │
-                                        ▼
-+-------------------------------------------------------------------------------+
-|                           CV & ANALYTICS PIPELINE                             |
-|                                                                               |
-|  * YOLOv11 Object Detection (Classes: Dan, Sanbo, Dan_hand, Bowl, Kibble)     |
-|  * Temporal Tracking & Discrete Event Extraction                              |
-|  * Continuous Active Learning & Anomaly Auto-Flagging                         |
-|  * Championship Rule Engine (Household v10.4 Outcome Derivation)              |
-+-------------------------------------------------------------------------------+
-                                        │
-                                        ▼
-+-------------------------------------------------------------------------------+
-|                      PRIVACY-SAFE PUBLIC PROJECTION GATE                      |
-|                                                                               |
-|  * Wall-Clock -> Relative Match Time Offset (T+00:00 = Kibble Drop)           |
-|  * Fail-Closed Person Safety Rule (Withholds Media if Human Presence Detected)|
-|  * 16:9 Single-Lane Crop Framing & Background Privacy Masking                 |
-|  * Surveillance Audio Removal                                                 |
-|  * Replay Vault Deterministic Retention (Top 3 Dan Wins + Top 3 Sanbo Wins)   |
-+-------------------------------------------------------------------------------+
-                                        │
-                                        ▼
-+-------------------------------------------------------------------------------+
-|                       PUBLIC PRESENTATION & REPLAY                            |
-|                                                                               |
-|  [KIBBLE RUMBLE '94 Arcade Site (GitHub Pages)]                               |
-|  * NIKUKYU NK-500R Interactive CRT Emulator                                   |
-|  * Verified Match Memories & ASCII Weight Records                             |
-+-------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------+
+|                           PRIVATE HOUSEHOLD OPERATIONS (LAN / EDGE / TELEGRAM)                    |
+|                                                                                                   |
+|  [STAGE A · PHYSICAL SETUP]                                                                       |
+|  * Lane 1 (Dan / Arena): Timed auto-feeder + Tapo C210 2K IR overhead camera on tripod (24/7 IR)  |
+|  * Lane 2 (Sanbo / Base): Ground-level feeder + Logitech C925e USB camera (ambient daylight)      |
+|  * Raspberry Pi 5: MOG2 motion detection + circular RAM pre-roll ring buffer (5-10s lead-in)      |
+|                                          │                                                        |
+|                                          ▼ (Candidate frames & motion clips)                      |
+|  [STAGE B · ROBOFLOW & YOLOv11]                                                                   |
+|  * Roboflow "IR kibble" dataset (930+ labeled frames; classes: Dan, Sanbo, Dan_hand, Bowl, Kibble)|
+|  * YOLOv11 edge model (native 16:9 rect=True; historical V14 val benchmark mAP50 = 0.957)         |
+|  * Active learning flywheel (flagger.py cache triage: blips, dual-cat conflicts, kibble jumps>=15)|
+|                                          │                                                        |
+|                                          ▼ (Inference weights & edge deployment)                  |
+|  [STAGE C · DAILY TELEGRAM OPS]                                                                   |
+|  * Breakfast analysis: discrete event extraction (food_dispensed T+0, arrival, foreign raid)     |
+|  * Feederbot morning report in private "feeder monitor" group with meal stats & health heartbeat  |
+|  * Forensic verification stills (annotated infrared frame with YOLOv11 bounding boxes)            |
+|  * Decoupled household ruleset (v10.4): Game outcome layer vs independent Stewards evidence layer|
++---------------------------------------------------------------------------------------------------+
+                                           │
+                                           ▼ (Raw event telemetry & clips)
++---------------------------------------------------------------------------------------------------+
+|                                 FAIL-CLOSED PRIVACY GATE (SECURITY BOUNDARY)                      |
+|                                                                                                   |
+|  1. Person Safety Rule: Fail-closed withholding of media if human presence (Dan_hand) detected    |
+|  2. Relative Match Time: Normalizes wall-clock to T+00:00 (kibble drop anchor); hides schedules   |
+|  3. Visual Masking: 16:9 crop framing strictly isolates bowl arenas; room background masked       |
+|  4. Surveillance Audio Removal: All ambient audio stripped; synthesized 8-bit arcade SFX only     |
+|  5. Deterministic Vault Retention: Strictly 3 Dan wins + 3 Sanbo raids (max 6 active replays)     |
++---------------------------------------------------------------------------------------------------+
+                                           │
+                                           ▼ (Sanitized match telemetry)
++---------------------------------------------------------------------------------------------------+
+|                               PUBLIC SHOWCASE & INTERACTIVE REPLAY                                |
+|                                                                                                   |
+|  [STAGE D · FIGMA EXPERIENCE DESIGN]                                                              |
+|  * "Game Room v4" productization design system translating CV telemetry into 1994 retro arcade    |
+|  * NIKUKYU NK-500R 14" Trinitron CRT emulator: scanlines, audio toggles, lane switcher, HUD      |
+|                                          │                                                        |
+|                                          ▼ (Arcade UI assets & presentation code)                 |
+|  [STAGE E · GITHUB PUBLIC WEB APP]                                                                |
+|  * Public GitHub Repository (iknoest/kibble-rumble): curated technical core (fair-feeder/)        |
+|  * Clean git history with zero household images; showcase videos delivered via Release v1.0.0     |
+|  * Live GitHub Pages Web Application (iknoest.github.io/kibble-rumble): playable daily bouts      |
++---------------------------------------------------------------------------------------------------+
 ```
 
 ---
@@ -68,28 +77,50 @@ The system monitors two physical feeding stations in separate areas of the home:
 
 ---
 
-## 3. Computer Vision & Event Extraction
+## 3. Computer Vision & Roboflow Dataset Layer (Stage B)
 
-### Vision Model
-The detection core uses a custom-trained **YOLOv11** model with 5 domain classes:
-1. `Dan`: Tuxedo cat (black & white coat, white chest/paws).
-2. `Sanbo`: Calico cat (tricolor calico pattern, agile build).
-3. `Dan_hand`: Human hand/arm during manual feeder maintenance (trigger for Person Safety withholding).
-4. `Bowl`: Feeding dish boundary.
-5. `Kibble`: Individual dry food pieces.
+### Roboflow Dataset Curation ("IR kibble")
+Ground truth annotations are managed through the Roboflow project `IR kibble` (930+ curated and annotated frames):
+- **Multi-Class Annotations**: 5 domain classes:
+  1. `Dan`: Tuxedo cat (black & white coat, white chest/paws).
+  2. `Sanbo`: Calico cat (tricolor calico pattern, agile build).
+  3. `Dan_hand`: Human hand/arm during manual feeder maintenance (Person Safety gate trigger).
+  4. `Bowl`: Feeding dish boundary.
+  5. `Kibble`: Individual dry food pellets.
+- **Split Hygiene**: Strict Train / Validation / Test separation enforced by feeding session to eliminate temporal data leakage.
+- **Spectral Balance**: Stratified curation combines zero-lux 850nm infrared frames (Tapo IR) and ambient daylight frames (Logitech USB).
 
-All inference runs at native 16:9 aspect ratio (`rect=True`) to avoid bounding box distortion.
-
-### Event Extraction Engine
-From raw frame-by-frame detections, the engine derives discrete timeline events:
-- `food_dispensed`: Kibble released into bowl. Defines time zero ($T+00:00$).
-- `cat_arrival`: Primary cat arrives at their home feeder.
-- `foreign_arrival`: Cat detected visiting the *other* cat's feeder (cross-feeder raid event).
-- `meal_finish`: Bowl cleared and cat departs.
+### YOLOv11 Edge Detection Core
+- Custom YOLOv11 edge model fine-tuned for small-object (kibble) and low-contrast IR detection.
+- Native 16:9 aspect ratio preserved (`rect=True`, single `imgsz`) to eliminate bounding-box stretching distortion.
+- Dynamic class index mapping using `model.names` (never hardcoded integer indexes).
+- **Validation Benchmark Context**: Historical V14 split benchmark achieved $mAP_{50} = 0.957$. (Note: Benchmark is split-dependent; evaluated continuously via active learning).
 
 ---
 
-## 4. Household Championship Game Rules (`v10.4-household`)
+## 4. Daily Operations & Feederbot Telegram Reporting (Stage C)
+
+### Automated Morning Analysis Pipeline
+The operational pipeline executes daily at breakfast time:
+- Ingests motion clips captured during morning feeding sessions.
+- Runs YOLOv11 inference across temporal clips, stitching sequences where inter-clip gaps $\le 10\text{s}$.
+- Derives discrete timeline events:
+  - `food_dispensed`: Kibble released into bowl. Defines relative match zero ($T+00:00$).
+  - `cat_arrival`: Primary cat arrives at home feeder.
+  - `foreign_arrival`: Cross-feeder visit (Sanbo raid attempt at Dan's bowl).
+  - `meal_finish`: Bowl cleared and cat departs.
+  - Pre-cat kibble snapshot: Emits clean pre-cat kibble dispensed snapshot before cat arrival.
+
+### Feederbot Telegram Morning Report
+Operational results are delivered directly to the private family Telegram group (`"feeder monitor"`):
+- **Breakfast Summary**: Date, dispensed kibble count, remaining kibble count, total eaten duration.
+- **Timeline & Raids**: Dan arrival timestamp, raid attempt alerts, feeder status.
+- **Forensic Verification Stills**: Delivers infrared frames with YOLOv11 bounding boxes (confirming cat presence, bowl bounds, and kibble clearance).
+- **System Health Heartbeat**: Validates camera synchronization, Google Drive registries, and local storage headroom.
+
+---
+
+## 5. Household Championship Game Rules (`v10.4-household`)
 
 The engine derives competitive outcomes for KIBBLE RUMBLE '94 using a **decoupled two-tier architecture** separating the competitive match outcome from physical evidence verification:
 
@@ -119,9 +150,28 @@ Maintains independent forensic verification of video and sensor feeds:
 
 ---
 
-## 5. Privacy & Sanitization Boundary
+## 6. Figma Experience Design & Productization (Stage D)
 
-Fair Feeder enforces a strict privacy gate between private on-premise operations and the public presentation:
+To transform raw feeding telemetry into an engaging public experience, the productization layer was prototyped and defined in Figma (`Game Room v4 · Today`):
+
+- **Design System & Visual Language**:
+  - Retro 1994 Japanese arcade aesthetic (green phosphor CRT raster, neon action amber, LCD displays).
+  - Custom pixel typography, authentic Japanese arcade badging, and tactile mechanical switch styling.
+  - Split-lane visual balance: Lane 1 (The Arena · Dan's Bowl) vs Lane 2 (Home Base · Sanbo's Feeder).
+- **NIKUKYU NK-500R Virtual CRT Chassis**:
+  - Emulates a fictional 1994 Japanese Trinitron-style 14-inch color video monitor.
+  - Real-time CRT scanlines, bloom shader, and barrel curvature filter.
+  - Physical controls: CRT power toggle, scanline filter switch, stereo 8-bit arcade audio toggle, and cassette tape selector.
+- **Head-to-Head Arcade HUD**:
+  - Live match clock normalized to kibble drop ($T+MM:SS$).
+  - Kibble health bar remaining gauge and feeding duration tracker.
+  - Printable retro match result cards and monthly ASCII weight progression charts.
+
+---
+
+## 7. Privacy & Sanitization Boundary (Fail-Closed Gate)
+
+Fair Feeder enforces a strict fail-closed privacy gate between private on-premise operations and the public presentation:
 
 | Aspect | Private Operations (Kept Private) | Public Technical Core / KIBBLE RUMBLE |
 | :--- | :--- | :--- |
@@ -134,7 +184,7 @@ Fair Feeder enforces a strict privacy gate between private on-premise operations
 
 ---
 
-## 6. Continuous Data Flywheel & Improvement Loop
+## 8. Continuous Data Flywheel & Improvement Loop
 
 Rather than manually reviewing hours of footage, the system implements an active learning feedback loop to continuously refine detection accuracy:
 
@@ -155,7 +205,7 @@ Rather than manually reviewing hours of footage, the system implements an active
 
 ---
 
-## 7. Public Technical Core Notice & Licensing
+## 9. Public Technical Core Notice & Licensing
 
 The source code and documentation published under `fair-feeder/` represent a curated, sanitized technical core demonstrating the multi-camera computer vision models, motion buffers, and rule mechanics.
 
