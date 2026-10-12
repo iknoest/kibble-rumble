@@ -1,13 +1,45 @@
 {
   "schema": "kibble-rumble.public/1",
-  "published_on": "2026-10-11",
+  "published_on": "2026-10-12",
   "result_rule": "v10.4-household",
   "retention": {
     "per_cat": 3,
     "max_total": 6
   },
-  "latest_match_id": "2026-10-11",
+  "latest_match_id": "2026-10-12",
   "matches": [
+    {
+      "match_id": "2026-10-12",
+      "date": "2026-10-12",
+      "label": "MON 12 OCT 2026",
+      "dow": "MON",
+      "duration_s": 291,
+      "duration_str": "04:51",
+      "result": "DAN_WIN",
+      "winner": "dan",
+      "basis": "DEFENDED",
+      "rule": "SANBO NEVER ENTERED DAN'S BOWL AND DAN CLEARED HIS BREAKFAST.",
+      "bonus": {
+        "kind": "DAN RAID",
+        "label": "DAN RAIDED SANBO",
+        "camera": "LOGITECH"
+      },
+      "stewards": "CLEAN",
+      "stewards_detail": "CLEAN MATCH",
+      "kibble": {
+        "start": 33,
+        "end": 0,
+        "consumed": 33,
+        "dan": 33,
+        "sanbo": 0
+      },
+      "meal_finished": true,
+      "replay": {
+        "status": "not_available",
+        "error": "ffmpeg failed: ll_comp]; [full_comp]drawbox=x=440:y=0:w=280:h=34:color=0x141418:t=fill,drawbox=x=440:y=886:w=280:h=34:color=0x141418:t=fill,drawbox=x=15:y=439:w=135:h=23:color=0x141418:t=fill,drawbox=x=0:y=34:w=262:h=18:color=0x141418:t=fill matches no streams.\nError initializing complex filters: Invalid argument\n"
+      },
+      "memories_count": 3
+    },
     {
       "match_id": "2026-10-11",
       "date": "2026-10-11",
