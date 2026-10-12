@@ -605,10 +605,14 @@ window.KR_DATA = {
       },
       "meal_finished": true,
       "replay": {
-        "status": "not_available",
-        "error": "ffmpeg failed: ll_comp]; [full_comp]drawbox=x=440:y=0:w=280:h=34:color=0x141418:t=fill,drawbox=x=440:y=886:w=280:h=34:color=0x141418:t=fill,drawbox=x=15:y=439:w=135:h=23:color=0x141418:t=fill,drawbox=x=0:y=34:w=262:h=18:color=0x141418:t=fill matches no streams.\nError initializing complex filters: Invalid argument\n"
+        "status": "retained",
+        "src": "media/2026-10-12-0de12ba4-v3.mp4",
+        "sha256": "bfb953b6da25554d0fb0edf04cd07b34d5057eb5ea83489d469ba0e8120d5060",
+        "bytes": 4176541,
+        "duration_s": 72.8,
+        "speed": 4
       },
-      "memories_count": 3
+      "memories_count": 4
     },
     {
       "match_id": "2026-10-11",
@@ -888,7 +892,7 @@ window.KR_DATA = {
       },
       "meal_finished": true,
       "replay": {
-        "status": "retained",
+        "status": "aged",
         "src": "media/2026-09-13-0ca9a6da-v3.mp4",
         "sha256": "7103374988ecfd91e70554bfb65ccd8542e9105629afdc01ca2affd6fb7cfee7",
         "bytes": 5588596,
@@ -981,7 +985,8 @@ window.KR_DATA = {
           "cat": "none",
           "confidence": 1.0,
           "feeder": "Dan feeder",
-          "notes": "Food dispensed (~33 kibble)"
+          "notes": "Food dispensed (~33 kibble)",
+          "seek_t": 13.5
         },
         {
           "t": 0,
@@ -993,7 +998,8 @@ window.KR_DATA = {
           "cat": "Dan",
           "confidence": 0.95,
           "feeder": "Dan feeder",
-          "notes": "Dan arrived at Dan feeder"
+          "notes": "Dan arrived at Dan feeder",
+          "seek_t": 14.0
         },
         {
           "t": 125,
@@ -1005,7 +1011,8 @@ window.KR_DATA = {
           "cat": "Dan",
           "confidence": 1.0,
           "feeder": "Dan feeder",
-          "notes": "Dan feeder meal finished"
+          "notes": "Dan feeder meal finished",
+          "seek_t": 171.5
         },
         {
           "t": 291,
@@ -1060,6 +1067,20 @@ window.KR_DATA = {
           "event_type": "cat_arrival"
         },
         {
+          "n": 3,
+          "kind": "counter_raid",
+          "label": "DAN COUNTER RAID",
+          "title": "DAN COUNTER RAID",
+          "rel_time": "PRE-MATCH",
+          "event_time": "PRE-MATCH",
+          "t": -14,
+          "t_s": -14,
+          "cat": "both",
+          "feeder": "Sanbo feeder",
+          "src": "media/2026-10-12-memories-3-v3.jpg",
+          "event_type": "cat_arrival"
+        },
+        {
           "n": 4,
           "kind": "finish",
           "label": "BOWL CLEARED",
@@ -1098,6 +1119,17 @@ window.KR_DATA = {
           "feeder": "Dan feeder"
         },
         {
+          "n": 3,
+          "kind": "counter_raid",
+          "title": "DAN COUNTER RAID",
+          "src": "media/2026-10-12-memories-3-v3.jpg",
+          "event_type": "cat_arrival",
+          "event_time": "PRE-MATCH",
+          "t": -14,
+          "cat": "both",
+          "feeder": "Sanbo feeder"
+        },
+        {
           "n": 4,
           "kind": "finish",
           "title": "BOWL CLEARED",
@@ -1109,10 +1141,28 @@ window.KR_DATA = {
           "feeder": "Dan feeder"
         }
       ],
-      "video": null,
+      "video": {
+        "src": "media/2026-10-12-0de12ba4-v3.mp4",
+        "speed": 4,
+        "clock_t0": -14,
+        "layout": {
+          "tapo_y": 34,
+          "bar_y": 439,
+          "bar_h": 42,
+          "logi_y": 481,
+          "lane_w": 720,
+          "lane_h": 405,
+          "track_x0": 20,
+          "track_x1": 700
+        }
+      },
       "replay": {
-        "status": "not_available",
-        "error": "ffmpeg failed: ll_comp]; [full_comp]drawbox=x=440:y=0:w=280:h=34:color=0x141418:t=fill,drawbox=x=440:y=886:w=280:h=34:color=0x141418:t=fill,drawbox=x=15:y=439:w=135:h=23:color=0x141418:t=fill,drawbox=x=0:y=34:w=262:h=18:color=0x141418:t=fill matches no streams.\nError initializing complex filters: Invalid argument\n"
+        "status": "retained",
+        "src": "media/2026-10-12-0de12ba4-v3.mp4",
+        "sha256": "bfb953b6da25554d0fb0edf04cd07b34d5057eb5ea83489d469ba0e8120d5060",
+        "bytes": 4176541,
+        "duration_s": 72.8,
+        "speed": 4
       },
       "replay_withheld": false
     },
@@ -2877,23 +2927,9 @@ window.KR_DATA = {
       },
       "memories": [],
       "stills": [],
-      "video": {
-        "src": "media/2026-09-13-0ca9a6da-v3.mp4",
-        "speed": 4,
-        "clock_t0": -5,
-        "layout": {
-          "tapo_y": 34,
-          "bar_y": 439,
-          "bar_h": 42,
-          "logi_y": 481,
-          "lane_w": 720,
-          "lane_h": 405,
-          "track_x0": 20,
-          "track_x1": 700
-        }
-      },
+      "video": null,
       "replay": {
-        "status": "retained",
+        "status": "aged",
         "src": "media/2026-09-13-0ca9a6da-v3.mp4",
         "sha256": "7103374988ecfd91e70554bfb65ccd8542e9105629afdc01ca2affd6fb7cfee7",
         "bytes": 5588596,

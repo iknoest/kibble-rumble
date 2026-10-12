@@ -66,23 +66,9 @@
   },
   "memories": [],
   "stills": [],
-  "video": {
-    "src": "media/2026-09-13-0ca9a6da-v3.mp4",
-    "speed": 4,
-    "clock_t0": -5,
-    "layout": {
-      "tapo_y": 34,
-      "bar_y": 439,
-      "bar_h": 42,
-      "logi_y": 481,
-      "lane_w": 720,
-      "lane_h": 405,
-      "track_x0": 20,
-      "track_x1": 700
-    }
-  },
+  "video": null,
   "replay": {
-    "status": "retained",
+    "status": "aged",
     "src": "media/2026-09-13-0ca9a6da-v3.mp4",
     "sha256": "7103374988ecfd91e70554bfb65ccd8542e9105629afdc01ca2affd6fb7cfee7",
     "bytes": 5588596,

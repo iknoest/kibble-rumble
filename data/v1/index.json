@@ -35,10 +35,14 @@
       },
       "meal_finished": true,
       "replay": {
-        "status": "not_available",
-        "error": "ffmpeg failed: ll_comp]; [full_comp]drawbox=x=440:y=0:w=280:h=34:color=0x141418:t=fill,drawbox=x=440:y=886:w=280:h=34:color=0x141418:t=fill,drawbox=x=15:y=439:w=135:h=23:color=0x141418:t=fill,drawbox=x=0:y=34:w=262:h=18:color=0x141418:t=fill matches no streams.\nError initializing complex filters: Invalid argument\n"
+        "status": "retained",
+        "src": "media/2026-10-12-0de12ba4-v3.mp4",
+        "sha256": "bfb953b6da25554d0fb0edf04cd07b34d5057eb5ea83489d469ba0e8120d5060",
+        "bytes": 4176541,
+        "duration_s": 72.8,
+        "speed": 4
       },
-      "memories_count": 3
+      "memories_count": 4
     },
     {
       "match_id": "2026-10-11",
@@ -318,7 +322,7 @@
       },
       "meal_finished": true,
       "replay": {
-        "status": "retained",
+        "status": "aged",
         "src": "media/2026-09-13-0ca9a6da-v3.mp4",
         "sha256": "7103374988ecfd91e70554bfb65ccd8542e9105629afdc01ca2affd6fb7cfee7",
         "bytes": 5588596,
