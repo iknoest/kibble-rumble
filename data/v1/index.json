@@ -1,13 +1,45 @@
 {
   "schema": "kibble-rumble.public/1",
-  "published_on": "2026-10-12",
+  "published_on": "2026-10-13",
   "result_rule": "v10.4-household",
   "retention": {
     "per_cat": 3,
     "max_total": 6
   },
-  "latest_match_id": "2026-10-12",
+  "latest_match_id": "2026-10-13",
   "matches": [
+    {
+      "match_id": "2026-10-13",
+      "date": "2026-10-13",
+      "label": "TUE 13 OCT 2026",
+      "dow": "TUE",
+      "duration_s": 296,
+      "duration_str": "04:56",
+      "result": "DAN_WIN",
+      "winner": "dan",
+      "basis": "DEFENDED",
+      "rule": "SANBO NEVER ENTERED DAN'S BOWL AND DAN CLEARED HIS BREAKFAST.",
+      "bonus": {
+        "kind": "DAN RAID",
+        "label": "DAN RAIDED SANBO",
+        "camera": "LOGITECH"
+      },
+      "stewards": "CLEAN",
+      "stewards_detail": "CLEAN MATCH",
+      "kibble": {
+        "start": 31,
+        "end": 0,
+        "consumed": 31,
+        "dan": 31,
+        "sanbo": 0
+      },
+      "meal_finished": true,
+      "replay": {
+        "status": "withheld",
+        "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
+      },
+      "memories_count": 0
+    },
     {
       "match_id": "2026-10-12",
       "date": "2026-10-12",
@@ -322,7 +354,7 @@
       },
       "meal_finished": true,
       "replay": {
-        "status": "aged",
+        "status": "not_available",
         "src": "media/2026-09-13-0ca9a6da-v3.mp4",
         "sha256": "7103374988ecfd91e70554bfb65ccd8542e9105629afdc01ca2affd6fb7cfee7",
         "bytes": 5588596,
