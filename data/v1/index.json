@@ -1,13 +1,41 @@
 {
   "schema": "kibble-rumble.public/1",
-  "published_on": "2026-10-14",
+  "published_on": "2026-10-15",
   "result_rule": "v10.4-household",
   "retention": {
     "per_cat": 3,
     "max_total": 6
   },
-  "latest_match_id": "2026-10-14",
+  "latest_match_id": "2026-10-15",
   "matches": [
+    {
+      "match_id": "2026-10-15",
+      "date": "2026-10-15",
+      "label": "THU 15 OCT 2026",
+      "dow": "THU",
+      "duration_s": 348,
+      "duration_str": "05:48",
+      "result": "DAN_WIN",
+      "winner": "dan",
+      "basis": "DEFENDED",
+      "rule": "SANBO NEVER ENTERED DAN'S BOWL AND DAN CLEARED HIS BREAKFAST.",
+      "bonus": null,
+      "stewards": "CLEAN",
+      "stewards_detail": "CLEAN MATCH",
+      "kibble": {
+        "start": 40,
+        "end": 0,
+        "consumed": 40,
+        "dan": 40,
+        "sanbo": 0
+      },
+      "meal_finished": true,
+      "replay": {
+        "status": "withheld",
+        "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
+      },
+      "memories_count": 0
+    },
     {
       "match_id": "2026-10-14",
       "date": "2026-10-14",
@@ -333,33 +361,6 @@
       "replay": {
         "status": "withheld",
         "withheld_reason": "HUMAN_INTERACTION_IN_REPORT: 1 ep (human hand/interaction observed)"
-      },
-      "memories_count": 0
-    },
-    {
-      "match_id": "2026-09-14",
-      "date": "2026-09-14",
-      "label": "MON 14 SEP 2026",
-      "dow": "MON",
-      "duration_s": 309,
-      "duration_str": "05:09",
-      "result": "DAN_WIN",
-      "winner": "dan",
-      "basis": "DEFENDED",
-      "rule": "SANBO NEVER ENTERED DAN'S BOWL AND DAN CLEARED HIS BREAKFAST.",
-      "bonus": null,
-      "stewards": "CLEAN",
-      "stewards_detail": "CLEAN MATCH",
-      "kibble": {
-        "start": 34,
-        "end": 0,
-        "consumed": 34,
-        "dan": 34,
-        "sanbo": 0
-      },
-      "meal_finished": true,
-      "replay": {
-        "status": "not_available"
       },
       "memories_count": 0
     }
