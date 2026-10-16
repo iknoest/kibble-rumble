@@ -1,13 +1,41 @@
 {
   "schema": "kibble-rumble.public/1",
-  "published_on": "2026-10-15",
+  "published_on": "2026-10-16",
   "result_rule": "v10.4-household",
   "retention": {
     "per_cat": 3,
     "max_total": 6
   },
-  "latest_match_id": "2026-10-15",
+  "latest_match_id": "2026-10-16",
   "matches": [
+    {
+      "match_id": "2026-10-16",
+      "date": "2026-10-16",
+      "label": "FRI 16 OCT 2026",
+      "dow": "FRI",
+      "duration_s": 307,
+      "duration_str": "05:07",
+      "result": "DAN_WIN",
+      "winner": "dan",
+      "basis": "DEFENDED",
+      "rule": "SANBO NEVER ENTERED DAN'S BOWL AND DAN CLEARED HIS BREAKFAST.",
+      "bonus": null,
+      "stewards": "CLEAN",
+      "stewards_detail": "CLEAN MATCH",
+      "kibble": {
+        "start": 45,
+        "end": 0,
+        "consumed": 45,
+        "dan": 45,
+        "sanbo": 0
+      },
+      "meal_finished": true,
+      "replay": {
+        "status": "withheld",
+        "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
+      },
+      "memories_count": 0
+    },
     {
       "match_id": "2026-10-15",
       "date": "2026-10-15",
