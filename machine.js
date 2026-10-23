@@ -954,7 +954,16 @@
   async function play() {
     if (S.state === "archive") return S.arTab ? AUDIO.ui("tick") : selectArchive();
     if (S.day && S.day.replay && S.day.replay.status === "withheld") {
-      $("#nosig-text").textContent = "REPLAY WITHHELD · HUMAN PRESENCE DETECTED (PRIVACY GUARD)";
+      const reason = String((S.day.replay && S.day.replay.withheld_reason) || "").toUpperCase();
+      if (!reason || reason.includes("CLEARANCE") || reason.includes("UNAVAILABLE") || reason.includes("MISSING") || reason.includes("ABSENT") || reason.includes("NOT_INSPECTED") || reason.includes("INCOMPLETE") || reason.includes("COVERAGE")) {
+        $("#nosig-text").textContent = "REPLAY WITHHELD · SAFETY CLEARANCE ABSENT";
+      } else if (reason.includes("FACE")) {
+        $("#nosig-text").textContent = "REPLAY WITHHELD · VISIBLE FACE DETECTED (PRIVACY GUARD)";
+      } else if (reason.includes("POSITIVE_HUMAN") || reason.includes("HUMAN_PRESENCE") || reason.includes("HUMAN DETECTED") || reason.includes("DAN_HAND")) {
+        $("#nosig-text").textContent = "REPLAY WITHHELD · HUMAN PRESENCE DETECTED (PRIVACY GUARD)";
+      } else {
+        $("#nosig-text").textContent = "REPLAY WITHHELD · PRIVACY GUARD TRIGGERED";
+      }
       setState("nosignal");
       return;
     }
@@ -1274,7 +1283,9 @@
 
   /* ------------------------------------------------------------ start */
   fit();
-  const start = Math.max(0, DATA.days.findIndex((d) => d.date === DATA.latest));
+  const isPlayable = (d) => !!(d && d.video && d.video.src && (!d.replay || d.replay.status !== "withheld"));
+  const playableIdx = DATA.days.findIndex(isPlayable);
+  const start = playableIdx >= 0 ? playableIdx : Math.max(0, DATA.days.findIndex((d) => d.date === DATA.latest));
   loadDay(start);
   const params = new URLSearchParams(location.search);
   if (params.has("tape")) { const i = DATA.days.findIndex((d) => d.date === params.get("tape")); if (i >= 0) loadDay(i); }
