@@ -633,10 +633,14 @@ window.KR_DATA = {
       },
       "meal_finished": true,
       "replay": {
-        "status": "withheld",
-        "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
+        "status": "retained",
+        "src": "media/2026-10-24-54a334de-v3.mp4",
+        "sha256": "d3b7ddad70019ecc09c3fbdd760728c7e779edf465ef02e6308987659a2fb4fc",
+        "bytes": 5640172,
+        "duration_s": 81.8,
+        "speed": 4
       },
-      "memories_count": 0
+      "memories_count": 3
     },
     {
       "match_id": "2026-10-18",
@@ -1251,14 +1255,109 @@ window.KR_DATA = {
         "event_log": true,
         "sanbo_never_at_dan_feeder": true
       },
-      "memories": [],
-      "stills": [],
-      "video": null,
-      "replay": {
-        "status": "withheld",
-        "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
+      "memories": [
+        {
+          "n": 1,
+          "kind": "dispensed",
+          "label": "KIBBLE DROP",
+          "title": "KIBBLE DROP",
+          "rel_time": "T+00:00",
+          "event_time": "T+00:00",
+          "t": 0,
+          "t_s": 0,
+          "cat": "none",
+          "feeder": "Dan feeder",
+          "src": "media/2026-10-24-memories-1-v3.jpg",
+          "event_type": "food_dispensed"
+        },
+        {
+          "n": 2,
+          "kind": "arrival",
+          "label": "DAN ARRIVES",
+          "title": "DAN ARRIVES",
+          "rel_time": "T+00:00",
+          "event_time": "T+00:00",
+          "t": 0,
+          "t_s": 0,
+          "cat": "Dan",
+          "feeder": "Dan feeder",
+          "src": "media/2026-10-24-memories-2-v3.jpg",
+          "event_type": "cat_arrival"
+        },
+        {
+          "n": 3,
+          "kind": "counter_raid",
+          "label": "DAN COUNTER RAID",
+          "title": "DAN COUNTER RAID",
+          "rel_time": "PRE-MATCH",
+          "event_time": "PRE-MATCH",
+          "t": -14,
+          "t_s": -14,
+          "cat": "both",
+          "feeder": "Sanbo feeder",
+          "src": "media/2026-10-24-memories-3-v3.jpg",
+          "event_type": "cat_arrival"
+        }
+      ],
+      "stills": [
+        {
+          "n": 1,
+          "kind": "dispensed",
+          "title": "KIBBLE DROP",
+          "src": "media/2026-10-24-memories-1-v3.jpg",
+          "event_type": "food_dispensed",
+          "event_time": "T+00:00",
+          "t": 0,
+          "cat": "none",
+          "feeder": "Dan feeder"
+        },
+        {
+          "n": 2,
+          "kind": "arrival",
+          "title": "DAN ARRIVES",
+          "src": "media/2026-10-24-memories-2-v3.jpg",
+          "event_type": "cat_arrival",
+          "event_time": "T+00:00",
+          "t": 0,
+          "cat": "Dan",
+          "feeder": "Dan feeder"
+        },
+        {
+          "n": 3,
+          "kind": "counter_raid",
+          "title": "DAN COUNTER RAID",
+          "src": "media/2026-10-24-memories-3-v3.jpg",
+          "event_type": "cat_arrival",
+          "event_time": "PRE-MATCH",
+          "t": -14,
+          "cat": "both",
+          "feeder": "Sanbo feeder"
+        }
+      ],
+      "video": {
+        "src": "media/2026-10-24-54a334de-v3.mp4",
+        "speed": 4,
+        "clock_t0": -14,
+        "layout": {
+          "tapo_y": 34,
+          "bar_y": 439,
+          "bar_h": 42,
+          "logi_y": 481,
+          "lane_w": 720,
+          "lane_h": 405,
+          "track_x0": 20,
+          "track_x1": 700
+        }
       },
-      "replay_withheld": true
+      "replay": {
+        "status": "retained",
+        "src": "media/2026-10-24-54a334de-v3.mp4",
+        "sha256": "d3b7ddad70019ecc09c3fbdd760728c7e779edf465ef02e6308987659a2fb4fc",
+        "bytes": 5640172,
+        "duration_s": 81.8,
+        "speed": 4
+      },
+      "replay_withheld": false
     },
     {
       "schema": "kibble-rumble.public/1",

@@ -63,10 +63,14 @@
       },
       "meal_finished": true,
       "replay": {
-        "status": "withheld",
-        "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
+        "status": "retained",
+        "src": "media/2026-10-24-54a334de-v3.mp4",
+        "sha256": "d3b7ddad70019ecc09c3fbdd760728c7e779edf465ef02e6308987659a2fb4fc",
+        "bytes": 5640172,
+        "duration_s": 81.8,
+        "speed": 4
       },
-      "memories_count": 0
+      "memories_count": 3
     },
     {
       "match_id": "2026-10-18",
