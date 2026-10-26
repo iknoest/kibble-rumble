@@ -1210,3 +1210,44 @@ body{position:relative}
   .fp-btn{font-size:1.5cqw}
 }
 
+/* ============================================================ Meme Card Collection MVP */
+.mc-sub{display:flex;justify-content:space-between;align-items:center;padding:.8cqh 1.2cqw;background:#060818;border:.25cqw solid #2b3577;font-family:var(--pix);font-size:.95cqw;color:#9fb4ff;margin-bottom:1.2cqh}
+.mc-meter{font-family:var(--mono);color:#ffd21f;letter-spacing:1px}
+.mc-wrap{display:grid;grid-template-columns:1fr 1fr;gap:1.6cqw;max-height:58cqh;overflow-y:auto;padding-right:.4cqw}
+.mc-col{display:flex;flex-direction:column;gap:1cqh}
+.mc-col.p1{color:var(--p1)}.mc-col.p2{color:var(--p2)}
+.mc-col-hd{display:flex;justify-content:space-between;align-items:baseline;padding:.4cqh .8cqw;border-bottom:.25cqw solid currentColor;font-family:var(--pix);font-size:1.1cqw}
+.mc-col-hd span{font-size:.85cqw;color:#9fb4ff}
+.mc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1cqw}
+.mc-card{display:flex;flex-direction:column;gap:.6cqh;padding:1cqh 1cqw;background:#050714;border:.25cqw solid currentColor;box-shadow:.3cqw .3cqw 0 #000;position:relative}
+.mc-card.locked{border-style:dashed;color:#5a6699;background:#03050c}
+.mc-img{width:100%;aspect-ratio:4/3;background:#000;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center}
+.mc-img img{width:100%;height:100%;object-fit:cover;display:block}
+.mc-img .synth{position:absolute;left:0;bottom:0;right:0;font-family:var(--pix);font-size:.62cqw;background:rgba(0,0,0,.85);color:#ffd21f;padding:.2cqh .4cqw;text-align:center;letter-spacing:.5px;border-top:.1cqw solid rgba(255,210,31,.4);z-index:2}
+.mc-img.locked{background:radial-gradient(circle,rgba(43,53,119,.4) 0%,#000 85%);border:.15cqw solid #1f2759}
+.mc-lock-box{display:flex;flex-direction:column;align-items:center;gap:.4cqh}
+.mc-q{font-family:var(--disp);font-size:3.2cqw;color:#ffd21f;line-height:1;text-shadow:0 0 .5cqw rgba(255,210,31,.5)}
+.mc-lock-box small{font-family:var(--pix);font-size:.75cqw;color:#7f8bc0;letter-spacing:1px}
+.mc-body{display:flex;flex-direction:column;gap:.3cqh}
+.mc-tag{font-family:var(--pix);font-size:.75cqw;color:#7f8bc0}
+.mc-body b{font-family:var(--disp);font-size:1.5cqw;line-height:1.1;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mc-body p{font-family:var(--pix);font-size:.68cqw;line-height:1.4;color:#b0beeb;margin:0;min-height:2.4cqh}
+.mc-hint{color:#ffd21f !important}
+.mc-status{font-family:var(--pix);font-size:.72cqw;padding:.2cqh .5cqw;border:.15cqw solid currentColor;align-self:flex-start;margin-top:.3cqh}
+.mc-status.ok{color:#3dff7a;border-color:#3dff7a}
+.mc-status.lock{color:#8892be;border-color:#394375}
+
+@container screen (aspect-ratio < 1){
+  .mc-sub{flex-direction:column;gap:.6cqh;font-size:1.4cqw;align-items:flex-start}
+  .mc-meter{font-size:1.6cqw}
+  .mc-wrap{grid-template-columns:1fr;gap:2cqh;max-height:52cqh}
+  .mc-col-hd{font-size:1.8cqw}
+  .mc-col-hd span{font-size:1.3cqw}
+  .mc-grid{grid-template-columns:1fr 1fr;gap:1.6cqw}
+  .mc-q{font-size:5cqw}
+  .mc-body b{font-size:2.2cqw}
+  .mc-body p{font-size:1.1cqw;min-height:3cqh}
+  .mc-tag{font-size:1.1cqw}
+  .mc-status{font-size:1.1cqw}
+}
+

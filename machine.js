@@ -98,7 +98,42 @@
     if (!pick) return { id: "none", text: "NO BET PLACED", tone: "white" };
     return pick === outcome.winner ? { id: "win", text: "YOU CALLED IT!", tone: "green" } : { id: "lose", text: "YOU LOST THE BET", tone: "red" };
   }
+  function ensureReactionRules() {
+    const R = DATA.reaction_registry;
+    if (!R || !R.rules) return;
+    const rIds = new Set(R.rules.map((r) => r.id));
+    if (!rIds.has("sanbo-win-you-backed-sanbo")) {
+      R.rules.splice(1, 0, {
+        id: "sanbo-win-you-backed-sanbo",
+        when: { game: "SANBO_WIN", pick: "sanbo" },
+        primary: "sanbo-sunglasses",
+        label: "YOU CALLED THE RAID!",
+        why: "Sanbo entered Dan's bowl and you backed Sanbo. Deal with it."
+      });
+    }
+    if (!rIds.has("no-contest-you-backed-sanbo")) {
+      R.rules.splice(R.rules.length - 1, 0, {
+        id: "no-contest-you-backed-sanbo",
+        when: { game: "NO_CONTEST", pick: "sanbo" },
+        primary: "sanbo-huh",
+        label: "PUZZLED RAIDER",
+        why: "The match state is unresolved and you backed Sanbo."
+      });
+    }
+    const evIds = new Set((R.event_reactions || []).map((e) => e.id));
+    if (!evIds.has("dan-raid-bonus")) {
+      (R.event_reactions = R.event_reactions || []).unshift({
+        id: "dan-raid-bonus",
+        when: { fact: "takeover_by_dan" },
+        asset: "dan-take-some",
+        label: "BONUS EVENT · DAN RAID",
+        why: "Dan raided Sanbo's feeder in the foreign lane."
+      });
+    }
+  }
+
   function pickReaction(d, outcome, pick) {
+    ensureReactionRules();
     const R = DATA.reaction_registry, f = d.facts || {};
     const fits = (w) => (!w.game || w.game === outcome.id) && (!w.basis || w.basis === outcome.basis) && (!w.pick || w.pick === pick) && (!w.fact || f[w.fact]);
     const rule = R.rules.find((r) => fits(r.when)) || null;
@@ -408,17 +443,126 @@
     rib(e1, "#rb1"); rib(e2, "#rb2");
   }
 
-  /* ARCHIVE has two tabs (◀ ▶): MATCH TAPES (replays) and PLAYER RECORD (30-day metadata, no video).
-   * Spoiler rule: a tape's outcome, steward status and vault slot appear only after its RESULT was seen. */
-  const AR_TABS = ["MATCH TAPES", "PLAYER RECORD", "FIGHTERS"];
+  /* ARCHIVE has four tabs (◀ ▶): MATCH TAPES, PLAYER RECORD, FIGHTERS, and MEME CARDS.
+   * Spoiler rule: a tape's outcome, steward status and deck slot appear only after its RESULT was seen. */
+  const AR_TABS = ["MATCH TAPES", "PLAYER RECORD", "FIGHTERS", "MEME CARDS"];
   const dm = (d) => `${d.date.slice(8)} ${d.label.split(" ")[2]}`;
   const STEWARD = { "CLEAN MATCH": "CLEAN", "STEWARDS REVIEW": "REVIEW" };
-  // Replay-vault policy (planned retention, not implemented here): last 3 DAN WIN + last 3 SANBO WIN, max 6; NO CONTEST keeps none.
+
+  const MEME_CARDS = [
+    // P1 DAN CARDS
+    {
+      id: "dan-sunglasses",
+      cat: "dan",
+      player: "P1",
+      name: "SUNGLASSES",
+      title: "BREAKFAST DEFENDED",
+      file: "assets/memes/dan-sunglasses.jpg",
+      hint: "WITNESS DAN DEFEND & CLEAR HIS BOWL (DAN WIN)",
+      story: "Dan cleared his bowl with zero Sanbo intake",
+    },
+    {
+      id: "dan-yamcha-defeat",
+      cat: "dan",
+      player: "P1",
+      name: "YAMCHA DEFEAT",
+      title: "DAN LOST HIS BREAKFAST",
+      file: "assets/memes/dan-yamcha-defeat.jpg",
+      hint: "BACK DAN IN A MATCH WHERE SANBO RAIDS HIS BOWL",
+      story: "Sanbo raided Dan's feeder after you backed Dan",
+    },
+    {
+      id: "dan-huh",
+      cat: "dan",
+      player: "P1",
+      name: "HUH CAT",
+      title: "UNRESOLVED MYSTERY",
+      file: "assets/memes/dan-huh.jpg",
+      hint: "INSPECT THE RESULT OF AN UNRESOLVED 'NO CONTEST' TAPE",
+      story: "Unresolved match outcome without conclusive event log",
+    },
+    {
+      id: "dan-take-some",
+      cat: "dan",
+      player: "P1",
+      name: "CHOPSTICKS RAID",
+      title: "DAN COUNTER-RAID",
+      file: "assets/memes/dan-take-some.jpg",
+      hint: "VIEW A MATCH WHERE DAN RAIDS SANBO'S FEEDER (BONUS EVENT)",
+      story: "Dan entered Sanbo's feeding lane in a bonus raid",
+    },
+
+    // P2 SANBO CARDS
+    {
+      id: "sanbo-take-some",
+      cat: "sanbo",
+      player: "P2",
+      name: "RAID CHOPSTICKS",
+      title: "RAID SUCCESS!",
+      file: "assets/memes/sanbo-take-some.jpg",
+      hint: "WITNESS SANBO ENTER DAN'S BOWL (SANBO WIN)",
+      story: "Sanbo entered Dan's bowl: house rule raid victory",
+    },
+    {
+      id: "sanbo-crying",
+      cat: "sanbo",
+      player: "P2",
+      name: "CRYING CAT",
+      title: "NOT TODAY, SANBO",
+      file: "assets/memes/sanbo-crying.jpg",
+      hint: "BACK SANBO IN A MATCH WHERE DAN DEFENDS HIS BOWL",
+      story: "Dan defended his feeder after you backed Sanbo",
+    },
+    {
+      id: "sanbo-sunglasses",
+      cat: "sanbo",
+      player: "P2",
+      name: "SUNGLASSES",
+      title: "YOU CALLED THE RAID",
+      file: "assets/memes/sanbo-sunglasses.jpg",
+      hint: "BACK SANBO IN A MATCH WHERE SANBO SUCCESSFULLY RAIDS",
+      story: "Sanbo successfully raided Dan's bowl and you called it",
+    },
+    {
+      id: "sanbo-huh",
+      cat: "sanbo",
+      player: "P2",
+      name: "PUZZLED RAIDER",
+      title: "UNRESOLVED RAID",
+      file: "assets/memes/sanbo-huh.jpg",
+      hint: "INSPECT AN UNRESOLVED 'NO CONTEST' TAPE (SPECIAL DOUBLE UNLOCK)",
+      story: "Puzzled raider in an unresolved match state",
+    },
+  ];
+
+  const MEMES_KEY = "kr94.memes.unlocked";
+  function getUnlockedMemes() {
+    try {
+      const raw = localStorage.getItem(MEMES_KEY);
+      if (raw) return new Set(JSON.parse(raw));
+    } catch (e) { /* fallback if localStorage blocked */ }
+    return S.unlockedMemes || new Set();
+  }
+  function saveUnlockedMeme(assetId) {
+    if (!assetId) return false;
+    const set = getUnlockedMemes();
+    if (set.has(assetId)) return false;
+    set.add(assetId);
+    S.unlockedMemes = set;
+    try {
+      localStorage.setItem(MEMES_KEY, JSON.stringify([...set]));
+    } catch (e) { /* in-memory fallback */ }
+    return true;
+  }
+
+  // Featured Replay Deck status in archive list
   function vaultSlot(d) {
-    const g = gameOutcome(d);
-    if (!g.winner) return { id: "none", text: "NO VAULT SLOT" };
-    const rank = DATA.days.filter((x) => gameOutcome(x).winner === g.winner && x.date >= d.date).length;
-    return rank <= 3 ? { id: "vault", text: `IN VAULT · ${g.winner === "dan" ? "DAN" : "SANBO"} ${rank}/3` } : { id: "aged", text: "AGED OUT" };
+    const deck = DATA.featured_deck || DATA.showcase;
+    if (deck && deck.latest && deck.latest.includes(d.date)) return { id: "vault", text: "IN DECK · LATEST" };
+    if (deck && deck.classics && deck.classics.includes(d.date)) return { id: "vault", text: "IN DECK · CLASSIC" };
+    if (d.video && (!d.replay || d.replay.status !== "withheld")) return { id: "aged", text: "ARCHIVE REPLAY" };
+    if (d.replay && d.replay.status === "withheld") return { id: "none", text: "WITHHELD" };
+    return { id: "none", text: "DATA ONLY" };
   }
   function recordToday() {
     const q = new URLSearchParams(location.search).get("today");   // review/test override only
@@ -451,9 +595,10 @@
   }
   function renderArchive() {
     const tabs = AR_TABS.map((t, i) => `<span class="ar-tab${i === S.arTab ? " on" : ""}">${t}</span>`).join("");
-    const head = `<div class="ar-head"><b>${["SELECT MATCH", "PLAYER RECORD", "FIGHTER PROFILE"][S.arTab]}</b><div class="ar-tabs"><i>◀</i>${tabs}<i>▶</i></div></div>`;
+    const head = `<div class="ar-head"><b>${["SELECT MATCH", "PLAYER RECORD", "FIGHTER PROFILE", "MEME CARD COLLECTION"][S.arTab]}</b><div class="ar-tabs"><i>◀</i>${tabs}<i>▶</i></div></div>`;
     if (S.arTab === 1) { $("#s-archive").innerHTML = head + renderRecord(); return; }
     if (S.arTab === 2) { $("#s-archive").innerHTML = head + renderFighters(); return; }
+    if (S.arTab === 3) { $("#s-archive").innerHTML = head + renderMemeCards(); return; }
     const rows = DATA.days.map((d, i) => {
       const isWithheld = d.replay && d.replay.status === "withheld";
       const media = isWithheld ? "WITHHELD" : d.video ? `VIDEO${d.stills && d.stills.length ? ` · ${d.stills.length} STILLS` : ""}` : "NO VIDEO";
@@ -468,7 +613,7 @@
     }).join("");
     $("#s-archive").innerHTML = `${head}
       <div class="ar-list">${rows}</div>
-      <div class="ar-vault"><b>REPLAY VAULT</b><span>KEEPS THE LAST 3 DAN WIN + LAST 3 SANBO WIN REPLAYS · MAX 6 · NO CONTEST EARNS NO SLOT · PROTOTYPE SHOWS ALL LOCAL TAPES</span></div>
+      <div class="ar-vault"><b>FEATURED REPLAY DECK</b><span>CURATES 3 LATEST PLAYABLE REPLAYS + UP TO 4 BALANCED CLASSICS · FULL MATCH RECORDS IN ARCHIVE</span></div>
       <div class="ar-foot"><span>↑↓ SELECT · ▶ PLAY / ENTER LOAD · ◀ ▶ TAB</span><span>■ STOP / ESC BACK</span></div>`;
   }
   function renderRecord() {
@@ -611,6 +756,75 @@
       <div class="ar-foot"><span>◀ ▶ TAB · 1/2 SELECT FIGHTER</span><span>■ STOP / ESC BACK</span></div>`;
   }
 
+  /* MEME CARD COLLECTION: retro 1994 CRT gallery tracking unlocked Dan and Sanbo reactions.
+   * Locked cards provide authentic arcade hints; unlocks happen exclusively through match result viewing. */
+  function renderMemeCards() {
+    const unlocked = getUnlockedMemes();
+    const danCards = MEME_CARDS.filter((c) => c.cat === "dan");
+    const sanboCards = MEME_CARDS.filter((c) => c.cat === "sanbo");
+    const danUnlocked = danCards.filter((c) => unlocked.has(c.id)).length;
+    const sanboUnlocked = sanboCards.filter((c) => unlocked.has(c.id)).length;
+    const totalUnlocked = danUnlocked + sanboUnlocked;
+    const totalCards = MEME_CARDS.length;
+    const pct = Math.round((totalUnlocked / totalCards) * 100);
+
+    const filledBlocks = Math.round((totalUnlocked / totalCards) * 16);
+    const meter = "█".repeat(filledBlocks) + "░".repeat(16 - filledBlocks);
+
+    const renderCard = (c) => {
+      const isUnlocked = unlocked.has(c.id);
+      if (isUnlocked) {
+        return `
+          <div class="mc-card unlocked ${c.cat}">
+            <div class="mc-img">
+              <img src="${esc(c.file)}" alt="${esc(c.name)}">
+              <span class="synth">SYNTHETIC · NOT EVIDENCE</span>
+            </div>
+            <div class="mc-body">
+              <div class="mc-tag">${esc(c.player)} · ${esc(c.name)}</div>
+              <b>${esc(c.title)}</b>
+              <p>${esc(c.story)}</p>
+              <span class="mc-status ok">✓ UNLOCKED</span>
+            </div>
+          </div>`;
+      } else {
+        return `
+          <div class="mc-card locked ${c.cat}">
+            <div class="mc-img locked">
+              <div class="mc-lock-box">
+                <span class="mc-q">[ ? ]</span>
+                <small>LOCKED</small>
+              </div>
+            </div>
+            <div class="mc-body">
+              <div class="mc-tag">${esc(c.player)} · SECRET CARD</div>
+              <b>${esc(c.name)}</b>
+              <p class="mc-hint">HINT: ${esc(c.hint)}</p>
+              <span class="mc-status lock">🔒 LOCKED</span>
+            </div>
+          </div>`;
+      }
+    };
+
+    return `
+      <div class="mc-sub">
+        <span>COLLECTION PROGRESS · ${totalUnlocked}/${totalCards} CARDS UNLOCKED (${pct}%)</span>
+        <span class="mc-meter">[${meter}]</span>
+        <span>DAN: ${danUnlocked}/${danCards.length} · SANBO: ${sanboUnlocked}/${sanboCards.length}</span>
+      </div>
+      <div class="mc-wrap">
+        <div class="mc-col p1">
+          <div class="mc-col-hd"><b>P1 DAN CARDS</b><span>${danUnlocked}/${danCards.length} UNLOCKED</span></div>
+          <div class="mc-grid">${danCards.map(renderCard).join("")}</div>
+        </div>
+        <div class="mc-col p2">
+          <div class="mc-col-hd"><b>P2 SANBO CARDS</b><span>${sanboUnlocked}/${sanboCards.length} UNLOCKED</span></div>
+          <div class="mc-grid">${sanboCards.map(renderCard).join("")}</div>
+        </div>
+      </div>
+      <div class="ar-foot"><span>◀ ▶ TAB · ↑↓ SCROLL</span><span>■ STOP / ESC BACK · SYNTHETIC MEDIA NEVER EVIDENCE</span></div>`;
+  }
+
   function setArchiveTab(dir) {
     S.arTab = (S.arTab + dir + AR_TABS.length) % AR_TABS.length;
     S.fighterSub = 0;
@@ -618,13 +832,29 @@
     renderArchive(); updateLCD(true);
   }
 
+  /* Filters matches displayed on the physical shelf to the Featured Replay Deck */
+  function getFeaturedDeckDays() {
+    const deck = DATA.featured_deck || DATA.showcase;
+    if (deck && deck.all && deck.all.length) {
+      return DATA.days
+        .map((d, i) => ({ d, originalIndex: i }))
+        .filter(({ d }) => deck.all.includes(d.date));
+    }
+    return DATA.days.map((d, i) => ({ d, originalIndex: i }));
+  }
+
   function renderShelf() {
-    $("#shelf").innerHTML = DATA.days.map((d, i) => {
+    const deck = DATA.featured_deck || DATA.showcase || {};
+    const items = getFeaturedDeckDays();
+    $("#shelf").innerHTML = items.map(({ d, originalIndex: i }) => {
       const isWithheld = d.replay && d.replay.status === "withheld";
       const dur = d.duration_str || (d.window ? d.window.duration : "");
+      const isLatest = deck.latest && deck.latest.includes(d.date);
+      const isClassic = deck.classics && deck.classics.includes(d.date);
+      const deckBadge = isLatest ? " · LATEST" : (isClassic ? " · CLASSIC" : "");
       return `
       <button class="tape${i === S.dayIdx ? " loaded" : ""}" data-tape="${i}" aria-label="Load match ${esc(d.label)}">
-        <span class="lbl"><b>${d.date.slice(8)} ${d.label ? d.label.split(" ")[2] : "SEP"}</b><em>${esc(d.dow)} · ${esc(dur)}</em>
+        <span class="lbl"><b>${d.date.slice(8)} ${d.label ? d.label.split(" ")[2] : "SEP"}</b><em>${esc(d.dow)} · ${esc(dur)}${deckBadge}</em>
         ${pred(d.date).revealed
           ? `<span>DAN ${approx(d.dan ? d.dan.kibble : null)} · SANBO ${approx(d.sanbo ? d.sanbo.kibble : null)}</span><i class="tone-${gameOutcome(d).winner ? "green" : "white"}">${esc(gameOutcome(d).label)}${isWithheld ? " · WITHHELD" : d.video ? "" : " · NO VIDEO"}</i>`
           : `<span>${pred(d.date).pick ? "PICK " + pred(d.date).pick.toUpperCase() : "PICK YOUR CHAMPION"}</span><i class="tone-white">${isWithheld ? "WITHHELD" : "UNPLAYED"}${isWithheld ? "" : d.video ? "" : " · NO VIDEO"}</i>`}</span>
@@ -687,12 +917,45 @@
     return `<div class="mem-grid n${m.items.length}">${frames}</div>
       <div class="mem-track"><span>${esc(m.from)}</span><div class="mtl">${marks}</div><span>END</span></div>`;
   }
+  function unlockToast(msg) {
+    if (!toastEl) return;
+    toastEl.className = "toast show t-white";
+    toastEl.innerHTML = `<b>★ MEME CARD UNLOCKED</b><span>${esc(msg)}</span>`;
+    clearTimeout(S.toastTimer);
+    S.toastTimer = setTimeout(() => toastEl.classList.remove("show"), 2200);
+  }
+
+  function unlockMatchMemes(d, outcome, pick) {
+    const rx = pickReaction(d, outcome, pick);
+    const newly = [];
+    if (rx.asset && rx.asset.id) {
+      if (saveUnlockedMeme(rx.asset.id)) newly.push(rx.asset.id);
+    }
+    if (rx.event && rx.event.a && rx.event.a.id) {
+      if (saveUnlockedMeme(rx.event.a.id)) newly.push(rx.event.a.id);
+    }
+    // Special double-unlock: viewing a genuine NO_CONTEST result unlocks both mutual confusion cards
+    if (outcome.id === "NO_CONTEST" || d.result === "NO_CONTEST") {
+      if (saveUnlockedMeme("dan-huh")) newly.push("dan-huh");
+      if (saveUnlockedMeme("sanbo-huh")) newly.push("sanbo-huh");
+    }
+    return { rx, newly };
+  }
+
   function renderResult() {
     const d = S.day;
     if (d) d.result = stewardResult(d);
     const dk = d.dan ? d.dan.kibble : null, sk = d.sanbo ? d.sanbo.kibble : null, total = (dk || 0) + (sk || 0);
     const dp = total ? Math.round((dk / total) * 100) : null;
-    const g = gameOutcome(d), pr = pred(), bet = betVerdict(g, pr.pick), rx = pickReaction(d, g, pr.pick);
+    const g = gameOutcome(d), pr = pred(), bet = betVerdict(g, pr.pick);
+    const { rx, newly } = unlockMatchMemes(d, g, pr.pick);
+    if (newly.length > 0) {
+      if (g.id === "NO_CONTEST") {
+        unlockToast("DOUBLE UNLOCK · PUZZLED CATS");
+      } else if (rx.asset) {
+        unlockToast(rx.asset.template.toUpperCase());
+      }
+    }
     const foreign = (d.events || []).filter((e) => e.type === "foreign_arrival");
     const ret = (d.events || []).find((e) => e.type === "return_to_feeder");
     const fin = (d.events || []).find((e) => e.type === "meal_finish");
@@ -1097,6 +1360,7 @@
     osd("TAPE IN", 900);
   }
   function scrollRecord(dir) { const l = $("#s-archive .rec-list"); if (l) l.scrollBy(0, dir * 40); AUDIO.ui("tick"); }
+  function scrollMemeCards(dir) { const w = $("#s-archive .mc-wrap"); if (w) w.scrollBy(0, dir * 50); AUDIO.ui("tick"); }
   function moveArchive(dir) {
     S.arSel = (S.arSel + dir + DATA.days.length) % DATA.days.length;
     $$(".ar-row").forEach((r, i) => r.classList.toggle("sel", i === S.arSel));
@@ -1176,7 +1440,7 @@
       case "ESC": return back();
       case "MENU_UP": case "MENU_DOWN": {
         const dir = cmd === "MENU_UP" ? -1 : 1;
-        if (S.state === "archive") return S.arTab === 1 ? scrollRecord(dir) : S.arTab ? AUDIO.ui("tick") : moveArchive(dir);
+        if (S.state === "archive") return S.arTab === 1 ? scrollRecord(dir) : S.arTab === 3 ? scrollMemeCards(dir) : S.arTab ? AUDIO.ui("tick") : moveArchive(dir);
         if (S.state === "result") { AUDIO.ui("tick"); return showResultPage(S.resPage + dir); }
         AUDIO.ui("tick"); return;
       }
@@ -1294,5 +1558,5 @@
   if (seenBefore() || params.has("on")) setTimeout(() => powerOn(false), 350);
   requestAnimationFrame(loop);
   if (FILE_MODE) $("#file-notice").hidden = false;
-  window.__KR = { S, press, command, getState: () => S.state, loadDay, jumpEvent, onState: (fn) => S.listeners.push(fn), audio: window.KRAudio, gameOutcome, betVerdict, vaultSlot }; // review / test hook
+  window.__KR = { S, press, command, getState: () => S.state, loadDay, jumpEvent, onState: (fn) => S.listeners.push(fn), audio: window.KRAudio, gameOutcome, betVerdict, vaultSlot, getUnlockedMemes, saveUnlockedMeme, unlockMatchMemes, scrollMemeCards, MEME_CARDS }; // review / test hook
 })();

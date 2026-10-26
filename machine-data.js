@@ -272,7 +272,7 @@ window.KR_DATA = {
     },
     "source": {
       "dob": "scripts/care_store.py CAT_CONFIGS",
-      "weight": "scripts/weight_store.py \u2192 weight_log.csv",
+      "weight": "scripts/weight_store.py → weight_log.csv",
       "weight_file_modified": "2026-09-06",
       "weight_is_local_mirror": true
     }
@@ -301,7 +301,7 @@ window.KR_DATA = {
     "facts": {
       "theft_confirmed": "house_theft_verdict starts with 'Confirmed' or 'Theft observed' (the pipeline's own decision that Sanbo actually ate Dan's food)",
       "takeover_by_sanbo": "events[] has foreign_arrival, cat=Sanbo, camera=TAPO (Sanbo entered Dan's lane)",
-      "takeover_by_dan": "a canonical LOGITECH (Sanbo feeder) cat_arrival/foreign_arrival whose cat is Dan or 'both' \u2192 bonus COUNTER RAID / DAN RAID event",
+      "takeover_by_dan": "a canonical LOGITECH (Sanbo feeder) cat_arrival/foreign_arrival whose cat is Dan or 'both' → bonus COUNTER RAID / DAN RAID event",
       "sanbo_ate_at_dan_feeder": "tapo_summary.sanbo_kibble > 0",
       "attribution_contested": "tapo_summary.has_conflict is true",
       "no_incident": "no conflict and no foreign_arrival",
@@ -322,6 +322,16 @@ window.KR_DATA = {
         "primary": "dan-yamcha-defeat",
         "label": "DAN LOST HIS BREAKFAST",
         "why": "Sanbo raided Dan's bowl (house rule: entering = eating) and you backed Dan. Yamcha stays reserved for a lost bet on a raid."
+      },
+      {
+        "id": "sanbo-win-you-backed-sanbo",
+        "when": {
+          "game": "SANBO_WIN",
+          "pick": "sanbo"
+        },
+        "primary": "sanbo-sunglasses",
+        "label": "YOU CALLED THE RAID!",
+        "why": "Sanbo entered Dan's bowl and you backed Sanbo. Deal with it."
       },
       {
         "id": "sanbo-win",
@@ -352,6 +362,16 @@ window.KR_DATA = {
         "why": "Dan cleared his own bowl with no Sanbo intake."
       },
       {
+        "id": "no-contest-you-backed-sanbo",
+        "when": {
+          "game": "NO_CONTEST",
+          "pick": "sanbo"
+        },
+        "primary": "sanbo-huh",
+        "label": "PUZZLED RAIDER",
+        "why": "The match state is unresolved and you backed Sanbo."
+      },
+      {
         "id": "no-contest",
         "when": {
           "game": "NO_CONTEST"
@@ -363,12 +383,21 @@ window.KR_DATA = {
     ],
     "event_reactions": [
       {
+        "id": "dan-raid-bonus",
+        "when": {
+          "fact": "takeover_by_dan"
+        },
+        "asset": "dan-take-some",
+        "label": "BONUS EVENT · DAN RAID",
+        "why": "Dan raided Sanbo's feeder in the foreign lane."
+      },
+      {
         "id": "raid",
         "when": {
           "fact": "takeover_by_sanbo"
         },
         "asset": "sanbo-take-some",
-        "label": "EVENT REACTION \u00b7 RAID",
+        "label": "EVENT REACTION · RAID",
         "why": "Canonical foreign_arrival: Sanbo entered Dan's bowl."
       }
     ],
@@ -604,7 +633,9 @@ window.KR_DATA = {
         "status": "withheld",
         "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
       },
-      "memories_count": 0
+      "memories_count": 0,
+      "featured_deck": false,
+      "featured_role": null
     },
     {
       "match_id": "2026-10-25",
@@ -632,7 +663,9 @@ window.KR_DATA = {
         "status": "withheld",
         "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
       },
-      "memories_count": 0
+      "memories_count": 0,
+      "featured_deck": false,
+      "featured_role": null
     },
     {
       "match_id": "2026-10-24",
@@ -668,7 +701,9 @@ window.KR_DATA = {
         "duration_s": 81.8,
         "speed": 4
       },
-      "memories_count": 3
+      "memories_count": 3,
+      "featured_deck": true,
+      "featured_role": "latest"
     },
     {
       "match_id": "2026-10-18",
@@ -696,7 +731,9 @@ window.KR_DATA = {
         "status": "withheld",
         "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
       },
-      "memories_count": 0
+      "memories_count": 0,
+      "featured_deck": false,
+      "featured_role": null
     },
     {
       "match_id": "2026-10-17",
@@ -724,7 +761,9 @@ window.KR_DATA = {
         "status": "withheld",
         "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
       },
-      "memories_count": 0
+      "memories_count": 0,
+      "featured_deck": false,
+      "featured_role": null
     },
     {
       "match_id": "2026-10-16",
@@ -752,7 +791,9 @@ window.KR_DATA = {
         "status": "withheld",
         "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
       },
-      "memories_count": 0
+      "memories_count": 0,
+      "featured_deck": false,
+      "featured_role": null
     },
     {
       "match_id": "2026-10-15",
@@ -780,7 +821,9 @@ window.KR_DATA = {
         "status": "withheld",
         "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
       },
-      "memories_count": 0
+      "memories_count": 0,
+      "featured_deck": false,
+      "featured_role": null
     },
     {
       "match_id": "2026-10-14",
@@ -812,7 +855,9 @@ window.KR_DATA = {
         "status": "withheld",
         "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
       },
-      "memories_count": 0
+      "memories_count": 0,
+      "featured_deck": false,
+      "featured_role": null
     },
     {
       "match_id": "2026-10-13",
@@ -844,7 +889,9 @@ window.KR_DATA = {
         "status": "withheld",
         "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
       },
-      "memories_count": 0
+      "memories_count": 0,
+      "featured_deck": false,
+      "featured_role": null
     },
     {
       "match_id": "2026-10-12",
@@ -880,7 +927,9 @@ window.KR_DATA = {
         "duration_s": 72.8,
         "speed": 4
       },
-      "memories_count": 4
+      "memories_count": 4,
+      "featured_deck": true,
+      "featured_role": "latest"
     },
     {
       "match_id": "2026-10-11",
@@ -913,10 +962,12 @@ window.KR_DATA = {
         "src": "media/2026-10-11-94f38fd6-v3.mp4",
         "sha256": "f3575daedd325adafa1ee3b5aab82d3772b8d6e549303ff5b70510d7b8942ec0",
         "bytes": 5360599,
-        "duration_s": 113.0,
+        "duration_s": 113,
         "speed": 4
       },
-      "memories_count": 4
+      "memories_count": 4,
+      "featured_deck": true,
+      "featured_role": "latest"
     },
     {
       "match_id": "2026-09-27",
@@ -948,7 +999,9 @@ window.KR_DATA = {
         "duration_s": 68.5,
         "speed": 4
       },
-      "memories_count": 4
+      "memories_count": 4,
+      "featured_deck": true,
+      "featured_role": "classic_sanbo"
     },
     {
       "match_id": "2026-09-26",
@@ -980,7 +1033,9 @@ window.KR_DATA = {
         "status": "withheld",
         "withheld_reason": "DAN_HAND_DETECTED_IN_VIDEO (conf=0.88, area=3848)"
       },
-      "memories_count": 3
+      "memories_count": 3,
+      "featured_deck": false,
+      "featured_role": null
     }
   ],
   "days": [
@@ -990,7 +1045,7 @@ window.KR_DATA = {
       "date": "2026-10-26",
       "label": "MON 26 OCT 2026",
       "dow": "MON",
-      "short": "26\u00b710",
+      "short": "26·10",
       "duration_s": 492,
       "duration_str": "08:12",
       "result": "DAN_WIN",
@@ -1019,7 +1074,7 @@ window.KR_DATA = {
       },
       "sanbo": {
         "kibble": 0,
-        "bowl_s": 0.0,
+        "bowl_s": 0,
         "own_ate": false,
         "own_line": "Sanbo own feeder"
       },
@@ -1037,7 +1092,7 @@ window.KR_DATA = {
       },
       "timeline": {
         "t0": 0,
-        "t1": 492.0
+        "t1": 492
       },
       "events": [
         {
@@ -1048,7 +1103,7 @@ window.KR_DATA = {
           "type": "food_dispensed",
           "camera": "TAPO",
           "cat": "none",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Food dispensed (~0 kibble)"
         },
@@ -1084,7 +1139,7 @@ window.KR_DATA = {
           "type": "meal_finish",
           "camera": "TAPO",
           "cat": "Dan",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Dan feeder meal finished"
         },
@@ -1126,7 +1181,7 @@ window.KR_DATA = {
       "date": "2026-10-25",
       "label": "SUN 25 OCT 2026",
       "dow": "SUN",
-      "short": "25\u00b710",
+      "short": "25·10",
       "duration_s": 56,
       "duration_str": "00:56",
       "result": "DAN_WIN",
@@ -1151,11 +1206,11 @@ window.KR_DATA = {
       },
       "dan": {
         "kibble": 0,
-        "bowl_s": 0.0
+        "bowl_s": 0
       },
       "sanbo": {
         "kibble": 0,
-        "bowl_s": 0.0,
+        "bowl_s": 0,
         "own_ate": false,
         "own_line": "Sanbo own feeder"
       },
@@ -1173,7 +1228,7 @@ window.KR_DATA = {
       },
       "timeline": {
         "t0": 0,
-        "t1": 56.0
+        "t1": 56
       },
       "events": [
         {
@@ -1196,7 +1251,7 @@ window.KR_DATA = {
           "type": "food_dispensed",
           "camera": "TAPO",
           "cat": "none",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Food dispensed (~0 kibble)"
         },
@@ -1232,7 +1287,7 @@ window.KR_DATA = {
           "type": "meal_finish",
           "camera": "TAPO",
           "cat": "Dan",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Dan feeder meal finished"
         }
@@ -1262,7 +1317,7 @@ window.KR_DATA = {
       "date": "2026-10-24",
       "label": "SAT 24 OCT 2026",
       "dow": "SAT",
-      "short": "24\u00b710",
+      "short": "24·10",
       "duration_s": 327,
       "duration_str": "05:27",
       "result": "DAN_WIN",
@@ -1295,7 +1350,7 @@ window.KR_DATA = {
       },
       "sanbo": {
         "kibble": 0,
-        "bowl_s": 0.0,
+        "bowl_s": 0,
         "own_ate": false,
         "own_line": "Sanbo own feeder"
       },
@@ -1313,7 +1368,7 @@ window.KR_DATA = {
       },
       "timeline": {
         "t0": 0,
-        "t1": 327.0
+        "t1": 327
       },
       "events": [
         {
@@ -1336,7 +1391,7 @@ window.KR_DATA = {
           "type": "food_dispensed",
           "camera": "TAPO",
           "cat": "none",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Food dispensed (~37 kibble)"
         },
@@ -1360,7 +1415,7 @@ window.KR_DATA = {
           "type": "meal_finish",
           "camera": "TAPO",
           "cat": "Dan",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Dan feeder meal finished"
         },
@@ -1497,7 +1552,7 @@ window.KR_DATA = {
       "date": "2026-10-18",
       "label": "SUN 18 OCT 2026",
       "dow": "SUN",
-      "short": "18\u00b710",
+      "short": "18·10",
       "duration_s": 345,
       "duration_str": "05:45",
       "result": "DAN_WIN",
@@ -1526,7 +1581,7 @@ window.KR_DATA = {
       },
       "sanbo": {
         "kibble": 0,
-        "bowl_s": 0.0,
+        "bowl_s": 0,
         "own_ate": false,
         "own_line": "Sanbo own feeder"
       },
@@ -1544,7 +1599,7 @@ window.KR_DATA = {
       },
       "timeline": {
         "t0": 0,
-        "t1": 345.0
+        "t1": 345
       },
       "events": [
         {
@@ -1567,7 +1622,7 @@ window.KR_DATA = {
           "type": "food_dispensed",
           "camera": "TAPO",
           "cat": "none",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Food dispensed (~34 kibble)"
         },
@@ -1591,7 +1646,7 @@ window.KR_DATA = {
           "type": "meal_finish",
           "camera": "TAPO",
           "cat": "Dan",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Dan feeder meal finished"
         },
@@ -1633,7 +1688,7 @@ window.KR_DATA = {
       "date": "2026-10-17",
       "label": "SAT 17 OCT 2026",
       "dow": "SAT",
-      "short": "17\u00b710",
+      "short": "17·10",
       "duration_s": 332,
       "duration_str": "05:32",
       "result": "DAN_WIN",
@@ -1662,7 +1717,7 @@ window.KR_DATA = {
       },
       "sanbo": {
         "kibble": 0,
-        "bowl_s": 0.0,
+        "bowl_s": 0,
         "own_ate": false,
         "own_line": "Sanbo own feeder"
       },
@@ -1680,7 +1735,7 @@ window.KR_DATA = {
       },
       "timeline": {
         "t0": 0,
-        "t1": 332.0
+        "t1": 332
       },
       "events": [
         {
@@ -1703,7 +1758,7 @@ window.KR_DATA = {
           "type": "food_dispensed",
           "camera": "TAPO",
           "cat": "none",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Food dispensed (~36 kibble)"
         },
@@ -1727,7 +1782,7 @@ window.KR_DATA = {
           "type": "meal_finish",
           "camera": "TAPO",
           "cat": "Dan",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Dan feeder meal finished"
         },
@@ -1769,7 +1824,7 @@ window.KR_DATA = {
       "date": "2026-10-16",
       "label": "FRI 16 OCT 2026",
       "dow": "FRI",
-      "short": "16\u00b710",
+      "short": "16·10",
       "duration_s": 307,
       "duration_str": "05:07",
       "result": "DAN_WIN",
@@ -1798,7 +1853,7 @@ window.KR_DATA = {
       },
       "sanbo": {
         "kibble": 0,
-        "bowl_s": 0.0,
+        "bowl_s": 0,
         "own_ate": false,
         "own_line": "Sanbo own feeder"
       },
@@ -1816,7 +1871,7 @@ window.KR_DATA = {
       },
       "timeline": {
         "t0": 0,
-        "t1": 307.0
+        "t1": 307
       },
       "events": [
         {
@@ -1839,7 +1894,7 @@ window.KR_DATA = {
           "type": "food_dispensed",
           "camera": "TAPO",
           "cat": "none",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Food dispensed (~45 kibble)"
         },
@@ -1863,7 +1918,7 @@ window.KR_DATA = {
           "type": "meal_finish",
           "camera": "TAPO",
           "cat": "Dan",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Dan feeder meal finished"
         },
@@ -1905,7 +1960,7 @@ window.KR_DATA = {
       "date": "2026-10-15",
       "label": "THU 15 OCT 2026",
       "dow": "THU",
-      "short": "15\u00b710",
+      "short": "15·10",
       "duration_s": 348,
       "duration_str": "05:48",
       "result": "DAN_WIN",
@@ -1934,7 +1989,7 @@ window.KR_DATA = {
       },
       "sanbo": {
         "kibble": 0,
-        "bowl_s": 0.0,
+        "bowl_s": 0,
         "own_ate": false,
         "own_line": "Sanbo own feeder"
       },
@@ -1952,7 +2007,7 @@ window.KR_DATA = {
       },
       "timeline": {
         "t0": 0,
-        "t1": 348.0
+        "t1": 348
       },
       "events": [
         {
@@ -1975,7 +2030,7 @@ window.KR_DATA = {
           "type": "food_dispensed",
           "camera": "TAPO",
           "cat": "none",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Food dispensed (~40 kibble)"
         },
@@ -1999,7 +2054,7 @@ window.KR_DATA = {
           "type": "meal_finish",
           "camera": "TAPO",
           "cat": "Dan",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Dan feeder meal finished"
         },
@@ -2041,7 +2096,7 @@ window.KR_DATA = {
       "date": "2026-10-14",
       "label": "WED 14 OCT 2026",
       "dow": "WED",
-      "short": "14\u00b710",
+      "short": "14·10",
       "duration_s": 317,
       "duration_str": "05:17",
       "result": "DAN_WIN",
@@ -2074,7 +2129,7 @@ window.KR_DATA = {
       },
       "sanbo": {
         "kibble": 0,
-        "bowl_s": 0.0,
+        "bowl_s": 0,
         "own_ate": false,
         "own_line": "Sanbo own feeder"
       },
@@ -2092,7 +2147,7 @@ window.KR_DATA = {
       },
       "timeline": {
         "t0": 0,
-        "t1": 317.0
+        "t1": 317
       },
       "events": [
         {
@@ -2115,7 +2170,7 @@ window.KR_DATA = {
           "type": "food_dispensed",
           "camera": "TAPO",
           "cat": "none",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Food dispensed (~43 kibble)"
         },
@@ -2139,7 +2194,7 @@ window.KR_DATA = {
           "type": "meal_finish",
           "camera": "TAPO",
           "cat": "Dan",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Dan feeder meal finished"
         },
@@ -2181,7 +2236,7 @@ window.KR_DATA = {
       "date": "2026-10-13",
       "label": "TUE 13 OCT 2026",
       "dow": "TUE",
-      "short": "13\u00b710",
+      "short": "13·10",
       "duration_s": 296,
       "duration_str": "04:56",
       "result": "DAN_WIN",
@@ -2214,7 +2269,7 @@ window.KR_DATA = {
       },
       "sanbo": {
         "kibble": 0,
-        "bowl_s": 0.0,
+        "bowl_s": 0,
         "own_ate": false,
         "own_line": "Sanbo own feeder"
       },
@@ -2232,7 +2287,7 @@ window.KR_DATA = {
       },
       "timeline": {
         "t0": 0,
-        "t1": 296.0
+        "t1": 296
       },
       "events": [
         {
@@ -2255,7 +2310,7 @@ window.KR_DATA = {
           "type": "food_dispensed",
           "camera": "TAPO",
           "cat": "none",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Food dispensed (~31 kibble)"
         },
@@ -2279,7 +2334,7 @@ window.KR_DATA = {
           "type": "meal_finish",
           "camera": "TAPO",
           "cat": "Dan",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Dan feeder meal finished"
         },
@@ -2321,7 +2376,7 @@ window.KR_DATA = {
       "date": "2026-10-12",
       "label": "MON 12 OCT 2026",
       "dow": "MON",
-      "short": "12\u00b710",
+      "short": "12·10",
       "duration_s": 291,
       "duration_str": "04:51",
       "result": "DAN_WIN",
@@ -2354,7 +2409,7 @@ window.KR_DATA = {
       },
       "sanbo": {
         "kibble": 0,
-        "bowl_s": 0.0,
+        "bowl_s": 0,
         "own_ate": false,
         "own_line": "Sanbo own feeder"
       },
@@ -2372,7 +2427,7 @@ window.KR_DATA = {
       },
       "timeline": {
         "t0": 0,
-        "t1": 291.0
+        "t1": 291
       },
       "events": [
         {
@@ -2395,7 +2450,7 @@ window.KR_DATA = {
           "type": "food_dispensed",
           "camera": "TAPO",
           "cat": "none",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Food dispensed (~33 kibble)",
           "seek_t": 13.5
@@ -2411,7 +2466,7 @@ window.KR_DATA = {
           "confidence": 0.95,
           "feeder": "Dan feeder",
           "notes": "Dan arrived at Dan feeder",
-          "seek_t": 14.0
+          "seek_t": 14
         },
         {
           "t": 125,
@@ -2421,7 +2476,7 @@ window.KR_DATA = {
           "type": "meal_finish",
           "camera": "TAPO",
           "cat": "Dan",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Dan feeder meal finished",
           "seek_t": 171.5
@@ -2584,7 +2639,7 @@ window.KR_DATA = {
       "date": "2026-10-11",
       "label": "SUN 11 OCT 2026",
       "dow": "SUN",
-      "short": "11\u00b710",
+      "short": "11·10",
       "duration_s": 452,
       "duration_str": "07:32",
       "result": "DAN_WIN",
@@ -2617,7 +2672,7 @@ window.KR_DATA = {
       },
       "sanbo": {
         "kibble": 0,
-        "bowl_s": 0.0,
+        "bowl_s": 0,
         "own_ate": false,
         "own_line": "Sanbo own feeder"
       },
@@ -2635,7 +2690,7 @@ window.KR_DATA = {
       },
       "timeline": {
         "t0": 0,
-        "t1": 452.0
+        "t1": 452
       },
       "events": [
         {
@@ -2658,7 +2713,7 @@ window.KR_DATA = {
           "type": "food_dispensed",
           "camera": "TAPO",
           "cat": "none",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Food dispensed (~36 kibble)",
           "seek_t": 10.5
@@ -2674,7 +2729,7 @@ window.KR_DATA = {
           "confidence": 0.95,
           "feeder": "Dan feeder",
           "notes": "Dan arrived at Dan feeder",
-          "seek_t": 11.0
+          "seek_t": 11
         },
         {
           "t": 125,
@@ -2684,7 +2739,7 @@ window.KR_DATA = {
           "type": "meal_finish",
           "camera": "TAPO",
           "cat": "Dan",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Dan feeder meal finished",
           "seek_t": 169.5
@@ -2836,7 +2891,7 @@ window.KR_DATA = {
         "src": "media/2026-10-11-94f38fd6-v3.mp4",
         "sha256": "f3575daedd325adafa1ee3b5aab82d3772b8d6e549303ff5b70510d7b8942ec0",
         "bytes": 5360599,
-        "duration_s": 113.0,
+        "duration_s": 113,
         "speed": 4
       },
       "replay_withheld": false
@@ -2847,7 +2902,7 @@ window.KR_DATA = {
       "date": "2026-09-27",
       "label": "SUN 27 SEP 2026",
       "dow": "SUN",
-      "short": "27\u00b709",
+      "short": "27·09",
       "duration_s": 274,
       "duration_str": "04:34",
       "result": "SANBO_WIN",
@@ -2894,7 +2949,7 @@ window.KR_DATA = {
       },
       "timeline": {
         "t0": 0,
-        "t1": 274.0
+        "t1": 274
       },
       "events": [
         {
@@ -2917,7 +2972,7 @@ window.KR_DATA = {
           "type": "food_dispensed",
           "camera": "TAPO",
           "cat": "none",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Food dispensed (~18 kibble)",
           "seek_t": 8.5
@@ -2933,7 +2988,7 @@ window.KR_DATA = {
           "confidence": 0.95,
           "feeder": "Dan feeder",
           "notes": "Dan arrived at Dan feeder",
-          "seek_t": 13.0
+          "seek_t": 13
         },
         {
           "t": 1,
@@ -2945,8 +3000,8 @@ window.KR_DATA = {
           "cat": "Sanbo",
           "confidence": 0.9,
           "feeder": "Dan feeder",
-          "notes": "\u26a0\ufe0f Sanbo arrived at Dan feeder",
-          "seek_t": 18.0
+          "notes": "⚠️ Sanbo arrived at Dan feeder",
+          "seek_t": 18
         },
         {
           "t": 35,
@@ -2968,7 +3023,7 @@ window.KR_DATA = {
           "type": "meal_finish",
           "camera": "TAPO",
           "cat": "Sanbo",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Dan feeder meal finished",
           "seek_t": 61.5
@@ -2983,7 +3038,7 @@ window.KR_DATA = {
           "cat": "Sanbo",
           "confidence": 0.9,
           "feeder": "Sanbo feeder",
-          "notes": "\u21a9 Sanbo returned to Sanbo feeder"
+          "notes": "↩ Sanbo returned to Sanbo feeder"
         },
         {
           "t": 274,
@@ -3143,7 +3198,7 @@ window.KR_DATA = {
       "date": "2026-09-26",
       "label": "SAT 26 SEP 2026",
       "dow": "SAT",
-      "short": "26\u00b709",
+      "short": "26·09",
       "duration_s": 293,
       "duration_str": "04:53",
       "result": "DAN_WIN",
@@ -3176,7 +3231,7 @@ window.KR_DATA = {
       },
       "sanbo": {
         "kibble": 0,
-        "bowl_s": 0.0,
+        "bowl_s": 0,
         "own_ate": false,
         "own_line": "Sanbo own feeder"
       },
@@ -3194,7 +3249,7 @@ window.KR_DATA = {
       },
       "timeline": {
         "t0": 0,
-        "t1": 293.0
+        "t1": 293
       },
       "events": [
         {
@@ -3217,7 +3272,7 @@ window.KR_DATA = {
           "type": "food_dispensed",
           "camera": "TAPO",
           "cat": "none",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Food dispensed (~44 kibble)",
           "seek_t": 9.5
@@ -3233,7 +3288,7 @@ window.KR_DATA = {
           "confidence": 0.95,
           "feeder": "Dan feeder",
           "notes": "Dan arrived at Dan feeder",
-          "seek_t": 13.0
+          "seek_t": 13
         },
         {
           "t": 182,
@@ -3243,10 +3298,10 @@ window.KR_DATA = {
           "type": "meal_finish",
           "camera": "TAPO",
           "cat": "Dan",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Dan feeder meal finished",
-          "seek_t": 185.0
+          "seek_t": 185
         },
         {
           "t": 293,
@@ -3363,7 +3418,7 @@ window.KR_DATA = {
       "date": "2026-09-25",
       "label": "FRI 25 SEP 2026",
       "dow": "FRI",
-      "short": "25\u00b709",
+      "short": "25·09",
       "duration_s": 320,
       "duration_str": "05:20",
       "result": "DAN_WIN",
@@ -3392,7 +3447,7 @@ window.KR_DATA = {
       },
       "sanbo": {
         "kibble": 0,
-        "bowl_s": 0.0,
+        "bowl_s": 0,
         "own_ate": false,
         "own_line": "Sanbo own feeder"
       },
@@ -3410,7 +3465,7 @@ window.KR_DATA = {
       },
       "timeline": {
         "t0": 0,
-        "t1": 320.0
+        "t1": 320
       },
       "events": [
         {
@@ -3433,7 +3488,7 @@ window.KR_DATA = {
           "type": "food_dispensed",
           "camera": "TAPO",
           "cat": "none",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Food dispensed (~35 kibble)",
           "seek_t": 11.5
@@ -3459,7 +3514,7 @@ window.KR_DATA = {
           "type": "meal_finish",
           "camera": "TAPO",
           "cat": "Dan",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Dan feeder meal finished",
           "seek_t": 166.5
@@ -3586,7 +3641,7 @@ window.KR_DATA = {
         "src": "media/2026-09-25-a21cb343-v3.mp4",
         "sha256": "57f343c7e41bfe61fd7206eb4c2cd9ac4affe43429800986940e59b3c2829cec",
         "bytes": 4539254,
-        "duration_s": 80.0,
+        "duration_s": 80,
         "speed": 4
       },
       "replay_withheld": false
@@ -3597,7 +3652,7 @@ window.KR_DATA = {
       "date": "2026-09-21",
       "label": "MON 21 SEP 2026",
       "dow": "MON",
-      "short": "21\u00b709",
+      "short": "21·09",
       "duration_s": 568,
       "duration_str": "09:28",
       "result": "SANBO_WIN",
@@ -3648,7 +3703,7 @@ window.KR_DATA = {
       },
       "timeline": {
         "t0": 0,
-        "t1": 568.0
+        "t1": 568
       },
       "events": [
         {
@@ -3671,7 +3726,7 @@ window.KR_DATA = {
           "type": "food_dispensed",
           "camera": "TAPO",
           "cat": "none",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Food dispensed (~26 kibble)",
           "seek_t": 12.5
@@ -3687,7 +3742,7 @@ window.KR_DATA = {
           "confidence": 0.95,
           "feeder": "Dan feeder",
           "notes": "Dan arrived at Dan feeder",
-          "seek_t": 13.0
+          "seek_t": 13
         },
         {
           "t": 2,
@@ -3699,7 +3754,7 @@ window.KR_DATA = {
           "cat": "Sanbo",
           "confidence": 0.9,
           "feeder": "Dan feeder",
-          "notes": "\u26a0\ufe0f Sanbo arrived at Dan feeder"
+          "notes": "⚠️ Sanbo arrived at Dan feeder"
         },
         {
           "t": 53,
@@ -3721,10 +3776,10 @@ window.KR_DATA = {
           "type": "meal_finish",
           "camera": "TAPO",
           "cat": "Sanbo",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Dan feeder meal finished",
-          "seek_t": 87.0
+          "seek_t": 87
         },
         {
           "t": 97,
@@ -3828,7 +3883,7 @@ window.KR_DATA = {
       "date": "2026-09-20",
       "label": "SUN 20 SEP 2026",
       "dow": "SUN",
-      "short": "20\u00b709",
+      "short": "20·09",
       "duration_s": 250,
       "duration_str": "04:10",
       "result": "SANBO_WIN",
@@ -3879,7 +3934,7 @@ window.KR_DATA = {
       },
       "timeline": {
         "t0": 0,
-        "t1": 250.0
+        "t1": 250
       },
       "events": [
         {
@@ -3902,10 +3957,10 @@ window.KR_DATA = {
           "type": "food_dispensed",
           "camera": "TAPO",
           "cat": "none",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Food dispensed (~20 kibble)",
-          "seek_t": 8.0
+          "seek_t": 8
         },
         {
           "t": 0,
@@ -3918,7 +3973,7 @@ window.KR_DATA = {
           "confidence": 0.95,
           "feeder": "Dan feeder",
           "notes": "Dan arrived at Dan feeder",
-          "seek_t": 11.0
+          "seek_t": 11
         },
         {
           "t": 1,
@@ -3930,7 +3985,7 @@ window.KR_DATA = {
           "cat": "Sanbo",
           "confidence": 0.9,
           "feeder": "Dan feeder",
-          "notes": "\u26a0\ufe0f Sanbo arrived at Dan feeder",
+          "notes": "⚠️ Sanbo arrived at Dan feeder",
           "seek_t": 15.5
         },
         {
@@ -3953,10 +4008,10 @@ window.KR_DATA = {
           "type": "meal_finish",
           "camera": "TAPO",
           "cat": "Sanbo",
-          "confidence": 1.0,
+          "confidence": 1,
           "feeder": "Dan feeder",
           "notes": "Dan feeder meal finished",
-          "seek_t": 70.0
+          "seek_t": 70
         },
         {
           "t": 81,
@@ -4128,7 +4183,7 @@ window.KR_DATA = {
       "date": "2026-09-16",
       "label": "WED 16 SEP 2026",
       "dow": "WED",
-      "short": "16\u00b709",
+      "short": "16·09",
       "duration_s": 63,
       "duration_str": "01:03",
       "result": "NO_CONTEST",
@@ -4175,7 +4230,7 @@ window.KR_DATA = {
       },
       "timeline": {
         "t0": 0,
-        "t1": 63.0
+        "t1": 63
       },
       "events": [],
       "facts": {
@@ -4203,7 +4258,7 @@ window.KR_DATA = {
       "date": "2026-09-14",
       "label": "MON 14 SEP 2026",
       "dow": "MON",
-      "short": "14\u00b709",
+      "short": "14·09",
       "duration_s": 309,
       "duration_str": "05:09",
       "result": "DAN_WIN",
@@ -4232,7 +4287,7 @@ window.KR_DATA = {
       },
       "sanbo": {
         "kibble": 0,
-        "bowl_s": 0.0,
+        "bowl_s": 0,
         "own_ate": true,
         "own_line": "Sanbo own feeder"
       },
@@ -4250,7 +4305,7 @@ window.KR_DATA = {
       },
       "timeline": {
         "t0": 0,
-        "t1": 309.0
+        "t1": 309
       },
       "events": [],
       "facts": {
@@ -4277,7 +4332,7 @@ window.KR_DATA = {
       "date": "2026-09-13",
       "label": "SUN 13 SEP 2026",
       "dow": "SUN",
-      "short": "13\u00b709",
+      "short": "13·09",
       "duration_s": 301,
       "duration_str": "05:01",
       "result": "DAN_WIN",
@@ -4306,7 +4361,7 @@ window.KR_DATA = {
       },
       "sanbo": {
         "kibble": 0,
-        "bowl_s": 0.0,
+        "bowl_s": 0,
         "own_ate": false,
         "own_line": "Sanbo own feeder"
       },
@@ -4324,7 +4379,7 @@ window.KR_DATA = {
       },
       "timeline": {
         "t0": 0,
-        "t1": 301.0
+        "t1": 301
       },
       "events": [],
       "facts": {
@@ -4350,5 +4405,62 @@ window.KR_DATA = {
       },
       "replay_withheld": false
     }
-  ]
+  ],
+  "featured": "2026-09-27",
+  "featured_deck": {
+    "latest": [
+      "2026-10-24",
+      "2026-10-12",
+      "2026-10-11"
+    ],
+    "classics": [
+      "2026-09-27",
+      "2026-09-25",
+      "2026-09-20"
+    ],
+    "classics_sanbo": [
+      "2026-09-27",
+      "2026-09-20"
+    ],
+    "classics_dan": [
+      "2026-09-25"
+    ],
+    "all": [
+      "2026-10-24",
+      "2026-10-12",
+      "2026-10-11",
+      "2026-09-27",
+      "2026-09-25",
+      "2026-09-20"
+    ],
+    "featured": "2026-09-27"
+  },
+  "showcase": {
+    "latest": [
+      "2026-10-24",
+      "2026-10-12",
+      "2026-10-11"
+    ],
+    "classics": [
+      "2026-09-27",
+      "2026-09-25",
+      "2026-09-20"
+    ],
+    "classics_sanbo": [
+      "2026-09-27",
+      "2026-09-20"
+    ],
+    "classics_dan": [
+      "2026-09-25"
+    ],
+    "all": [
+      "2026-10-24",
+      "2026-10-12",
+      "2026-10-11",
+      "2026-09-27",
+      "2026-09-25",
+      "2026-09-20"
+    ],
+    "featured": "2026-09-27"
+  }
 };

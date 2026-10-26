@@ -45,6 +45,16 @@
       "why": "Sanbo raided Dan's bowl (house rule: entering = eating) and you backed Dan. Yamcha stays reserved for a lost bet on a raid."
     },
     {
+      "id": "sanbo-win-you-backed-sanbo",
+      "when": {
+        "game": "SANBO_WIN",
+        "pick": "sanbo"
+      },
+      "primary": "sanbo-sunglasses",
+      "label": "YOU CALLED THE RAID!",
+      "why": "Sanbo entered Dan's bowl and you backed Sanbo. Deal with it."
+    },
+    {
       "id": "sanbo-win",
       "when": {
         "game": "SANBO_WIN"
@@ -73,6 +83,16 @@
       "why": "Dan cleared his own bowl with no Sanbo intake."
     },
     {
+      "id": "no-contest-you-backed-sanbo",
+      "when": {
+        "game": "NO_CONTEST",
+        "pick": "sanbo"
+      },
+      "primary": "sanbo-huh",
+      "label": "PUZZLED RAIDER",
+      "why": "The match state is unresolved and you backed Sanbo."
+    },
+    {
       "id": "no-contest",
       "when": {
         "game": "NO_CONTEST"
@@ -83,6 +103,15 @@
     }
   ],
   "event_reactions": [
+    {
+      "id": "dan-raid-bonus",
+      "when": {
+        "fact": "takeover_by_dan"
+      },
+      "asset": "dan-take-some",
+      "label": "BONUS EVENT \u00b7 DAN RAID",
+      "why": "Dan raided Sanbo's feeder in the foreign lane."
+    },
     {
       "id": "raid",
       "when": {
