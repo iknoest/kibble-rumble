@@ -1,13 +1,41 @@
 {
   "schema": "kibble-rumble.public/1",
-  "published_on": "2026-10-25",
+  "published_on": "2026-10-26",
   "result_rule": "v10.4-household",
   "retention": {
     "per_cat": 3,
     "max_total": 6
   },
-  "latest_match_id": "2026-10-25",
+  "latest_match_id": "2026-10-26",
   "matches": [
+    {
+      "match_id": "2026-10-26",
+      "date": "2026-10-26",
+      "label": "MON 26 OCT 2026",
+      "dow": "MON",
+      "duration_s": 492,
+      "duration_str": "08:12",
+      "result": "DAN_WIN",
+      "winner": "dan",
+      "basis": "DEFENDED",
+      "rule": "SANBO NEVER ENTERED DAN'S BOWL AND DAN CLEARED HIS BREAKFAST.",
+      "bonus": null,
+      "stewards": "CLEAN",
+      "stewards_detail": "CLEAN MATCH",
+      "kibble": {
+        "start": 0,
+        "end": 0,
+        "consumed": 0,
+        "dan": 38,
+        "sanbo": 0
+      },
+      "meal_finished": true,
+      "replay": {
+        "status": "withheld",
+        "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
+      },
+      "memories_count": 0
+    },
     {
       "match_id": "2026-10-25",
       "date": "2026-10-25",
@@ -381,38 +409,6 @@
       "replay": {
         "status": "withheld",
         "withheld_reason": "DAN_HAND_DETECTED_IN_VIDEO (conf=0.88, area=3848)"
-      },
-      "memories_count": 3
-    },
-    {
-      "match_id": "2026-09-25",
-      "date": "2026-09-25",
-      "label": "FRI 25 SEP 2026",
-      "dow": "FRI",
-      "duration_s": 320,
-      "duration_str": "05:20",
-      "result": "DAN_WIN",
-      "winner": "dan",
-      "basis": "DEFENDED",
-      "rule": "SANBO NEVER ENTERED DAN'S BOWL AND DAN CLEARED HIS BREAKFAST.",
-      "bonus": null,
-      "stewards": "CLEAN",
-      "stewards_detail": "CLEAN MATCH",
-      "kibble": {
-        "start": 35,
-        "end": 0,
-        "consumed": 35,
-        "dan": 35,
-        "sanbo": 0
-      },
-      "meal_finished": true,
-      "replay": {
-        "status": "retained",
-        "src": "media/2026-09-25-a21cb343-v3.mp4",
-        "sha256": "57f343c7e41bfe61fd7206eb4c2cd9ac4affe43429800986940e59b3c2829cec",
-        "bytes": 4539254,
-        "duration_s": 80.0,
-        "speed": 4
       },
       "memories_count": 3
     }
