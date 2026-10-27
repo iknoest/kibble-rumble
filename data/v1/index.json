@@ -1,13 +1,109 @@
 {
   "schema": "kibble-rumble.public/1",
-  "published_on": "2026-10-26",
+  "published_on": "2026-10-27",
   "result_rule": "v10.4-household",
   "retention": {
-    "per_cat": 3,
-    "max_total": 6
+    "policy": "curated-deck-3latest-4classics",
+    "latest_max": 3,
+    "classics_max": 4,
+    "max_total": 7,
+    "per_cat": 2
   },
-  "latest_match_id": "2026-10-26",
+  "featured_deck": {
+    "latest": [
+      "2026-10-24",
+      "2026-10-12",
+      "2026-10-11"
+    ],
+    "classics": [
+      "2026-09-27",
+      "2026-09-25",
+      "2026-09-20"
+    ],
+    "classics_sanbo": [
+      "2026-09-27",
+      "2026-09-20"
+    ],
+    "classics_dan": [
+      "2026-09-25"
+    ],
+    "all": [
+      "2026-10-24",
+      "2026-10-12",
+      "2026-10-11",
+      "2026-09-27",
+      "2026-09-25",
+      "2026-09-20"
+    ],
+    "featured": "2026-09-27"
+  },
+  "showcase": {
+    "latest": [
+      "2026-10-24",
+      "2026-10-12",
+      "2026-10-11"
+    ],
+    "classics": [
+      "2026-09-27",
+      "2026-09-25",
+      "2026-09-20"
+    ],
+    "classics_sanbo": [
+      "2026-09-27",
+      "2026-09-20"
+    ],
+    "classics_dan": [
+      "2026-09-25"
+    ],
+    "all": [
+      "2026-10-24",
+      "2026-10-12",
+      "2026-10-11",
+      "2026-09-27",
+      "2026-09-25",
+      "2026-09-20"
+    ],
+    "featured": "2026-09-27"
+  },
+  "featured": "2026-09-27",
+  "latest_match_id": "2026-10-27",
   "matches": [
+    {
+      "match_id": "2026-10-27",
+      "date": "2026-10-27",
+      "label": "TUE 27 OCT 2026",
+      "dow": "TUE",
+      "duration_s": 308,
+      "duration_str": "05:08",
+      "result": "DAN_WIN",
+      "winner": "dan",
+      "basis": "DEFENDED",
+      "rule": "SANBO NEVER ENTERED DAN'S BOWL AND DAN CLEARED HIS BREAKFAST.",
+      "bonus": {
+        "kind": "DAN RAID",
+        "label": "DAN RAIDED SANBO",
+        "camera": "LOGITECH"
+      },
+      "stewards": "CLEAN",
+      "stewards_detail": "CLEAN MATCH",
+      "kibble": {
+        "start": 42,
+        "end": 0,
+        "consumed": 42,
+        "dan": 42,
+        "sanbo": 0
+      },
+      "meal_finished": true,
+      "replay": {
+        "status": "withheld",
+        "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
+      },
+      "featured_deck": false,
+      "featured_role": null,
+      "showcase": false,
+      "showcase_label": null,
+      "memories_count": 0
+    },
     {
       "match_id": "2026-10-26",
       "date": "2026-10-26",
@@ -34,6 +130,10 @@
         "status": "withheld",
         "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
       },
+      "featured_deck": false,
+      "featured_role": null,
+      "showcase": false,
+      "showcase_label": null,
       "memories_count": 0
     },
     {
@@ -62,6 +162,10 @@
         "status": "withheld",
         "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
       },
+      "featured_deck": false,
+      "featured_role": null,
+      "showcase": false,
+      "showcase_label": null,
       "memories_count": 0
     },
     {
@@ -98,6 +202,10 @@
         "duration_s": 81.8,
         "speed": 4
       },
+      "featured_deck": true,
+      "featured_role": "latest",
+      "showcase": true,
+      "showcase_label": "LATEST",
       "memories_count": 3
     },
     {
@@ -126,6 +234,10 @@
         "status": "withheld",
         "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
       },
+      "featured_deck": false,
+      "featured_role": null,
+      "showcase": false,
+      "showcase_label": null,
       "memories_count": 0
     },
     {
@@ -154,6 +266,10 @@
         "status": "withheld",
         "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
       },
+      "featured_deck": false,
+      "featured_role": null,
+      "showcase": false,
+      "showcase_label": null,
       "memories_count": 0
     },
     {
@@ -182,6 +298,10 @@
         "status": "withheld",
         "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
       },
+      "featured_deck": false,
+      "featured_role": null,
+      "showcase": false,
+      "showcase_label": null,
       "memories_count": 0
     },
     {
@@ -210,6 +330,10 @@
         "status": "withheld",
         "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
       },
+      "featured_deck": false,
+      "featured_role": null,
+      "showcase": false,
+      "showcase_label": null,
       "memories_count": 0
     },
     {
@@ -242,6 +366,10 @@
         "status": "withheld",
         "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
       },
+      "featured_deck": false,
+      "featured_role": null,
+      "showcase": false,
+      "showcase_label": null,
       "memories_count": 0
     },
     {
@@ -274,6 +402,10 @@
         "status": "withheld",
         "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
       },
+      "featured_deck": false,
+      "featured_role": null,
+      "showcase": false,
+      "showcase_label": null,
       "memories_count": 0
     },
     {
@@ -310,6 +442,10 @@
         "duration_s": 72.8,
         "speed": 4
       },
+      "featured_deck": true,
+      "featured_role": "latest",
+      "showcase": true,
+      "showcase_label": "LATEST",
       "memories_count": 4
     },
     {
@@ -346,6 +482,10 @@
         "duration_s": 113.0,
         "speed": 4
       },
+      "featured_deck": true,
+      "featured_role": "latest",
+      "showcase": true,
+      "showcase_label": "LATEST",
       "memories_count": 4
     },
     {
@@ -378,39 +518,87 @@
         "duration_s": 68.5,
         "speed": 4
       },
+      "featured_deck": true,
+      "featured_role": "classic_sanbo",
+      "showcase": true,
+      "showcase_label": "CLASSIC_SANBO",
       "memories_count": 4
     },
     {
-      "match_id": "2026-09-26",
-      "date": "2026-09-26",
-      "label": "SAT 26 SEP 2026",
-      "dow": "SAT",
-      "duration_s": 293,
-      "duration_str": "04:53",
+      "match_id": "2026-09-25",
+      "date": "2026-09-25",
+      "label": "FRI 25 SEP 2026",
+      "dow": "FRI",
+      "duration_s": 320,
+      "duration_str": "05:20",
       "result": "DAN_WIN",
       "winner": "dan",
       "basis": "DEFENDED",
       "rule": "SANBO NEVER ENTERED DAN'S BOWL AND DAN CLEARED HIS BREAKFAST.",
-      "bonus": {
-        "kind": "DAN RAID",
-        "label": "DAN RAIDED SANBO",
-        "camera": "LOGITECH"
-      },
+      "bonus": null,
       "stewards": "CLEAN",
       "stewards_detail": "CLEAN MATCH",
       "kibble": {
-        "start": 44,
+        "start": 35,
         "end": 0,
-        "consumed": 44,
-        "dan": 44,
+        "consumed": 35,
+        "dan": 35,
         "sanbo": 0
       },
       "meal_finished": true,
       "replay": {
-        "status": "withheld",
-        "withheld_reason": "DAN_HAND_DETECTED_IN_VIDEO (conf=0.88, area=3848)"
+        "status": "retained",
+        "src": "media/2026-09-25-a21cb343-v3.mp4",
+        "sha256": "57f343c7e41bfe61fd7206eb4c2cd9ac4affe43429800986940e59b3c2829cec",
+        "bytes": 4539254,
+        "duration_s": 80.0,
+        "speed": 4
       },
+      "featured_deck": true,
+      "featured_role": "classic_dan",
+      "showcase": true,
+      "showcase_label": "CLASSIC_DAN",
       "memories_count": 3
+    },
+    {
+      "match_id": "2026-09-20",
+      "date": "2026-09-20",
+      "label": "SUN 20 SEP 2026",
+      "dow": "SUN",
+      "duration_s": 250,
+      "duration_str": "04:10",
+      "result": "SANBO_WIN",
+      "winner": "sanbo",
+      "basis": "RAID SUCCESS",
+      "rule": "SANBO ENTERED DAN'S BOWL. HOUSE RULE: ENTERING DAN'S BOWL IS A SUCCESSFUL RAID.",
+      "bonus": {
+        "kind": "COUNTER RAID",
+        "label": "DAN COUNTER-RAIDED SANBO",
+        "camera": "LOGITECH"
+      },
+      "stewards": "REVIEW",
+      "stewards_detail": "ATTRIBUTION CONTESTED",
+      "kibble": {
+        "start": 20,
+        "end": 0,
+        "consumed": 20,
+        "dan": 6,
+        "sanbo": 14
+      },
+      "meal_finished": true,
+      "replay": {
+        "status": "retained",
+        "src": "media/2026-09-20-ed3175a7-v3.mp4",
+        "sha256": "e4eb0e8679e9fe78a5a5627b0449e38e204132e549febd7d42b9df37ce46b121",
+        "bytes": 3042658,
+        "duration_s": 62.5,
+        "speed": 4
+      },
+      "featured_deck": true,
+      "featured_role": "classic_sanbo",
+      "showcase": true,
+      "showcase_label": "CLASSIC_SANBO",
+      "memories_count": 4
     }
   ]
 }
