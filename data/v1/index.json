@@ -1,6 +1,6 @@
 {
   "schema": "kibble-rumble.public/1",
-  "published_on": "2026-10-31",
+  "published_on": "2026-11-01",
   "result_rule": "v10.4-household",
   "retention": {
     "policy": "curated-deck-3latest-4classics",
@@ -66,8 +66,44 @@
     "featured": "2026-09-27"
   },
   "featured": "2026-09-27",
-  "latest_match_id": "2026-10-31",
+  "latest_match_id": "2026-11-01",
   "matches": [
+    {
+      "match_id": "2026-11-01",
+      "date": "2026-11-01",
+      "label": "SUN 01 NOV 2026",
+      "dow": "SUN",
+      "duration_s": 116,
+      "duration_str": "01:56",
+      "result": "SANBO_WIN",
+      "winner": "sanbo",
+      "basis": "RAID SUCCESS",
+      "rule": "SANBO ENTERED DAN'S BOWL. HOUSE RULE: ENTERING DAN'S BOWL IS A SUCCESSFUL RAID.",
+      "bonus": {
+        "kind": "DAN RAID",
+        "label": "DAN RAIDED SANBO",
+        "camera": "LOGITECH"
+      },
+      "stewards": "CLEAN",
+      "stewards_detail": "CLEAN MATCH",
+      "kibble": {
+        "start": 32,
+        "end": 0,
+        "consumed": 32,
+        "dan": 0,
+        "sanbo": 24
+      },
+      "meal_finished": true,
+      "replay": {
+        "status": "withheld",
+        "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
+      },
+      "featured_deck": false,
+      "featured_role": null,
+      "showcase": false,
+      "showcase_label": null,
+      "memories_count": 0
+    },
     {
       "match_id": "2026-10-31",
       "date": "2026-10-31",
