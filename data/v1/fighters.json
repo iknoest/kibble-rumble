@@ -1,6 +1,6 @@
 {
   "schema": "kibble-rumble.public/1",
-  "updated_on": "2026-11-02",
+  "updated_on": "2026-11-03",
   "fighters": {
     "dan": {
       "name": "Dan",
@@ -10,10 +10,10 @@
       "coat": "TUXEDO CAT",
       "role": "DEFENDS HIS BREAKFAST",
       "home_feeder": "TAPO",
-      "current_weight_kg": 3.5,
-      "weighed_date": "2026-09-06",
-      "previous_weight_kg": 3.3,
-      "previous_date": "2026-08-03",
+      "current_weight_kg": 3.7,
+      "weighed_date": "2026-11-02",
+      "previous_weight_kg": 3.5,
+      "previous_date": "2026-09-06",
       "trend": "gaining",
       "weight_history": [
         {
@@ -43,6 +43,10 @@
         {
           "date": "2026-09-06",
           "weight_kg": 3.5
+        },
+        {
+          "date": "2026-11-02",
+          "weight_kg": 3.7
         }
       ],
       "weight_monthly": [
@@ -121,6 +125,18 @@
               "weight_kg": 3.5
             }
           ]
+        },
+        {
+          "month": "2026-11",
+          "label": "NOV",
+          "year": 2026,
+          "latest_kg": 3.7,
+          "records": [
+            {
+              "date": "2026-11-02",
+              "weight_kg": 3.7
+            }
+          ]
         }
       ]
     },
@@ -132,11 +148,11 @@
       "coat": "CALICO CAT",
       "role": "RAIDS DAN'S BOWL",
       "home_feeder": "LOGITECH",
-      "current_weight_kg": 3.5,
-      "weighed_date": "2026-09-06",
-      "previous_weight_kg": 3.7,
-      "previous_date": "2026-08-03",
-      "trend": "losing",
+      "current_weight_kg": 4.0,
+      "weighed_date": "2026-11-02",
+      "previous_weight_kg": 3.5,
+      "previous_date": "2026-09-06",
+      "trend": "gaining",
       "weight_history": [
         {
           "date": "2026-04-11",
@@ -165,6 +181,10 @@
         {
           "date": "2026-09-06",
           "weight_kg": 3.5
+        },
+        {
+          "date": "2026-11-02",
+          "weight_kg": 4.0
         }
       ],
       "weight_monthly": [
@@ -241,6 +261,18 @@
             {
               "date": "2026-09-06",
               "weight_kg": 3.5
+            }
+          ]
+        },
+        {
+          "month": "2026-11",
+          "label": "NOV",
+          "year": 2026,
+          "latest_kg": 4.0,
+          "records": [
+            {
+              "date": "2026-11-02",
+              "weight_kg": 4.0
             }
           ]
         }
