@@ -1,8 +1,8 @@
 window.KR_DATA = {
   "schema": "kibble-rumble.public/1",
-  "published_on": "2026-11-04",
+  "published_on": "2026-11-05",
   "result_rule": "v10.4-household",
-  "latest": "2026-11-04",
+  "latest": "2026-11-05",
   "featured": "2026-09-27",
   "featured_deck": {
     "latest": [
@@ -696,6 +696,38 @@ window.KR_DATA = {
     ]
   },
   "matches": [
+    {
+      "match_id": "2026-11-05",
+      "date": "2026-11-05",
+      "label": "THU 05 NOV 2026",
+      "dow": "THU",
+      "duration_s": 344,
+      "duration_str": "05:44",
+      "result": "DAN_WIN",
+      "winner": "dan",
+      "basis": "DEFENDED",
+      "rule": "SANBO NEVER ENTERED DAN'S BOWL AND DAN CLEARED HIS BREAKFAST.",
+      "bonus": null,
+      "stewards": "CLEAN",
+      "stewards_detail": "CLEAN MATCH",
+      "kibble": {
+        "start": 39,
+        "end": 0,
+        "consumed": 39,
+        "dan": 39,
+        "sanbo": 0
+      },
+      "meal_finished": true,
+      "replay": {
+        "status": "withheld",
+        "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
+      },
+      "featured_deck": false,
+      "featured_role": null,
+      "showcase": false,
+      "showcase_label": null,
+      "memories_count": 0
+    },
     {
       "match_id": "2026-11-04",
       "date": "2026-11-04",
@@ -1494,6 +1526,142 @@ window.KR_DATA = {
     }
   ],
   "days": [
+    {
+      "schema": "kibble-rumble.public/1",
+      "match_id": "2026-11-05",
+      "date": "2026-11-05",
+      "label": "THU 05 NOV 2026",
+      "dow": "THU",
+      "short": "05\u00b711",
+      "duration_s": 344,
+      "duration_str": "05:44",
+      "result": "DAN_WIN",
+      "winner": "dan",
+      "basis": "DEFENDED",
+      "rule": "SANBO NEVER ENTERED DAN'S BOWL AND DAN CLEARED HIS BREAKFAST.",
+      "bonus": null,
+      "stewards": "CLEAN",
+      "stewards_detail": "CLEAN MATCH",
+      "stewards_result": {
+        "label": "CLEAN MATCH",
+        "tone": "green",
+        "sub": "CLEAN MATCH"
+      },
+      "meal_finished": true,
+      "kibble": {
+        "start": 39,
+        "end": 0,
+        "consumed": 39,
+        "dan": 39,
+        "sanbo": 0
+      },
+      "dan": {
+        "kibble": 39,
+        "bowl_s": 135.24
+      },
+      "sanbo": {
+        "kibble": 0,
+        "bowl_s": 0.0,
+        "own_ate": false,
+        "own_line": "Sanbo own feeder"
+      },
+      "conflict": false,
+      "theft": "Not confirmed",
+      "tapo_status": "Finished",
+      "logitech_status": "Finished likely",
+      "sessions": [],
+      "window": {
+        "start": "00:00",
+        "end": "05:44",
+        "t0": 0,
+        "t1": 344,
+        "duration": "05:44"
+      },
+      "timeline": {
+        "t0": 0,
+        "t1": 344.0
+      },
+      "events": [
+        {
+          "t": -9,
+          "t_s": -9,
+          "time": "PRE-MATCH",
+          "rel_time": "PRE-MATCH",
+          "type": "cat_arrival",
+          "camera": "LOGITECH",
+          "cat": "Sanbo",
+          "confidence": 0.9,
+          "feeder": "Sanbo feeder",
+          "notes": "Sanbo arrived at Sanbo feeder"
+        },
+        {
+          "t": 0,
+          "t_s": 0,
+          "time": "T+00:00",
+          "rel_time": "T+00:00",
+          "type": "food_dispensed",
+          "camera": "TAPO",
+          "cat": "none",
+          "confidence": 1.0,
+          "feeder": "Dan feeder",
+          "notes": "Food dispensed (~39 kibble)"
+        },
+        {
+          "t": 0,
+          "t_s": 0,
+          "time": "T+00:00",
+          "rel_time": "T+00:00",
+          "type": "cat_arrival",
+          "camera": "TAPO",
+          "cat": "Dan",
+          "confidence": 0.95,
+          "feeder": "Dan feeder",
+          "notes": "Dan arrived at Dan feeder"
+        },
+        {
+          "t": 183,
+          "t_s": 183,
+          "time": "T+03:03",
+          "rel_time": "T+03:03",
+          "type": "meal_finish",
+          "camera": "TAPO",
+          "cat": "Dan",
+          "confidence": 1.0,
+          "feeder": "Dan feeder",
+          "notes": "Dan feeder meal finished"
+        },
+        {
+          "t": 344,
+          "t_s": 344,
+          "time": "T+05:44",
+          "rel_time": "T+05:44",
+          "type": "feeder_departure",
+          "camera": "LOGITECH",
+          "cat": "Sanbo",
+          "confidence": 0.9,
+          "feeder": "Sanbo feeder",
+          "notes": "Sanbo departed Sanbo feeder"
+        }
+      ],
+      "facts": {
+        "takeover_by_sanbo": false,
+        "takeover_by_dan": false,
+        "sanbo_ate_at_dan_feeder": false,
+        "dan_bowl_cleared": true,
+        "attribution_contested": false,
+        "theft_confirmed": false,
+        "event_log": true,
+        "sanbo_never_at_dan_feeder": true
+      },
+      "memories": [],
+      "stills": [],
+      "video": null,
+      "replay": {
+        "status": "withheld",
+        "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
+      },
+      "replay_withheld": true
+    },
     {
       "schema": "kibble-rumble.public/1",
       "match_id": "2026-11-04",
