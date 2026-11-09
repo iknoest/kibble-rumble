@@ -1,6 +1,6 @@
 {
   "schema": "kibble-rumble.public/1",
-  "published_on": "2026-11-08",
+  "published_on": "2026-11-09",
   "result_rule": "v10.4-household",
   "retention": {
     "policy": "curated-deck-3latest-4classics",
@@ -11,11 +11,12 @@
   },
   "featured_deck": {
     "latest": [
+      "2026-11-09",
       "2026-10-24",
-      "2026-10-12",
-      "2026-10-11"
+      "2026-10-12"
     ],
     "classics": [
+      "2026-10-11",
       "2026-09-27",
       "2026-09-25",
       "2026-09-20"
@@ -25,9 +26,11 @@
       "2026-09-20"
     ],
     "classics_dan": [
-      "2026-09-25"
+      "2026-09-25",
+      "2026-10-11"
     ],
     "all": [
+      "2026-11-09",
       "2026-10-24",
       "2026-10-12",
       "2026-10-11",
@@ -35,15 +38,16 @@
       "2026-09-25",
       "2026-09-20"
     ],
-    "featured": "2026-09-27"
+    "featured": "2026-11-09"
   },
   "showcase": {
     "latest": [
+      "2026-11-09",
       "2026-10-24",
-      "2026-10-12",
-      "2026-10-11"
+      "2026-10-12"
     ],
     "classics": [
+      "2026-10-11",
       "2026-09-27",
       "2026-09-25",
       "2026-09-20"
@@ -53,9 +57,11 @@
       "2026-09-20"
     ],
     "classics_dan": [
-      "2026-09-25"
+      "2026-09-25",
+      "2026-10-11"
     ],
     "all": [
+      "2026-11-09",
       "2026-10-24",
       "2026-10-12",
       "2026-10-11",
@@ -63,11 +69,47 @@
       "2026-09-25",
       "2026-09-20"
     ],
-    "featured": "2026-09-27"
+    "featured": "2026-11-09"
   },
-  "featured": "2026-09-27",
-  "latest_match_id": "2026-11-08",
+  "featured": "2026-11-09",
+  "latest_match_id": "2026-11-09",
   "matches": [
+    {
+      "match_id": "2026-11-09",
+      "date": "2026-11-09",
+      "label": "MON 09 NOV 2026",
+      "dow": "MON",
+      "duration_s": 711,
+      "duration_str": "11:51",
+      "result": "SANBO_WIN",
+      "winner": "sanbo",
+      "basis": "RAID SUCCESS",
+      "rule": "SANBO ENTERED DAN'S BOWL. HOUSE RULE: ENTERING DAN'S BOWL IS A SUCCESSFUL RAID.",
+      "bonus": null,
+      "stewards": "REVIEW",
+      "stewards_detail": "ATTRIBUTION CONTESTED",
+      "kibble": {
+        "start": 42,
+        "end": 0,
+        "consumed": 42,
+        "dan": 29,
+        "sanbo": 13
+      },
+      "meal_finished": true,
+      "replay": {
+        "status": "retained",
+        "src": "media/2026-11-09-2820c1dd-v3.mp4",
+        "sha256": "6b3aa1462e61f31ac6f08b7eaf36830e3aba426106037f0d1a60811bab8236fd",
+        "bytes": 6143865,
+        "duration_s": 177.8,
+        "speed": 4
+      },
+      "featured_deck": true,
+      "featured_role": "latest",
+      "showcase": true,
+      "showcase_label": "LATEST",
+      "memories_count": 3
+    },
     {
       "match_id": "2026-11-08",
       "date": "2026-11-08",
@@ -875,9 +917,9 @@
         "speed": 4
       },
       "featured_deck": true,
-      "featured_role": "latest",
+      "featured_role": "classic_dan",
       "showcase": true,
-      "showcase_label": "LATEST",
+      "showcase_label": "CLASSIC_DAN",
       "memories_count": 4
     },
     {
