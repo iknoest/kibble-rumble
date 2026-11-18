@@ -1,6 +1,6 @@
 {
   "schema": "kibble-rumble.public/1",
-  "published_on": "2026-11-17",
+  "published_on": "2026-11-18",
   "result_rule": "v10.4-household",
   "retention": {
     "policy": "curated-deck-3latest-4classics",
@@ -11,9 +11,9 @@
   },
   "featured_deck": {
     "latest": [
+      "2026-11-18",
       "2026-11-17",
-      "2026-11-16",
-      "2026-11-15"
+      "2026-11-16"
     ],
     "classics": [
       "2026-10-12",
@@ -30,9 +30,9 @@
       "2026-10-12"
     ],
     "all": [
+      "2026-11-18",
       "2026-11-17",
       "2026-11-16",
-      "2026-11-15",
       "2026-10-12",
       "2026-09-27",
       "2026-09-25",
@@ -42,9 +42,9 @@
   },
   "showcase": {
     "latest": [
+      "2026-11-18",
       "2026-11-17",
-      "2026-11-16",
-      "2026-11-15"
+      "2026-11-16"
     ],
     "classics": [
       "2026-10-12",
@@ -61,9 +61,9 @@
       "2026-10-12"
     ],
     "all": [
+      "2026-11-18",
       "2026-11-17",
       "2026-11-16",
-      "2026-11-15",
       "2026-10-12",
       "2026-09-27",
       "2026-09-25",
@@ -72,8 +72,44 @@
     "featured": "2026-09-27"
   },
   "featured": "2026-09-27",
-  "latest_match_id": "2026-11-17",
+  "latest_match_id": "2026-11-18",
   "matches": [
+    {
+      "match_id": "2026-11-18",
+      "date": "2026-11-18",
+      "label": "WED 18 NOV 2026",
+      "dow": "WED",
+      "duration_s": 280,
+      "duration_str": "04:40",
+      "result": "DAN_WIN",
+      "winner": "dan",
+      "basis": "DEFENDED",
+      "rule": "SANBO NEVER ENTERED DAN'S BOWL AND DAN CLEARED HIS BREAKFAST.",
+      "bonus": null,
+      "stewards": "CLEAN",
+      "stewards_detail": "CLEAN MATCH",
+      "kibble": {
+        "start": 36,
+        "end": 0,
+        "consumed": 36,
+        "dan": 36,
+        "sanbo": 0
+      },
+      "meal_finished": true,
+      "replay": {
+        "status": "retained",
+        "src": "media/2026-11-18-421be0e3-v3.mp4",
+        "sha256": "bfacc38787711371f11c3d59eab16c6f42e9498bf6cff0e288e933523e00b8bc",
+        "bytes": 5353737,
+        "duration_s": 70.0,
+        "speed": 4
+      },
+      "featured_deck": true,
+      "featured_role": "latest",
+      "showcase": true,
+      "showcase_label": "LATEST",
+      "memories_count": 2
+    },
     {
       "match_id": "2026-11-17",
       "date": "2026-11-17",
@@ -169,17 +205,17 @@
       },
       "meal_finished": true,
       "replay": {
-        "status": "retained",
+        "status": "aged",
         "src": "media/2026-11-15-01874d48-v3.mp4",
         "sha256": "fa4fb567ab16931b609c5ee83e19eb9ba8f6ef765ea85b99af6738eeed2e2453",
         "bytes": 4766041,
         "duration_s": 92.0,
         "speed": 4
       },
-      "featured_deck": true,
-      "featured_role": "latest",
-      "showcase": true,
-      "showcase_label": "LATEST",
+      "featured_deck": false,
+      "featured_role": null,
+      "showcase": false,
+      "showcase_label": null,
       "memories_count": 2
     },
     {
@@ -929,38 +965,6 @@
       "showcase": false,
       "showcase_label": null,
       "memories_count": 3
-    },
-    {
-      "match_id": "2026-10-18",
-      "date": "2026-10-18",
-      "label": "SUN 18 OCT 2026",
-      "dow": "SUN",
-      "duration_s": 345,
-      "duration_str": "05:45",
-      "result": "DAN_WIN",
-      "winner": "dan",
-      "basis": "DEFENDED",
-      "rule": "SANBO NEVER ENTERED DAN'S BOWL AND DAN CLEARED HIS BREAKFAST.",
-      "bonus": null,
-      "stewards": "CLEAN",
-      "stewards_detail": "CLEAN MATCH",
-      "kibble": {
-        "start": 34,
-        "end": 0,
-        "consumed": 34,
-        "dan": 34,
-        "sanbo": 0
-      },
-      "meal_finished": true,
-      "replay": {
-        "status": "withheld",
-        "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
-      },
-      "featured_deck": false,
-      "featured_role": null,
-      "showcase": false,
-      "showcase_label": null,
-      "memories_count": 0
     },
     {
       "match_id": "2026-10-12",
