@@ -1,6 +1,6 @@
 {
   "schema": "kibble-rumble.public/1",
-  "published_on": "2026-11-18",
+  "published_on": "2026-11-19",
   "result_rule": "v10.4-household",
   "retention": {
     "policy": "curated-deck-3latest-4classics",
@@ -11,9 +11,9 @@
   },
   "featured_deck": {
     "latest": [
+      "2026-11-19",
       "2026-11-18",
-      "2026-11-17",
-      "2026-11-16"
+      "2026-11-17"
     ],
     "classics": [
       "2026-10-12",
@@ -30,9 +30,9 @@
       "2026-10-12"
     ],
     "all": [
+      "2026-11-19",
       "2026-11-18",
       "2026-11-17",
-      "2026-11-16",
       "2026-10-12",
       "2026-09-27",
       "2026-09-25",
@@ -42,9 +42,9 @@
   },
   "showcase": {
     "latest": [
+      "2026-11-19",
       "2026-11-18",
-      "2026-11-17",
-      "2026-11-16"
+      "2026-11-17"
     ],
     "classics": [
       "2026-10-12",
@@ -61,9 +61,9 @@
       "2026-10-12"
     ],
     "all": [
+      "2026-11-19",
       "2026-11-18",
       "2026-11-17",
-      "2026-11-16",
       "2026-10-12",
       "2026-09-27",
       "2026-09-25",
@@ -72,8 +72,44 @@
     "featured": "2026-09-27"
   },
   "featured": "2026-09-27",
-  "latest_match_id": "2026-11-18",
+  "latest_match_id": "2026-11-19",
   "matches": [
+    {
+      "match_id": "2026-11-19",
+      "date": "2026-11-19",
+      "label": "THU 19 NOV 2026",
+      "dow": "THU",
+      "duration_s": 247,
+      "duration_str": "04:07",
+      "result": "DAN_WIN",
+      "winner": "dan",
+      "basis": "DEFENDED",
+      "rule": "SANBO NEVER ENTERED DAN'S BOWL AND DAN CLEARED HIS BREAKFAST.",
+      "bonus": null,
+      "stewards": "CLEAN",
+      "stewards_detail": "CLEAN MATCH",
+      "kibble": {
+        "start": 44,
+        "end": 0,
+        "consumed": 44,
+        "dan": 44,
+        "sanbo": 0
+      },
+      "meal_finished": true,
+      "replay": {
+        "status": "retained",
+        "src": "media/2026-11-19-6e65f8f3-v3.mp4",
+        "sha256": "c77465f33cc75813beef4dff8ae2dc45f5e651cbd4b9dd18b3c4308c72a74552",
+        "bytes": 5206031,
+        "duration_s": 61.8,
+        "speed": 4
+      },
+      "featured_deck": true,
+      "featured_role": "latest",
+      "showcase": true,
+      "showcase_label": "LATEST",
+      "memories_count": 2
+    },
     {
       "match_id": "2026-11-18",
       "date": "2026-11-18",
@@ -169,17 +205,17 @@
       },
       "meal_finished": true,
       "replay": {
-        "status": "retained",
+        "status": "aged",
         "src": "media/2026-11-16-47f269c4-v3.mp4",
         "sha256": "6a506fe706a15adc8f66e1a0df2c6642d6376a7389f5810b4eb79c2a1d773c41",
         "bytes": 5073240,
         "duration_s": 88.5,
         "speed": 4
       },
-      "featured_deck": true,
-      "featured_role": "latest",
-      "showcase": true,
-      "showcase_label": "LATEST",
+      "featured_deck": false,
+      "featured_role": null,
+      "showcase": false,
+      "showcase_label": null,
       "memories_count": 2
     },
     {
