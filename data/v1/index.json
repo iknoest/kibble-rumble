@@ -1,6 +1,6 @@
 {
   "schema": "kibble-rumble.public/1",
-  "published_on": "2026-11-21",
+  "published_on": "2026-11-22",
   "result_rule": "v10.4-household",
   "retention": {
     "policy": "curated-deck-3latest-4classics",
@@ -11,9 +11,9 @@
   },
   "featured_deck": {
     "latest": [
+      "2026-11-22",
       "2026-11-21",
-      "2026-11-19",
-      "2026-11-18"
+      "2026-11-19"
     ],
     "classics": [
       "2026-10-12",
@@ -30,21 +30,21 @@
       "2026-10-12"
     ],
     "all": [
+      "2026-11-22",
       "2026-11-21",
       "2026-11-19",
-      "2026-11-18",
       "2026-10-12",
       "2026-09-27",
       "2026-09-25",
       "2026-09-20"
     ],
-    "featured": "2026-09-27"
+    "featured": "2026-11-22"
   },
   "showcase": {
     "latest": [
+      "2026-11-22",
       "2026-11-21",
-      "2026-11-19",
-      "2026-11-18"
+      "2026-11-19"
     ],
     "classics": [
       "2026-10-12",
@@ -61,19 +61,55 @@
       "2026-10-12"
     ],
     "all": [
+      "2026-11-22",
       "2026-11-21",
       "2026-11-19",
-      "2026-11-18",
       "2026-10-12",
       "2026-09-27",
       "2026-09-25",
       "2026-09-20"
     ],
-    "featured": "2026-09-27"
+    "featured": "2026-11-22"
   },
-  "featured": "2026-09-27",
-  "latest_match_id": "2026-11-21",
+  "featured": "2026-11-22",
+  "latest_match_id": "2026-11-22",
   "matches": [
+    {
+      "match_id": "2026-11-22",
+      "date": "2026-11-22",
+      "label": "SUN 22 NOV 2026",
+      "dow": "SUN",
+      "duration_s": 174,
+      "duration_str": "02:54",
+      "result": "SANBO_WIN",
+      "winner": "sanbo",
+      "basis": "RAID SUCCESS",
+      "rule": "SANBO ENTERED DAN'S BOWL. HOUSE RULE: ENTERING DAN'S BOWL IS A SUCCESSFUL RAID.",
+      "bonus": null,
+      "stewards": "CLEAN",
+      "stewards_detail": "CLEAN MATCH",
+      "kibble": {
+        "start": 43,
+        "end": 0,
+        "consumed": 43,
+        "dan": 1,
+        "sanbo": 42
+      },
+      "meal_finished": true,
+      "replay": {
+        "status": "retained",
+        "src": "media/2026-11-22-016f36a4-v3.mp4",
+        "sha256": "c9fff6e3b84e592cbac4d8d8e7c1872defc6dd685bc8fe1a0da93dfafaad1e74",
+        "bytes": 2893195,
+        "duration_s": 43.5,
+        "speed": 4
+      },
+      "featured_deck": true,
+      "featured_role": "latest",
+      "showcase": true,
+      "showcase_label": "LATEST",
+      "memories_count": 4
+    },
     {
       "match_id": "2026-11-21",
       "date": "2026-11-21",
@@ -176,10 +212,10 @@
         "duration_s": 70.0,
         "speed": 4
       },
-      "featured_deck": true,
-      "featured_role": "latest",
-      "showcase": true,
-      "showcase_label": "LATEST",
+      "featured_deck": false,
+      "featured_role": null,
+      "showcase": false,
+      "showcase_label": null,
       "memories_count": 2
     },
     {
