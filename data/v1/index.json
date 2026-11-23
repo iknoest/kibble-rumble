@@ -1,6 +1,6 @@
 {
   "schema": "kibble-rumble.public/1",
-  "published_on": "2026-11-22",
+  "published_on": "2026-11-23",
   "result_rule": "v10.4-household",
   "retention": {
     "policy": "curated-deck-3latest-4classics",
@@ -11,9 +11,9 @@
   },
   "featured_deck": {
     "latest": [
+      "2026-11-23",
       "2026-11-22",
-      "2026-11-21",
-      "2026-11-19"
+      "2026-11-21"
     ],
     "classics": [
       "2026-10-12",
@@ -30,9 +30,9 @@
       "2026-10-12"
     ],
     "all": [
+      "2026-11-23",
       "2026-11-22",
       "2026-11-21",
-      "2026-11-19",
       "2026-10-12",
       "2026-09-27",
       "2026-09-25",
@@ -42,9 +42,9 @@
   },
   "showcase": {
     "latest": [
+      "2026-11-23",
       "2026-11-22",
-      "2026-11-21",
-      "2026-11-19"
+      "2026-11-21"
     ],
     "classics": [
       "2026-10-12",
@@ -61,9 +61,9 @@
       "2026-10-12"
     ],
     "all": [
+      "2026-11-23",
       "2026-11-22",
       "2026-11-21",
-      "2026-11-19",
       "2026-10-12",
       "2026-09-27",
       "2026-09-25",
@@ -72,8 +72,44 @@
     "featured": "2026-11-22"
   },
   "featured": "2026-11-22",
-  "latest_match_id": "2026-11-22",
+  "latest_match_id": "2026-11-23",
   "matches": [
+    {
+      "match_id": "2026-11-23",
+      "date": "2026-11-23",
+      "label": "MON 23 NOV 2026",
+      "dow": "MON",
+      "duration_s": 22,
+      "duration_str": "00:22",
+      "result": "NO_CONTEST",
+      "winner": null,
+      "basis": "UNRESOLVED",
+      "rule": "NO POSITIVE EVIDENCE OF DAN FEEDING.",
+      "bonus": null,
+      "stewards": "CLEAN",
+      "stewards_detail": "CLEAN MATCH",
+      "kibble": {
+        "start": 8,
+        "end": 5,
+        "consumed": 3,
+        "dan": 0,
+        "sanbo": 0
+      },
+      "meal_finished": false,
+      "replay": {
+        "status": "none",
+        "src": "media/2026-11-23-dcec49e7-v3.mp4",
+        "sha256": "8faf06bd00ce83cd278e9f786c2f7eb7dc5d01da031ce02551fc7a3fc0dfa7c2",
+        "bytes": 536072,
+        "duration_s": 5.5,
+        "speed": 4
+      },
+      "featured_deck": true,
+      "featured_role": "latest",
+      "showcase": true,
+      "showcase_label": "LATEST",
+      "memories_count": 3
+    },
     {
       "match_id": "2026-11-22",
       "date": "2026-11-22",
@@ -176,10 +212,10 @@
         "duration_s": 61.8,
         "speed": 4
       },
-      "featured_deck": true,
-      "featured_role": "latest",
-      "showcase": true,
-      "showcase_label": "LATEST",
+      "featured_deck": false,
+      "featured_role": null,
+      "showcase": false,
+      "showcase_label": null,
       "memories_count": 2
     },
     {
