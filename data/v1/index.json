@@ -1,6 +1,6 @@
 {
   "schema": "kibble-rumble.public/1",
-  "published_on": "2026-11-25",
+  "published_on": "2026-11-26",
   "result_rule": "v10.4-household",
   "retention": {
     "policy": "curated-deck-3latest-4classics",
@@ -11,9 +11,9 @@
   },
   "featured_deck": {
     "latest": [
+      "2026-11-26",
       "2026-11-25",
-      "2026-11-24",
-      "2026-11-22"
+      "2026-11-24"
     ],
     "classics": [
       "2026-10-12",
@@ -30,21 +30,21 @@
       "2026-10-12"
     ],
     "all": [
+      "2026-11-26",
       "2026-11-25",
       "2026-11-24",
-      "2026-11-22",
       "2026-10-12",
       "2026-09-27",
       "2026-09-25",
       "2026-09-20"
     ],
-    "featured": "2026-11-22"
+    "featured": "2026-09-27"
   },
   "showcase": {
     "latest": [
+      "2026-11-26",
       "2026-11-25",
-      "2026-11-24",
-      "2026-11-22"
+      "2026-11-24"
     ],
     "classics": [
       "2026-10-12",
@@ -61,19 +61,55 @@
       "2026-10-12"
     ],
     "all": [
+      "2026-11-26",
       "2026-11-25",
       "2026-11-24",
-      "2026-11-22",
       "2026-10-12",
       "2026-09-27",
       "2026-09-25",
       "2026-09-20"
     ],
-    "featured": "2026-11-22"
+    "featured": "2026-09-27"
   },
-  "featured": "2026-11-22",
-  "latest_match_id": "2026-11-25",
+  "featured": "2026-09-27",
+  "latest_match_id": "2026-11-26",
   "matches": [
+    {
+      "match_id": "2026-11-26",
+      "date": "2026-11-26",
+      "label": "THU 26 NOV 2026",
+      "dow": "THU",
+      "duration_s": 268,
+      "duration_str": "04:28",
+      "result": "DAN_WIN",
+      "winner": "dan",
+      "basis": "DEFENDED",
+      "rule": "SANBO NEVER ENTERED DAN'S BOWL AND DAN CLEARED HIS BREAKFAST.",
+      "bonus": null,
+      "stewards": "CLEAN",
+      "stewards_detail": "CLEAN MATCH",
+      "kibble": {
+        "start": 41,
+        "end": 0,
+        "consumed": 41,
+        "dan": 41,
+        "sanbo": 0
+      },
+      "meal_finished": true,
+      "replay": {
+        "status": "retained",
+        "src": "media/2026-11-26-83ae7dd0-v3.mp4",
+        "sha256": "a52ec72bd9a519c741c742bbd34735df602116aeee806f889b440f71ddd7b917",
+        "bytes": 5467485,
+        "duration_s": 67.0,
+        "speed": 4
+      },
+      "featured_deck": true,
+      "featured_role": "latest",
+      "showcase": true,
+      "showcase_label": "LATEST",
+      "memories_count": 2
+    },
     {
       "match_id": "2026-11-25",
       "date": "2026-11-25",
@@ -212,10 +248,10 @@
         "duration_s": 43.5,
         "speed": 4
       },
-      "featured_deck": true,
-      "featured_role": "latest",
-      "showcase": true,
-      "showcase_label": "LATEST",
+      "featured_deck": false,
+      "featured_role": null,
+      "showcase": false,
+      "showcase_label": null,
       "memories_count": 4
     },
     {
@@ -241,7 +277,7 @@
       },
       "meal_finished": true,
       "replay": {
-        "status": "retained",
+        "status": "aged",
         "src": "media/2026-11-21-07f5af87-v3.mp4",
         "sha256": "879214e325f1cc42a5c54afef98eb33bd705de44731d8d37e52d2a36410e0a09",
         "bytes": 8067163,
@@ -1065,38 +1101,6 @@
         "end": 0,
         "consumed": 42,
         "dan": 42,
-        "sanbo": 0
-      },
-      "meal_finished": true,
-      "replay": {
-        "status": "withheld",
-        "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
-      },
-      "featured_deck": false,
-      "featured_role": null,
-      "showcase": false,
-      "showcase_label": null,
-      "memories_count": 0
-    },
-    {
-      "match_id": "2026-10-26",
-      "date": "2026-10-26",
-      "label": "MON 26 OCT 2026",
-      "dow": "MON",
-      "duration_s": 492,
-      "duration_str": "08:12",
-      "result": "DAN_WIN",
-      "winner": "dan",
-      "basis": "DEFENDED",
-      "rule": "SANBO NEVER ENTERED DAN'S BOWL AND DAN CLEARED HIS BREAKFAST.",
-      "bonus": null,
-      "stewards": "CLEAN",
-      "stewards_detail": "CLEAN MATCH",
-      "kibble": {
-        "start": 0,
-        "end": 0,
-        "consumed": 0,
-        "dan": 38,
         "sanbo": 0
       },
       "meal_finished": true,
