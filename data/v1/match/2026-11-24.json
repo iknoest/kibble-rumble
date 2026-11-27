@@ -179,23 +179,9 @@
       "feeder": "Dan feeder"
     }
   ],
-  "video": {
-    "src": "media/2026-11-24-c262e12a-v3.mp4",
-    "speed": 4,
-    "clock_t0": -21,
-    "layout": {
-      "tapo_y": 34,
-      "bar_y": 439,
-      "bar_h": 42,
-      "logi_y": 481,
-      "lane_w": 720,
-      "lane_h": 405,
-      "track_x0": 20,
-      "track_x1": 700
-    }
-  },
+  "video": null,
   "replay": {
-    "status": "retained",
+    "status": "aged",
     "src": "media/2026-11-24-c262e12a-v3.mp4",
     "sha256": "49cb09036379d1e3c3e1220df75d10bb7e40ff535d63666a718422cded9edcad",
     "bytes": 6035218,

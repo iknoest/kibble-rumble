@@ -1,6 +1,6 @@
 {
   "schema": "kibble-rumble.public/1",
-  "published_on": "2026-11-26",
+  "published_on": "2026-11-27",
   "result_rule": "v10.4-household",
   "retention": {
     "policy": "curated-deck-3latest-4classics",
@@ -11,9 +11,9 @@
   },
   "featured_deck": {
     "latest": [
+      "2026-11-27",
       "2026-11-26",
-      "2026-11-25",
-      "2026-11-24"
+      "2026-11-25"
     ],
     "classics": [
       "2026-10-12",
@@ -30,9 +30,9 @@
       "2026-10-12"
     ],
     "all": [
+      "2026-11-27",
       "2026-11-26",
       "2026-11-25",
-      "2026-11-24",
       "2026-10-12",
       "2026-09-27",
       "2026-09-25",
@@ -42,9 +42,9 @@
   },
   "showcase": {
     "latest": [
+      "2026-11-27",
       "2026-11-26",
-      "2026-11-25",
-      "2026-11-24"
+      "2026-11-25"
     ],
     "classics": [
       "2026-10-12",
@@ -61,9 +61,9 @@
       "2026-10-12"
     ],
     "all": [
+      "2026-11-27",
       "2026-11-26",
       "2026-11-25",
-      "2026-11-24",
       "2026-10-12",
       "2026-09-27",
       "2026-09-25",
@@ -72,8 +72,44 @@
     "featured": "2026-09-27"
   },
   "featured": "2026-09-27",
-  "latest_match_id": "2026-11-26",
+  "latest_match_id": "2026-11-27",
   "matches": [
+    {
+      "match_id": "2026-11-27",
+      "date": "2026-11-27",
+      "label": "FRI 27 NOV 2026",
+      "dow": "FRI",
+      "duration_s": 313,
+      "duration_str": "05:13",
+      "result": "DAN_WIN",
+      "winner": "dan",
+      "basis": "DEFENDED",
+      "rule": "SANBO NEVER ENTERED DAN'S BOWL AND DAN CLEARED HIS BREAKFAST.",
+      "bonus": null,
+      "stewards": "CLEAN",
+      "stewards_detail": "CLEAN MATCH",
+      "kibble": {
+        "start": 40,
+        "end": 0,
+        "consumed": 40,
+        "dan": 40,
+        "sanbo": 0
+      },
+      "meal_finished": true,
+      "replay": {
+        "status": "retained",
+        "src": "media/2026-11-27-6b8e196a-v3.mp4",
+        "sha256": "367594e2eda2c62f29e647ecfb79c92d1f82b043e625a156020c28de10eada5f",
+        "bytes": 6736494,
+        "duration_s": 78.2,
+        "speed": 4
+      },
+      "featured_deck": true,
+      "featured_role": "latest",
+      "showcase": true,
+      "showcase_label": "LATEST",
+      "memories_count": 2
+    },
     {
       "match_id": "2026-11-26",
       "date": "2026-11-26",
@@ -169,17 +205,17 @@
       },
       "meal_finished": true,
       "replay": {
-        "status": "retained",
+        "status": "aged",
         "src": "media/2026-11-24-c262e12a-v3.mp4",
         "sha256": "49cb09036379d1e3c3e1220df75d10bb7e40ff535d63666a718422cded9edcad",
         "bytes": 6035218,
         "duration_s": 78.0,
         "speed": 4
       },
-      "featured_deck": true,
-      "featured_role": "latest",
-      "showcase": true,
-      "showcase_label": "LATEST",
+      "featured_deck": false,
+      "featured_role": null,
+      "showcase": false,
+      "showcase_label": null,
       "memories_count": 2
     },
     {
@@ -1066,42 +1102,6 @@
         "consumed": 32,
         "dan": 26,
         "sanbo": 6
-      },
-      "meal_finished": true,
-      "replay": {
-        "status": "withheld",
-        "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
-      },
-      "featured_deck": false,
-      "featured_role": null,
-      "showcase": false,
-      "showcase_label": null,
-      "memories_count": 0
-    },
-    {
-      "match_id": "2026-10-27",
-      "date": "2026-10-27",
-      "label": "TUE 27 OCT 2026",
-      "dow": "TUE",
-      "duration_s": 308,
-      "duration_str": "05:08",
-      "result": "DAN_WIN",
-      "winner": "dan",
-      "basis": "DEFENDED",
-      "rule": "SANBO NEVER ENTERED DAN'S BOWL AND DAN CLEARED HIS BREAKFAST.",
-      "bonus": {
-        "kind": "DAN RAID",
-        "label": "DAN RAIDED SANBO",
-        "camera": "LOGITECH"
-      },
-      "stewards": "CLEAN",
-      "stewards_detail": "CLEAN MATCH",
-      "kibble": {
-        "start": 42,
-        "end": 0,
-        "consumed": 42,
-        "dan": 42,
-        "sanbo": 0
       },
       "meal_finished": true,
       "replay": {
