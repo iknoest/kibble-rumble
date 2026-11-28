@@ -1,14 +1,14 @@
 window.KR_DATA = {
   "schema": "kibble-rumble.public/1",
-  "published_on": "2026-11-27",
+  "published_on": "2026-11-28",
   "result_rule": "v10.4-household",
-  "latest": "2026-11-27",
+  "latest": "2026-11-28",
   "featured": "2026-09-27",
   "featured_deck": {
     "latest": [
+      "2026-11-28",
       "2026-11-27",
-      "2026-11-26",
-      "2026-11-25"
+      "2026-11-26"
     ],
     "classics": [
       "2026-10-12",
@@ -25,9 +25,9 @@ window.KR_DATA = {
       "2026-10-12"
     ],
     "all": [
+      "2026-11-28",
       "2026-11-27",
       "2026-11-26",
-      "2026-11-25",
       "2026-10-12",
       "2026-09-27",
       "2026-09-25",
@@ -37,9 +37,9 @@ window.KR_DATA = {
   },
   "showcase": {
     "latest": [
+      "2026-11-28",
       "2026-11-27",
-      "2026-11-26",
-      "2026-11-25"
+      "2026-11-26"
     ],
     "classics": [
       "2026-10-12",
@@ -56,9 +56,9 @@ window.KR_DATA = {
       "2026-10-12"
     ],
     "all": [
+      "2026-11-28",
       "2026-11-27",
       "2026-11-26",
-      "2026-11-25",
       "2026-10-12",
       "2026-09-27",
       "2026-09-25",
@@ -703,6 +703,42 @@ window.KR_DATA = {
   },
   "matches": [
     {
+      "match_id": "2026-11-28",
+      "date": "2026-11-28",
+      "label": "SAT 28 NOV 2026",
+      "dow": "SAT",
+      "duration_s": 252,
+      "duration_str": "04:12",
+      "result": "DAN_WIN",
+      "winner": "dan",
+      "basis": "DEFENDED",
+      "rule": "SANBO NEVER ENTERED DAN'S BOWL AND DAN CLEARED HIS BREAKFAST.",
+      "bonus": null,
+      "stewards": "REVIEW",
+      "stewards_detail": "ATTRIBUTION CONTESTED",
+      "kibble": {
+        "start": 46,
+        "end": 0,
+        "consumed": 46,
+        "dan": 43,
+        "sanbo": 3
+      },
+      "meal_finished": true,
+      "replay": {
+        "status": "retained",
+        "src": "media/2026-11-28-a0e72a90-v3.mp4",
+        "sha256": "eff5dce20e8106f131ee4363524437065a2c0db3c77fe74ad26ae35b9caf5324",
+        "bytes": 5701837,
+        "duration_s": 63.0,
+        "speed": 4
+      },
+      "featured_deck": true,
+      "featured_role": "latest",
+      "showcase": true,
+      "showcase_label": "LATEST",
+      "memories_count": 2
+    },
+    {
       "match_id": "2026-11-27",
       "date": "2026-11-27",
       "label": "FRI 27 NOV 2026",
@@ -797,17 +833,17 @@ window.KR_DATA = {
       },
       "meal_finished": true,
       "replay": {
-        "status": "retained",
+        "status": "aged",
         "src": "media/2026-11-25-6f4735f5-v3.mp4",
         "sha256": "52f236071eb3e0e620dd27082d57ae40197e8fe9ed80ecc08122297205302422",
         "bytes": 4276391,
         "duration_s": 46.0,
         "speed": 4
       },
-      "featured_deck": true,
-      "featured_role": "latest",
-      "showcase": true,
-      "showcase_label": "LATEST",
+      "featured_deck": false,
+      "featured_role": null,
+      "showcase": false,
+      "showcase_label": null,
       "memories_count": 2
     },
     {
@@ -1707,42 +1743,6 @@ window.KR_DATA = {
       "memories_count": 0
     },
     {
-      "match_id": "2026-10-28",
-      "date": "2026-10-28",
-      "label": "WED 28 OCT 2026",
-      "dow": "WED",
-      "duration_s": 308,
-      "duration_str": "05:08",
-      "result": "SANBO_WIN",
-      "winner": "sanbo",
-      "basis": "RAID SUCCESS",
-      "rule": "SANBO ENTERED DAN'S BOWL. HOUSE RULE: ENTERING DAN'S BOWL IS A SUCCESSFUL RAID.",
-      "bonus": {
-        "kind": "COUNTER RAID",
-        "label": "DAN COUNTER-RAIDED SANBO",
-        "camera": "LOGITECH"
-      },
-      "stewards": "REVIEW",
-      "stewards_detail": "ATTRIBUTION CONTESTED",
-      "kibble": {
-        "start": 32,
-        "end": 0,
-        "consumed": 32,
-        "dan": 26,
-        "sanbo": 6
-      },
-      "meal_finished": true,
-      "replay": {
-        "status": "withheld",
-        "withheld_reason": "SAFETY_CLEARANCE_ABSENT: No affirmative person-safety clearance record in report metadata"
-      },
-      "featured_deck": false,
-      "featured_role": null,
-      "showcase": false,
-      "showcase_label": null,
-      "memories_count": 0
-    },
-    {
       "match_id": "2026-10-12",
       "date": "2026-10-12",
       "label": "MON 12 OCT 2026",
@@ -1896,6 +1896,212 @@ window.KR_DATA = {
     }
   ],
   "days": [
+    {
+      "schema": "kibble-rumble.public/1",
+      "match_id": "2026-11-28",
+      "date": "2026-11-28",
+      "label": "SAT 28 NOV 2026",
+      "dow": "SAT",
+      "short": "28\u00b711",
+      "duration_s": 252,
+      "duration_str": "04:12",
+      "result": "DAN_WIN",
+      "winner": "dan",
+      "basis": "DEFENDED",
+      "rule": "SANBO NEVER ENTERED DAN'S BOWL AND DAN CLEARED HIS BREAKFAST.",
+      "bonus": null,
+      "stewards": "REVIEW",
+      "stewards_detail": "ATTRIBUTION CONTESTED",
+      "stewards_result": {
+        "label": "STEWARDS REVIEW",
+        "tone": "amber",
+        "sub": "ATTRIBUTION CONTESTED"
+      },
+      "meal_finished": true,
+      "kibble": {
+        "start": 46,
+        "end": 0,
+        "consumed": 46,
+        "dan": 43,
+        "sanbo": 3
+      },
+      "dan": {
+        "kibble": 43,
+        "bowl_s": 267.4583333333333
+      },
+      "sanbo": {
+        "kibble": 3,
+        "bowl_s": 13.125,
+        "own_ate": false,
+        "own_line": "Sanbo own feeder"
+      },
+      "conflict": true,
+      "theft": "Not confirmed",
+      "tapo_status": "Finished",
+      "logitech_status": "Finished likely",
+      "sessions": [],
+      "window": {
+        "start": "00:00",
+        "end": "04:12",
+        "t0": 0,
+        "t1": 252,
+        "duration": "04:12"
+      },
+      "timeline": {
+        "t0": 0,
+        "t1": 252.0
+      },
+      "events": [
+        {
+          "t": -8,
+          "t_s": -8,
+          "time": "PRE-MATCH",
+          "rel_time": "PRE-MATCH",
+          "type": "cat_arrival",
+          "camera": "LOGITECH",
+          "cat": "unsure",
+          "confidence": 0.5,
+          "feeder": "Sanbo feeder",
+          "notes": "unsure arrived at Sanbo feeder"
+        },
+        {
+          "t": 0,
+          "t_s": 0,
+          "time": "T+00:00",
+          "rel_time": "T+00:00",
+          "type": "food_dispensed",
+          "camera": "TAPO",
+          "cat": "none",
+          "confidence": 1.0,
+          "feeder": "Dan feeder",
+          "notes": "Food dispensed (~46 kibble)"
+        },
+        {
+          "t": 0,
+          "t_s": 0,
+          "time": "T+00:00",
+          "rel_time": "T+00:00",
+          "type": "cat_arrival",
+          "camera": "TAPO",
+          "cat": "Dan",
+          "confidence": 0.95,
+          "feeder": "Dan feeder",
+          "notes": "Dan arrived at Dan feeder"
+        },
+        {
+          "t": 180,
+          "t_s": 180,
+          "time": "T+03:00",
+          "rel_time": "T+03:00",
+          "type": "meal_finish",
+          "camera": "TAPO",
+          "cat": "Dan",
+          "confidence": 1.0,
+          "feeder": "Dan feeder",
+          "notes": "Dan feeder meal finished"
+        },
+        {
+          "t": 252,
+          "t_s": 252,
+          "time": "T+04:12",
+          "rel_time": "T+04:12",
+          "type": "feeder_departure",
+          "camera": "LOGITECH",
+          "cat": "unsure",
+          "confidence": 0.5,
+          "feeder": "Sanbo feeder",
+          "notes": "unsure departed Sanbo feeder"
+        }
+      ],
+      "facts": {
+        "takeover_by_sanbo": false,
+        "takeover_by_dan": false,
+        "sanbo_ate_at_dan_feeder": true,
+        "dan_bowl_cleared": true,
+        "attribution_contested": true,
+        "theft_confirmed": false,
+        "event_log": true,
+        "sanbo_never_at_dan_feeder": true
+      },
+      "memories": [
+        {
+          "n": 1,
+          "kind": "dispensed",
+          "label": "KIBBLE DROP",
+          "title": "KIBBLE DROP",
+          "rel_time": "T+00:00",
+          "event_time": "T+00:00",
+          "t": 0,
+          "t_s": 0,
+          "cat": "none",
+          "feeder": "Dan feeder",
+          "src": "media/2026-11-28-memories-1-v3.jpg",
+          "event_type": "food_dispensed"
+        },
+        {
+          "n": 2,
+          "kind": "arrival",
+          "label": "DAN ARRIVES",
+          "title": "DAN ARRIVES",
+          "rel_time": "T+00:00",
+          "event_time": "T+00:00",
+          "t": 0,
+          "t_s": 0,
+          "cat": "Dan",
+          "feeder": "Dan feeder",
+          "src": "media/2026-11-28-memories-2-v3.jpg",
+          "event_type": "cat_arrival"
+        }
+      ],
+      "stills": [
+        {
+          "n": 1,
+          "kind": "dispensed",
+          "title": "KIBBLE DROP",
+          "src": "media/2026-11-28-memories-1-v3.jpg",
+          "event_type": "food_dispensed",
+          "event_time": "T+00:00",
+          "t": 0,
+          "cat": "none",
+          "feeder": "Dan feeder"
+        },
+        {
+          "n": 2,
+          "kind": "arrival",
+          "title": "DAN ARRIVES",
+          "src": "media/2026-11-28-memories-2-v3.jpg",
+          "event_type": "cat_arrival",
+          "event_time": "T+00:00",
+          "t": 0,
+          "cat": "Dan",
+          "feeder": "Dan feeder"
+        }
+      ],
+      "video": {
+        "src": "media/2026-11-28-a0e72a90-v3.mp4",
+        "speed": 4,
+        "clock_t0": -8,
+        "layout": {
+          "tapo_y": 34,
+          "bar_y": 439,
+          "bar_h": 42,
+          "logi_y": 481,
+          "lane_w": 720,
+          "lane_h": 405,
+          "track_x0": 20,
+          "track_x1": 700
+        }
+      },
+      "replay": {
+        "status": "retained",
+        "src": "media/2026-11-28-a0e72a90-v3.mp4",
+        "sha256": "eff5dce20e8106f131ee4363524437065a2c0db3c77fe74ad26ae35b9caf5324",
+        "bytes": 5701837,
+        "duration_s": 63.0,
+        "speed": 4
+      },
+      "replay_withheld": false
+    },
     {
       "schema": "kibble-rumble.public/1",
       "match_id": "2026-11-27",
@@ -2537,23 +2743,9 @@ window.KR_DATA = {
           "feeder": "Dan feeder"
         }
       ],
-      "video": {
-        "src": "media/2026-11-25-6f4735f5-v3.mp4",
-        "speed": 4,
-        "clock_t0": -11,
-        "layout": {
-          "tapo_y": 34,
-          "bar_y": 439,
-          "bar_h": 42,
-          "logi_y": 481,
-          "lane_w": 720,
-          "lane_h": 405,
-          "track_x0": 20,
-          "track_x1": 700
-        }
-      },
+      "video": null,
       "replay": {
-        "status": "retained",
+        "status": "aged",
         "src": "media/2026-11-25-6f4735f5-v3.mp4",
         "sha256": "52f236071eb3e0e620dd27082d57ae40197e8fe9ed80ecc08122297205302422",
         "bytes": 4276391,
